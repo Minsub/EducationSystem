@@ -6,7 +6,8 @@
 	<appender name="console" class="org.apache.log4j.ConsoleAppender">
 		<param name="Target" value="System.out" />
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+			<param name="ConversionPattern" value="[%-5p] [%d] %-17c{2} (%13F:%L) %3x - %m%n" />
+			
 		</layout>
 	</appender>
 	
@@ -42,6 +43,9 @@
 
 
 <!-- 
+
+<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+
 # Log4j Setting file
 log4j.rootLogger=DEBUG, stdout, dailyfile, anotherlog
 
