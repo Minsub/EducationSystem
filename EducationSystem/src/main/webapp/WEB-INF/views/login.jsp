@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,26 +23,25 @@
 
 </head>
 <body>
-    <div class="container">
-        <form class="form-signin" action="/login.uni" method="post">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <input name="id" type="text" class="form-control" placeholder="User Name" autofocus> <input
-                name="pw" type="password" class="form-control" placeholder="Password">
+	<div class="container">
+		<form class="form-signin" action="/education/login" method="post">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<input name="id" type="text" class="form-control"
+				placeholder="User Name" autofocus> <input name="pw"
+				type="password" class="form-control" placeholder="Password">
 
-            <div class="row">
-                <div class="col-md-6">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
-    </div>
+			<div class="row">
+				<div class="col-md-6">
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+						in</button>
+		</form>
+	</div>
 
-    <div class="col-md-6">
-        <form class="form-signin" action="/signup.uni" method="get">
-            <button type="submit" class="btn btn-lg btn-danger btn-block">Sign-Up</button>
-        </form>
-    </div>
-    </div>
-    </div>
-    <!-- /container -->
+	<div class="col-md-6">
+		<form class="form-signin" action="/education/signup" method="get">
+			<button type="submit" class="btn btn-lg btn-danger btn-block">Sign-Up</button>
+		</form>
+	</div>
 
 </body>
 </html>

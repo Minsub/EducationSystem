@@ -1,7 +1,5 @@
 package com.uni.education.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
@@ -23,25 +21,6 @@ public class LoginController {
 	@Autowired
 	private SqlSession sqlSession;
 
-	@RequestMapping(method=RequestMethod.GET)
-	public String processLogin() {
-		
-		
-//		List<NationVO> list = sqlSession.selectList("Test.selectNations");
-		
-		//AnnotationMapper2 mapper = sqlSession.getMapper(AnnotationMapper2.class);
-        //List<NationVO> list = mapper.selectNationAll();
-		
-		List<UserVO> list = sqlSession.selectList("Users.selectAllUsers");
-        
-        System.out.println("cnt: " + list.size());
-        for(UserVO u : list) {
-            System.out.println(u.getId() + ", " +u.getName() + ", " + u.getTeam() + ", " + u.getRank());
-        }
-		
-		return "login";
-	}
-	
 	@RequestMapping(method = RequestMethod.GET)
     public String setupForm() {
         logger.info("Call login Page");
@@ -54,6 +33,12 @@ public class LoginController {
         String id = user.getId();
         String pw = user.getPw();
         logger.info("try login [" + id + "]");
+  
+		
+		//AnnotationMapper2 mapper = sqlSession.getMapper(AnnotationMapper2.class);
+        //List<NationVO> list = mapper.selectNationAll();
+		
+//		List<UserVO> list = sqlSession.selectList("Users.selectAllUsers");
         
 //        if (userService.login(id, pw)) {
 //            session.setAttribute("id", user.getId());
