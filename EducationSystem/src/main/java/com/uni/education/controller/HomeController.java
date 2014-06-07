@@ -1,4 +1,4 @@
-package com.uni.education;
+package com.uni.education.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

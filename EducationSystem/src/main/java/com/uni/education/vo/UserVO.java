@@ -1,14 +1,15 @@
 package com.uni.education.vo;
 
 public class UserVO {
-	private String id;
-	private String pw;
-	private String name;
-	private String utype;
-	private String team;
-	private String rank;
-	private String teacher;
-	private String admin;
+	private String id;		//사용자 고유 ID
+	private String pw;		//비밀번호
+	private String name;	//사용자 이름
+	private String utype;	//일반/개발
+	private String team;	//소속
+	private String rank;	//직급
+	private String teacher;	//강사 권한 여부 (Y/N)
+	private String admin;	//관리자 권한 여부 (Y/N)
+	
 	public String getId() {
 		return id;
 	}

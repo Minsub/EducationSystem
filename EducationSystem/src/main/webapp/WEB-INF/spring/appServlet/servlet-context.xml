@@ -21,7 +21,9 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.uni.education" />
+	<context:component-scan base-package="com.uni.education.controller" />
+	<context:component-scan base-package="com.uni.education.service" />
+	<context:component-scan base-package="com.uni.education.dao" />
 	
 	
 	
