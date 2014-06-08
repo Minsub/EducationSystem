@@ -11,4 +11,5 @@ public interface UserDao {
 	 */
 	public List<UserVO> getAllUsers();
 	
+	public List<UserVO> getUsersByDynamic(UserVO user);
 }

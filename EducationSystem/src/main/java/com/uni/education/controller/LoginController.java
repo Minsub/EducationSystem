@@ -39,6 +39,15 @@ public class LoginController {
 		List<UserVO> list = userService.getAllUsers();
         
         logger.info("TEST: SIZE-"+list.size());
+
+        
+        UserVO condition = new UserVO();
+        condition.setUtype("Developer");
+        condition.setRank("과장");
+        
+        list = userService.getUsers(condition);
+        
+        logger.info("Dynamic SQL: SIZE-"+list.size());
         
 //		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 //        List<UserVO> list = mapper.selectAll();

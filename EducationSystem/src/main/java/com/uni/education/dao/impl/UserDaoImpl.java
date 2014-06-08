@@ -20,21 +20,17 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public List<UserVO> getAllUsers() {
-//		List<UserVO> list = null;
-//		try {
-//			UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-//			list = mapper.selectAll();
-//		} catch(Exception e) {
-//			logger.debug(e.toString());
-//		} finally {
-//			if (sqlSession != null) sqlSession.close();
-//		}
-//		return list;
-		
-		
-		
 		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 		return mapper.selectAll();
 	}
+
+	@Override
+	public List<UserVO> getUsersByDynamic(UserVO user) {
+//		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+//		return mapper.selectByDynamic(user);
+		return sqlSession.selectList("Users.selectByDynamic", user);
+	}
+	
+	
 
 }

@@ -30,6 +30,31 @@ public class TestMyBatis {
 		
 	}
 	
+	public void test2() {
+		//Annotation SQL Sample
+//			//in your mapper interface:
+//			@SelectProvider(type=MyClass.class, method="myMethod")
+//			public Object selectById(int id);
+//			
+//			//in MyClass:
+//			public static String myMethod() {
+//			    return "select * from MyTable where id=#{id}"; 
+//			}
+		
+		//Dynamic SQL on Annotation
+//		@Update("""<script>
+//				  update Author
+//				    <set>
+//				      <if test="username != null">username=#{username},</if>
+//				      <if test="password != null">password=#{password},</if>
+//				      <if test="email != null">email=#{email},</if>
+//				      <if test="bio != null">bio=#{bio}</if>
+//				    </set>
+//				  where id=#{id}
+//				</script>""")
+
+	}
+	
 	public static void main(String[] args) {
 		new TestMyBatis().test();
 	}

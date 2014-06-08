@@ -17,4 +17,8 @@ public class UserService {
 	public List<UserVO> getAllUsers() {
 		return userDao.getAllUsers();
 	}
+	
+	public List<UserVO> getUsers(UserVO user) {
+		return userDao.getUsersByDynamic(user);
+	}
 }
