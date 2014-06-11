@@ -11,36 +11,6 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P></br>
-<P>  The time on the server is ${serverTime}. </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
-<P>  TEST </P></br>
 
 
 </body>

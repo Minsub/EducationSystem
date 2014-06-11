@@ -13,8 +13,11 @@
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -23,8 +26,8 @@
 
 </head>
 <body>
-	<div class="container">
-		<form class="form-signin" action="/education/login" method="post">
+	<div class="container" >
+		<form class="form-signin" action="/education/login" method="post" >
 			<h2 class="form-signin-heading">Please sign in</h2>
 			<input name="id" type="text" class="form-control"
 				placeholder="User Name" autofocus> <input name="pw"

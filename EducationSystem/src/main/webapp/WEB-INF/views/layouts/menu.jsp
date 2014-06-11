@@ -24,26 +24,23 @@
 
 </head>
 <body>
-	<header class="navbar navbar-inverse navbar-static-top bs-docs-nav"
-		role="banner">
+	<header class="navbar navbar-inverse bs-docs-nav" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<button class="navbar-toggle" type="button" data-toggle="collapse"
-					data-target=".bs-navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
-				<a href="/BS3/" class="navbar-brand">부트스트랩</a>
+				<a href="/education/jobedu" class="navbar-brand">U&I Education System</a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse"
 				role="navigation">
 				<ul class="nav navbar-nav">
-					<li><a href="/BS3/getting-started">시작하기</a></li>
-					<li><a href="/BS3/css">CSS</a></li>
-					<li class="active"><a href="/BS3/components">콤포넌트</a></li>
-					<li><a href="/BS3/javascript">자바스크립트</a></li>
-					<li><a href="/BS3/customize">맞춤화</a></li>
+					<li><a href="/education/jobedu">직무교육</a></li>
+					<li><a href="/education/jobedu">그룹교육</a></li>
+					<li><a href="/education/jobedu">어학교육</a></li>
 				</ul>
 			</nav>
 		</div>

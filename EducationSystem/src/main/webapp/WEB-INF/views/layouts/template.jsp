@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Login</title>
+<title>Education System</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -25,19 +25,41 @@
 </head>
 
 <body>
-
-
-
-
-
 	<div id="header">
-	    <tiles:insertAttribute name="menu" />
+		<tiles:insertAttribute name="menu" />
 	</div>
-	<div id="body">
-	    <tiles:insertAttribute name="body" />
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="bs-sidebar hidden-print" role="complementary">
+					<ul class="nav bs-sidenav">
+						<li><a href="/education/login">수강신청</a></li>
+						<li><a href="/education/login">수강내역</a></li>
+						<li><a href="/education/login">강좌개설 신청</a></li>
+						</br>
+						<li><a href="/education/login">사용자관리</a></li>
+						<li><a href="/education/login">요청중인 강좌</a></li>
+						<li><a href="/education/login">강좌개설</a></li>
+						<li><a href="/education/login">수강신청 관리</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-md-9" role="main">
+				<div id="body">
+					<tiles:insertAttribute name="body" />
+				</div>
+			</div>
+		</div>
 	</div>
-	<div id="footer">
-	    <tiles:insertAttribute name="footer" />
+	<div class="container">
+		<div class="col-md-12">
+			<div id="footer">
+				<tiles:insertAttribute name="footer" />
+			</div>
+		</div>
 	</div>
+
 </body>
 </html>
