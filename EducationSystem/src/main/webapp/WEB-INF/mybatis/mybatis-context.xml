@@ -8,8 +8,8 @@
     <bean id="propertyPlaceholderConfigurer"
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
-            <value>/WEB-INF/mybatis/postgre.properties</value>
-            <!-- <value>/WEB-INF/mybatis/cubrid.properties</value>  -->   
+            <!-- <value>/WEB-INF/mybatis/postgre.properties</value> -->
+            <value>/WEB-INF/mybatis/cubrid.properties</value>
         </property>
     </bean>
     
