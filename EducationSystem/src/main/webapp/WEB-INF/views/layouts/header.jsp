@@ -23,8 +23,6 @@
 
 
 <body>
-	<div class="page-header">
-		<h1>Hyundai U&I Education System <small>descriptionr</small></h1>
-	</div>
+	
 </body>
 </html>

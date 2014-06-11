@@ -29,7 +29,7 @@
 	<div class="container" >
 		<form class="form-signin" action="/education/login" method="post" >
 			<h2 class="form-signin-heading">Please sign in</h2>
-			<input name="id" type="text" class="form-control"
+			<input name="uid" type="text" class="form-control"
 				placeholder="User Name" autofocus> <input name="pw"
 				type="password" class="form-control" placeholder="Password">
 

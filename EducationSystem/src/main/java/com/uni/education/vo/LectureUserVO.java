@@ -1,6 +1,7 @@
 package com.uni.education.vo;
 
-public class LectureVO {
+public class LectureUserVO {
+	// LECTURE INFO
 	private String lid;			//강좌 고유 ID
 	private String lname;		//강좌이름
 	private String YMD_STD;		//시작날짜 (yyyyMMdd)
@@ -16,6 +17,12 @@ public class LectureVO {
 	private String institution;	//외부교육일 경우, 교육기관 이름
 	private String curriculum;	//커리큘럼
 	private String approval;	//"개설 완료 여부 (Y/N) (강사가 신청중인 강좌거나, 관라자가 수정중이면 N)"
+	// USERS INFO.
+	private String uname;		//사용자 이름
+	private String utype;		//일반/개발
+	private String team;		//소속
+	private String rank;		//직급
+	
 	
 	public String getLid() {
 		return lid;
@@ -106,6 +113,30 @@ public class LectureVO {
 	}
 	public void setApproval(String approval) {
 		this.approval = approval;
+	}
+	public String getUname() {
+		return uname;
+	}
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+	public String getUtype() {
+		return utype;
+	}
+	public void setUtype(String utype) {
+		this.utype = utype;
+	}
+	public String getTeam() {
+		return team;
+	}
+	public void setTeam(String team) {
+		this.team = team;
+	}
+	public String getRank() {
+		return rank;
+	}
+	public void setRank(String rank) {
+		this.rank = rank;
 	}
 	
 	

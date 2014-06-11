@@ -1,7 +1,5 @@
 package com.uni.education.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
@@ -24,44 +22,36 @@ public class LoginController {
 	private UserService userService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm() {
-        logger.info("Call login Page");
-        return "login";
+    public String setupForm(HttpSession session) {
+        logger.debug("Call Login-Page");
+        
+        String uid = (String)session.getAttribute("uid");
+        if (uid == null || "".equalsIgnoreCase(uid)) {
+        	return "login";
+        } else {
+        	return "redirect:/jobedu";
+        }
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public String processLogin(UserVO user, HttpSession session) {
         
-        String id = user.getId();
+        String uid = user.getUid();
         String pw = user.getPw();
-        logger.info("try login [" + id + "]");
+        logger.debug("Try to login, ID:[" + uid + "]");
   
-		List<UserVO> list = userService.getAllUsers();
-        
-        logger.info("TEST: SIZE-"+list.size());
-
-        
-        UserVO condition = new UserVO();
-        condition.setUtype("Developer");
-        condition.setRank("과장");
-        
-        list = userService.getUsers(condition);
-        
-        logger.info("Dynamic SQL: SIZE-"+list.size());
-        
-//		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-//        List<UserVO> list = mapper.selectAll();
-//        
-//		List<UserVO> list = sqlSession.selectList("Users.selectAllUsers");
-        
-//        if (userService.login(id, pw)) {
-//            session.setAttribute("id", user.getId());
-//            
-//        } else {
-//            logger.info("login failed [" + id + "]");
-//            return "redirect:/login.uni";
-//        } 
-        
-        return "redirect:/";
+        user = userService.login(uid, pw);
+		if (user != null) { //로그인 체크 
+			 session.setAttribute("uid", uid);
+			 session.setAttribute("uname", user.getUname());
+			 session.setAttribute("team", user.getTeam());
+			 session.setAttribute("rank", user.getRank());
+			 session.setAttribute("teahcer", user.getTeacher());
+			 session.setAttribute("dmin", user.getAdmin());
+			 return "redirect:/jobedu";
+		} else {
+			logger.info("Failed to login, ID:[" + uid + "]");
+			return "redirect:/login";
+		}
     }
 }

@@ -11,7 +11,10 @@
   <select id="selectByDynamic" resultType="com.uni.education.vo.UserVO">
     select * from users
     <where>
-    	<if test="utype != null">utype = #{utype}</if>
+    	<if test="uid != null">uid = #{uid}</if>
+    	<if test="pw != null">AND pw = #{pw}</if>
+    	<if test="uname != null">AND uname = #{uname}</if>
+    	<if test="utype != null">AND utype = #{utype}</if>
     	<if test="team != null">AND team = #{team}</if>
     	<if test="rank != null">AND rank = #{rank}</if>
     	<if test="teacher != null">AND teacher = #{teacher}</if>

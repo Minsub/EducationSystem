@@ -1,10 +1,14 @@
 package com.uni.education;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.util.List;
 
+import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.uni.education.vo.UserVO;
 
@@ -12,8 +16,7 @@ public class TestMyBatis {
 
 	private static Logger logger = Logger.getLogger(TestMyBatis.class);
 	
-	@Autowired
-	private SqlSession sqlSession;
+	
 	
 	public void test() {
 //		List<NationVO> list = sqlSession.selectList("Test.selectNations");
@@ -21,12 +24,12 @@ public class TestMyBatis {
 		//AnnotationMapper2 mapper = sqlSession.getMapper(AnnotationMapper2.class);
         //List<NationVO> list = mapper.selectNationAll();
 		
-		List<UserVO> list = sqlSession.selectList("Users.selectAllUsers");
+		//List<UserVO> list = sqlSession.selectList("Users.selectAllUsers");
         
-        System.out.println("cnt: " + list.size());
-        for(UserVO u : list) {
-            System.out.println(u.getId() + ", " +u.getName() + ", " + u.getTeam() + ", " + u.getRank());
-        }
+//        System.out.println("cnt: " + list.size());
+//        for(UserVO u : list) {
+//            //System.out.println(u.getId() + ", " +u.getName() + ", " + u.getTeam() + ", " + u.getRank());
+//        }
 		
 	}
 	
@@ -56,7 +59,16 @@ public class TestMyBatis {
 	}
 	
 	public static void main(String[] args) {
-		new TestMyBatis().test();
+		Reader reader;
+		try {
+			reader = Resources.getResourceAsReader("/src/main/webapp/WEB-INF/mybatis/mybatis-context.xml");
+			SqlSessionFactory sqlSessionFactory  = new SqlSessionFactoryBuilder().build(reader);
+		    SqlSession session = sqlSessionFactory .openSession();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	   
 	}
 
 }

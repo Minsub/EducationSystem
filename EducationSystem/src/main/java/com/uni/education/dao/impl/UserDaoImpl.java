@@ -30,7 +30,11 @@ public class UserDaoImpl implements UserDao {
 //		return mapper.selectByDynamic(user);
 		return sqlSession.selectList("Users.selectByDynamic", user);
 	}
-	
-	
 
+	@Override
+	public UserVO getUserForLogin(String id, String pw) {
+		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+		return mapper.selectForLogin(id, pw);
+	}
+	
 }

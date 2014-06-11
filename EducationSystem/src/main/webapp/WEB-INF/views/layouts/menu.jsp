@@ -24,26 +24,6 @@
 
 </head>
 <body>
-	<header class="navbar navbar-inverse bs-docs-nav" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> 
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="/education/jobedu" class="navbar-brand">U&I Education System</a>
-			</div>
-			<nav class="collapse navbar-collapse bs-navbar-collapse"
-				role="navigation">
-				<ul class="nav navbar-nav">
-					<li><a href="/education/jobedu">직무교육</a></li>
-					<li><a href="/education/jobedu">그룹교육</a></li>
-					<li><a href="/education/jobedu">어학교육</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	
 </body>
 </html>
