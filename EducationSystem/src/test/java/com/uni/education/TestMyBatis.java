@@ -61,7 +61,7 @@ public class TestMyBatis {
 	public static void main(String[] args) {
 		Reader reader;
 		try {
-			reader = Resources.getResourceAsReader("/src/main/webapp/WEB-INF/mybatis/mybatis-context.xml");
+			reader = Resources.getResourceAsReader("/../../main/webapp/WEB-INF/mybatis/mybatis-context.xml");
 			SqlSessionFactory sqlSessionFactory  = new SqlSessionFactoryBuilder().build(reader);
 		    SqlSession session = sqlSessionFactory .openSession();
 		} catch (IOException e) {
