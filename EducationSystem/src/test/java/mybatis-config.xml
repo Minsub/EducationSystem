@@ -24,6 +24,9 @@
   	<mappers>
     	<!-- <mapper resource="com/minsub/mybatis/mybatis-mapper.xml"/> -->
     	<!-- <mapper class="com.minsub.mybatis.AnnotationMapper" /> -->
+    	<mapper resource="com/uni/education/mapper/LectureUser-mapper.xml"/>
+    	<mapper resource="com/uni/education/mapper/Lecture-mapper.xml"/>
+    	<mapper resource="com/uni/education/mapper/Users-mapper.xml"/>
     	<package name="com.uni.education.mapper"/>
   	</mappers>
 </configuration>

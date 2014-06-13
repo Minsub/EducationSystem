@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Lecture">
+  
+  <select id="selectByDynamic" resultType="com.uni.education.vo.LectureVO">
+    SELECT * FROM lectures
+    <where>
+    	<if test="lid != null">lid = #{lid}</if>
+		<if test="lname != null"> AND lname = #{lname}</if>
+		<if test="YMD_STD != null"> AND YMD_STD = #{YMD_STD}</if>
+		<if test="YMD_END != null"> AND YMD_END = #{YMD_END}</if>
+		<if test="times != null"> AND times = #{times}</if>
+		<if test="days != null"> AND days = #{days}</if>
+		<if test="hours != null"> AND hours = #{hours}</if>
+		<if test="place != null"> AND place = #{place}</if>
+		<if test="target != null"> AND target = #{target}</if>
+		<if test="teacherID != null"> AND teacherID = #{teacherID}</if>
+		<if test="credit != 0"> AND credit = #{credit}</if>
+		<if test="ltype != null"> AND ltype = #{ltype}</if>
+		<if test="institution != null"> AND institution = #{institution}</if>
+		<if test="curriculum != null"> AND curriculum = #{curriculum}</if>
+		<if test="approval != null"> AND approval = #{approval}</if>
+    </where>
+  </select>
+  
+  <update id="updateDynamic" parameterType="com.uni.education.vo.LectureVO">
+    UPDATE lectures
+    <set>
+    	<if test="lname != null"> lname = #{lname},</if>
+		<if test="YMD_STD != null"> YMD_STD = #{YMD_STD},</if>
+		<if test="YMD_END != null"> YMD_END = #{YMD_END},</if>
+		<if test="times != null"> times = #{times},</if>
+		<if test="days != null"> days = #{days},</if>
+		<if test="hours != null"> hours = #{hours},</if>
+		<if test="place != null"> place = #{place},</if>
+		<if test="target != null"> target = #{target},</if>
+		<if test="teacherID != null"> teacherID = #{teacherID},</if>
+		<if test="credit != 0"> credit = #{credit},</if>
+		<if test="ltype != null"> ltype = #{ltype},</if>
+		<if test="institution != null"> institution = #{institution},</if>
+		<if test="curriculum != null"> curriculum = #{curriculum},</if>
+		<if test="approval != null"> approval = #{approval}</if>
+    </set>
+    WHERE lid = #{lid}
+  </update>
+  
+  <insert id="insertDynamic" parameterType="com.uni.education.vo.LectureVO">
+  	INSERT INTO lectures (lid
+  		<if test="lname != null"> ,lname</if>
+  		<if test="YMD_STD != null"> ,YMD_STD</if>
+		<if test="YMD_END != null"> ,YMD_END</if>
+		<if test="times != null"> ,times</if>
+		<if test="days != null"> ,days</if>
+		<if test="hours != null"> ,hours</if>
+		<if test="place != null"> ,place</if>
+		<if test="target != null"> ,target</if>
+		<if test="teacherID != null"> ,teacherID </if>
+		<if test="credit != 0"> ,credit</if>
+		<if test="ltype != null"> ,ltype</if>
+		<if test="institution != null"> ,institution</if>
+		<if test="curriculum != null"> ,curriculum</if>
+		<if test="approval != null"> ,approval</if>
+  	) VALUES ( #{lid}
+  		<if test="lname != null"> ,#{lname}</if>
+  		<if test="YMD_STD != null"> ,#{YMD_STD}</if>
+		<if test="YMD_END != null"> ,#{YMD_END}</if>
+		<if test="times != null"> ,#{times}</if>
+		<if test="days != null"> ,#{days}</if>
+		<if test="hours != null"> ,#{hours}</if>
+		<if test="place != null"> ,#{place}</if>
+		<if test="target != null"> ,#{target}</if>
+		<if test="teacherID != null"> ,#{teacherID }</if>
+		<if test="credit != 0"> ,#{credit}</if>
+		<if test="ltype != null"> ,#{ltype}</if>
+		<if test="institution != null"> ,#{institution}</if>
+		<if test="curriculum != null"> ,#{curriculum}</if>
+		<if test="approval != null"> ,#{approval}</if>
+  	)
+  </insert>
+
+</mapper>

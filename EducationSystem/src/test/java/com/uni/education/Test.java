@@ -1,6 +1,8 @@
 package com.uni.education;
 
 import java.lang.reflect.Method;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import org.apache.log4j.Logger;
 
@@ -11,30 +13,12 @@ public class Test {
 	private static Logger logger = Logger.getLogger(Test.class);
 
 	public static void main(String[] args) {
-		LectureUserVO obj = new LectureUserVO();
-		obj.setLname("aaaa");
-		Object a = (Object) obj;
-		
-		JUtils.printVO(a);
-//		try {
-//			Class c = Class.forName("com.uni.education.vo.LectureUserVO");
-//			Method m[] = c.getDeclaredMethods();
-//		    for (int i = 0; i < m.length; i++) {
-//		    	if (m[i].getName().contains("get")) {
-//		    		System.out.println(m[i].getName() + ": "+m[i].invoke(obj));
-//		    	}
-//		    	
-//		    }
-//		    	   
-//		       
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-	
-		
+		p(""+Long.MAX_VALUE);
+
 		
 	}
 
+	public static void p(String str) {
+		System.out.println(str);
+	}
 }

@@ -10,13 +10,25 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
 
-import com.uni.education.vo.UserVO;
+import com.uni.education.utils.JUtils;
+import com.uni.education.vo.LectureUserVO;
 
 public class TestMyBatis {
 
 	private static Logger logger = Logger.getLogger(TestMyBatis.class);
+	private static SqlSession sqlSession;
+	static {
+		try {
+			Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
+			SqlSessionFactory sqlSessionFactory  = new SqlSessionFactoryBuilder().build(reader);
+		    sqlSession = sqlSessionFactory .openSession();
+		    
 	
-	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	public void test() {
 //		List<NationVO> list = sqlSession.selectList("Test.selectNations");
@@ -59,15 +71,18 @@ public class TestMyBatis {
 	}
 	
 	public static void main(String[] args) {
-		Reader reader;
-		try {
-			reader = Resources.getResourceAsReader("/../../main/webapp/WEB-INF/mybatis/mybatis-context.xml");
-			SqlSessionFactory sqlSessionFactory  = new SqlSessionFactoryBuilder().build(reader);
-		    SqlSession session = sqlSessionFactory .openSession();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		    
+	    LectureUserVO vo1 = new LectureUserVO();
+		vo1.setDays("2");
+		List<LectureUserVO> list = sqlSession.selectList("LectureUser.selectByDynamic",vo1);
+       System.out.println(list.size());
+		
+       for (LectureUserVO vo : list ) {
+    	   System.out.println("-----------------------------------");
+    	   JUtils.printVO(vo);
+       }
+		
 	   
 	}
 

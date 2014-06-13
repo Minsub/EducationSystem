@@ -57,7 +57,7 @@
 					<ul class="nav bs-sidenav">
 						<li><a href="/education/login">수강신청</a></li>
 						<li><a href="/education/login">수강내역</a></li>
-						<li><a href="/education/login">강좌개설 신청</a></li>
+						<li><a href="/education/jobedu/makeLectureStd">강좌개설 신청</a></li>
 						</br>
 						<li><a href="/education/login">사용자관리</a></li>
 						<li><a href="/education/login">요청중인 강좌</a></li>
