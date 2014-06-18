@@ -1,7 +1,5 @@
 package com.uni.education.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
@@ -11,9 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.uni.education.mapper.LectureUserMapper;
-import com.uni.education.utils.JUtils;
-import com.uni.education.vo.LectureUserVO;
+import com.uni.education.service.LectureService;
+import com.uni.education.service.RegisterService;
 import com.uni.education.vo.UserVO;
 
 
@@ -26,27 +23,33 @@ public class TESTController {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	@Autowired
+	private LectureService lectureService;
+	
+	@Autowired
+	private RegisterService registerService;
+	
 	@RequestMapping(method = RequestMethod.GET)
     public String setupForm() {
-//       LectureUserMapper mapper = sqlSession.getMapper(LectureUserMapper.class);
-//       List<LectureUserVO> list = mapper.selectAll();
-		LectureUserVO vo1 = new LectureUserVO();
-		vo1.setDays("2");
-		List<LectureUserVO> list = sqlSession.selectList("LectureUser.selectByDynamic",vo1);
-       System.out.println(list.size());
-		
-       for (LectureUserVO vo : list ) {
-    	   System.out.println("-----------------------------------");
-    	   JUtils.printVO(vo);
-       }
-    
+		String uid = "uni200567";
+		String lid = "L100000001";
+	
+		int result = registerService.registerLecture(uid, lid);
+		System.out.println(result);
+//		registerService.registerLecture(registration);
+//		
+//       for (LectureUserVO vo : list ) {
+//    	   System.out.println("-----------------------------------");
+//    	   JUtils.printVO(vo);
+//       }
+//    
         return "login";
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public String processLogin(UserVO user, HttpSession session) {
         
-     return null;
+    	return null;
     }
 
 }

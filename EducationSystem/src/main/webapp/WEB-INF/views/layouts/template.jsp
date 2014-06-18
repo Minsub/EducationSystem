@@ -55,7 +55,7 @@
 			<div class="col-md-3">
 				<div class="bs-sidebar hidden-print" role="complementary">
 					<ul class="nav bs-sidenav">
-						<li><a href="/education/login">수강신청</a></li>
+						<li><a href="/education/jobedu/registerLecture">수강신청</a></li>
 						<li><a href="/education/login">수강내역</a></li>
 						<li><a href="/education/jobedu/makeLectureStd">강좌개설 신청</a></li>
 						</br>

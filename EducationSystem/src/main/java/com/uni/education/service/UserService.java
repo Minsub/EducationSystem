@@ -22,6 +22,10 @@ public class UserService {
 		return userDao.getAllUsers();
 	}
 	
+	public UserVO getUserByUID(final String uid) {
+		return userDao.getUserByUID(uid);
+	}
+	
 	/**
 	 * 동적 SQL로 userVO객체에 원하는 검색조건을 넣으면 해당 유저가 List형태로 반환
 	 * @param user

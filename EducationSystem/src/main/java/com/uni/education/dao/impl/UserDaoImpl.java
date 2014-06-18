@@ -23,6 +23,12 @@ public class UserDaoImpl implements UserDao {
 		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 		return mapper.selectAll();
 	}
+	
+	@Override
+	public UserVO getUserByUID(String uid) {
+		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+		return mapper.selectById(uid);
+	}
 
 	@Override
 	public List<UserVO> getUsersByDynamic(UserVO user) {
@@ -36,5 +42,7 @@ public class UserDaoImpl implements UserDao {
 		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 		return mapper.selectForLogin(id, pw);
 	}
+
+	
 	
 }

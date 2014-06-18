@@ -38,4 +38,10 @@ public class LectureUserDaoImpl implements LectureUserDao {
 		return lecture;
 	}
 
+	@Override
+	public List<LectureUserVO> getLectureUserByMonth(String YMD) {
+		LectureUserMapper mapper = sqlSession.getMapper(LectureUserMapper.class);
+		return mapper.selectByMonth(YMD);
+	}
+
 }

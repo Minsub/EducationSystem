@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Register">
+
+  <insert id="insertDynamic" parameterType="com.uni.education.vo.RegistrationVO">
+  	INSERT INTO registration (user_id, lecture_id
+  		<if test="rank != null"> ,rank</if>
+		<if test="testscore != -1"> ,testscore</if>
+		<if test="pass != null"> ,pass</if>
+		<if test="cancelation != null"> ,cancelation</if>
+		<if test="note != null"> ,note</if>
+  	) VALUES ( #{user_id}, #{lecture_id}
+  		<if test="rank != null"> ,#{rank}</if>
+		<if test="testscore != -1"> ,#{testscore}</if>
+		<if test="pass != null"> ,#{pass}</if>
+		<if test="cancelation != null"> ,#{cancelation}</if>
+		<if test="note != null"> ,#{note}</if>
+  	)
+  </insert>
+
+</mapper>

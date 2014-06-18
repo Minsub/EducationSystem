@@ -11,4 +11,5 @@ public interface LectureUserDao {
 	
 	public LectureUserVO getLectureById(final String lid);
 	
+	public List<LectureUserVO> getLectureUserByMonth(final String YMD);
 }

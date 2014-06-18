@@ -1,10 +1,13 @@
 package com.uni.education;
 
 import com.uni.education.vo.LectureVO;
+import com.uni.education.vo.RegistrationVO;
 
 public class VOGenerator {
 
 	public static LectureVO lecture1;
+	
+	public static RegistrationVO registration;
 	
 	static {
 		lecture1 = new LectureVO();
@@ -23,6 +26,8 @@ public class VOGenerator {
 		lecture1.setInstitution("");
 		lecture1.setCurriculum("Java Java Java");
 		lecture1.setApproval("Y");
+		
+		
 		
 	}
 }

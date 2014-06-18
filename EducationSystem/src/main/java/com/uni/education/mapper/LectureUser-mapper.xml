@@ -10,8 +10,7 @@
     <where>
     	<if test="lid != null">lid = #{lid}</if>
 		<if test="lname != null"> AND lname = #{lname}</if>
-		<if test="YMD_STD != null"> AND YMD_STD = #{YMD_STD}</if>
-		<if test="YMD_END != null"> AND YMD_END = #{YMD_END}</if>
+		<if test="YMD_STD != null and YMD_END != null"> AND YMD_STD between #{YMD_STD} and #{YMD_END}</if>
 		<if test="times != null"> AND times = #{times}</if>
 		<if test="days != null"> AND days = #{days}</if>
 		<if test="hours != null"> AND hours = #{hours}</if>

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.uni.education.dao.LectureDao;
+import com.uni.education.dao.LectureUserDao;
+import com.uni.education.vo.LectureUserVO;
 import com.uni.education.vo.LectureVO;
 
 @Service
@@ -18,12 +20,19 @@ public class LectureService {
 	@Autowired
 	private LectureDao lectureDao;
 	
+	@Autowired
+	private LectureUserDao lectureUserDao;
+	
 	public List<LectureVO> getAllLecture() {
 		return lectureDao.getAllLecture();
 	}
 	
 	public LectureVO getLectureById(final String lid) {
 		return lectureDao.getLectureById(lid);
+	}
+	
+	public List<LectureUserVO> getLectureUserForRegistration(final String YMD) {
+		return lectureUserDao.getLectureUserByMonth(YMD);
 	}
 	
 	

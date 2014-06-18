@@ -4,7 +4,7 @@ public class RegistrationVO {
 	private String user_id;		//사용자 ID		
 	private String lecture_id;	//강좌 ID
 	private String rank;		//직급
-	private int testScore;		//테스트 점수
+	private int testscore;		//테스트 점수
 	private String pass;		//수료여부 (Y/N)
 	private String cancelation;	//취소여부 (Y/N)
 	private String note;		//비고 (취소사유, 결석 사유 등)
@@ -27,11 +27,11 @@ public class RegistrationVO {
 	public void setRank(String rank) {
 		this.rank = rank;
 	}
-	public int getTestScore() {
-		return testScore;
+	public int getTestscore() {
+		return testscore;
 	}
-	public void setTestScore(int testScore) {
-		this.testScore = testScore;
+	public void setTestscore(int testscore) {
+		this.testscore = testscore;
 	}
 	public String getPass() {
 		return pass;

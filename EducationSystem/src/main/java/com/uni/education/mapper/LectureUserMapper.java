@@ -16,9 +16,15 @@ public interface LectureUserMapper {
 	@Select("SELECT * FROM lectures A INNER JOIN users B ON A.teacherid = B.uid")
 	public List<LectureUserVO> selectAll();
 	
+	@Select("SELECT * FROM lectures A INNER JOIN users B ON A.teacherid = B.uid"
+	      	+ " WHERE #{ymd} BETWEEN LEFT(YMD_STD,6) and LEFT(YMD_END,6) AND approval='Y' ")
+	public List<LectureUserVO> selectByMonth(@Param("ymd")final String YMD);
+	
 	
 	@Select("SELECT * FROM lectures A INNER JOIN users B ON A.teacherid = B.uid" + 
-			"WHERE lid=#{lid}")
+			" WHERE lid=#{lid}")
 	public LectureUserVO selectByLID(@Param("lid") final String lid);
+	
+	
 	
 }

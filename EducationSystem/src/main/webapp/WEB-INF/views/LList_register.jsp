@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>MakeLecture_STD</title>
+<title>수강신청</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -27,16 +27,32 @@
 
 </head>
 <body>
-	<h2>MakeLecture_STD</h2>
+	<h2>LList_register</h2>
 	<div class="container" >
-		<form class="form-signin" action="/education/jobedu/makeLectureStd" method="post" >
-			강좌명<input name="lname" type="text" /> <br>
-			시작(ex 20140701)<input name="YMD_STD" type="text"  /> <br>
-			끝(ex 20140701)<input name="YMD_END" type="text"  /> <br>
-			커리큘럼 <input name="curriculum" type="text"  /> <br>
-			
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-		</form>
+	<table class="table table-hover">
+		 <tr>
+            <td>강좌명</td>
+			<td>날짜</td>
+			<td>시간</td>
+			<td>장소</td>
+			<td>대상</td>
+			<td>강사소속</td>
+			<td>강사이름</td>
+			<td>학점</td>
+        </tr> 
+		<c:forEach var="lecture" items="${LectureUserList}">
+            <tr>
+                <td><c:out value="${lecture.lname}" /></td>
+                <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
+                <td><c:out value="${lecture.times}" /></td>
+                <td><c:out value="${lecture.place}" /></td>
+                <td><c:out value="${lecture.target}" /></td>
+                <td><c:out value="${lecture.team}" /></td>
+                <td><c:out value="${lecture.uname}" /></td>
+                <td><c:out value="${lecture.credit}" /></td>
+            </tr>   
+        </c:forEach>
+    </table>
 	</div>
 </body>
 </html>
