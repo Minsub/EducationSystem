@@ -31,6 +31,10 @@ public class LectureService {
 		return lectureDao.getLectureById(lid);
 	}
 	
+	public LectureUserVO getLectureUserById(final String lid) {
+		return lectureUserDao.getLectureById(lid);
+	}
+	
 	public List<LectureUserVO> getLectureUserForRegistration(final String YMD) {
 		return lectureUserDao.getLectureUserByMonth(YMD);
 	}

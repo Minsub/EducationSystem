@@ -1,10 +1,14 @@
 package com.uni.education.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.uni.education.dao.RegisterDao;
 import com.uni.education.dao.UserDao;
+import com.uni.education.vo.RegistrationLectureVO;
+import com.uni.education.vo.RegistrationUserVO;
 import com.uni.education.vo.RegistrationVO;
 import com.uni.education.vo.UserVO;
 
@@ -32,6 +36,19 @@ public class RegisterService {
 	
 	public int cancelLecture(final String uid, final String lid) {
 		return registerDao.delete(uid, lid);
+	}
+	
+	public List<RegistrationUserVO> getUserListByLid(final String lid) {
+		return registerDao.selectByLid(lid);
+	}
+	
+	public List<RegistrationLectureVO> getLectureListByDate(String uid, String sday,
+			String eday) {
+		return registerDao.selectByday(uid, sday, eday);
+	}
+	
+	public List<RegistrationLectureVO> getLectureListByRank(String uid, String rank) {
+		return registerDao.selectByRank(uid, rank);
 	}
 } 
 

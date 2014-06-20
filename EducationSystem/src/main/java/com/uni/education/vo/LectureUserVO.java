@@ -17,9 +17,9 @@ public class LectureUserVO {
 	private String institution;	//외부교육일 경우, 교육기관 이름
 	private String curriculum;	//커리큘럼
 	private String approval;	//"개설 완료 여부 (Y/N) (강사가 신청중인 강좌거나, 관라자가 수정중이면 N)"
-	// USERS INFO.
-	private String uname;		//사용자 이름
-	private String utype;		//일반/개발
+	// USERS INFO. (TEACHER)
+	private String uname;		//사용자 이름 
+	private String utype;		//일반/개발 
 	private String team;		//소속
 	private String rank;		//직급
 	

@@ -31,11 +31,13 @@ public class TESTController {
 	
 	@RequestMapping(method = RequestMethod.GET)
     public String setupForm() {
-		String uid = "uni200567";
-		String lid = "L100000001";
-	
-		int result = registerService.registerLecture(uid, lid);
-		System.out.println(result);
+//		String uid = "uni200567";
+//		String lid = "L100000001";
+//	
+//		int result = registerService.registerLecture(uid, lid);
+//		System.out.println(result);
+		
+		System.out.println("aaa");
 //		registerService.registerLecture(registration);
 //		
 //       for (LectureUserVO vo : list ) {

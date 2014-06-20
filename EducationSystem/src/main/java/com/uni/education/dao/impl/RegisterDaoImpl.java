@@ -1,11 +1,15 @@
 package com.uni.education.dao.impl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.uni.education.dao.RegisterDao;
 import com.uni.education.mapper.RegisterMapper;
+import com.uni.education.vo.RegistrationLectureVO;
+import com.uni.education.vo.RegistrationUserVO;
 import com.uni.education.vo.RegistrationVO;
 
 @Repository
@@ -25,6 +29,25 @@ public class RegisterDaoImpl implements RegisterDao {
 		int result = mapper.delete(uid, lid);
 		sqlSession.commit();
 		return result;
+	}
+
+	@Override
+	public List<RegistrationUserVO> selectByLid(String lid) {
+		RegisterMapper mapper = sqlSession.getMapper(RegisterMapper.class);
+		return mapper.selectRUbyLid(lid);	
+	}
+
+	@Override
+	public List<RegistrationLectureVO> selectByday(String uid, String sday,
+			String eday) {
+		RegisterMapper mapper = sqlSession.getMapper(RegisterMapper.class);
+		return mapper.selectRLbyDate(uid, sday, eday);
+	}
+
+	@Override
+	public List<RegistrationLectureVO> selectByRank(String uid, String rank) {
+		RegisterMapper mapper = sqlSession.getMapper(RegisterMapper.class);
+		return mapper.selectRLbyRank(uid, rank);
 	}
 
 }
