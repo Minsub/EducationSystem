@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Make Lecture Admin</title>
+<title>수강신청</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -23,25 +23,34 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+
+
 </head>
 <body>
-	<h2>Make Lecture Admin</h2>
+	<h2>LList_register</h2>
 	<div class="container" >
-		<form class="form-signin" action="/education/jobedu/makeLectureAdmin" method="post" >
-			달<input name="?????" type="text" /> <br>
-			강좌명<input name="lname" type="text" /> <br>
-			커리큘럼 <input name="curriculum" type="text"  /> <br>
-			날짜(ex 20140701)<input name="YMD_STD" type="text"  />   <input name="YMD_END" type="text"  /> <br>
-			종 일 수<input name="days" type="text"  /> <br>
-			총 시간<input name="hours" type="text"  /> <br>
-			장소<input name="place" type="text" /> <br>
-			대상<input name="target" type="text" /> <br>
-			강사소속<input name="강사id -> team" type="text" /> <br>
-			강사이름<input name="강사id -> uname" type="text" /> <br>
-			학점<input name="credit" type="text" /> <br>
-			
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-		</form>
+	<table class="table table-hover">
+		 <tr>
+            <td>소속</td>
+            <td>이름</td>
+            <td>직위</td>
+            <td>취소여부</td>
+            <td>수료여부</td>
+            <td>TEST점수</td>
+            <td>비고</td>
+        </tr> 
+		<c:forEach var="registerUser" items="${RegistrationUserList}">
+            <tr>
+                <td><c:out value="${registerUser.team}" /></td>
+                <td><c:out value="${registerUser.uname}" /></td>
+                <td><c:out value="${registerUser.rank}" /></td>
+                <td><c:out value="${registerUser.cancelation}" /></td>
+                <td><c:out value="${registerUser.pass}" /></td>
+                <td><c:out value="${registerUser.testscore}" /></td>
+                <td><c:out value="${registerUser.note}" /></td>
+            </tr>   
+        </c:forEach>
+    </table>
 	</div>
 </body>
 </html>

@@ -25,23 +25,21 @@
 
 </head>
 <body>
-	<h2>Make Lecture Admin</h2>
+	<h2>User Info Lecture</h2>
 	<div class="container" >
-		<form class="form-signin" action="/education/jobedu/makeLectureAdmin" method="post" >
-			달<input name="?????" type="text" /> <br>
-			강좌명<input name="lname" type="text" /> <br>
-			커리큘럼 <input name="curriculum" type="text"  /> <br>
-			날짜(ex 20140701)<input name="YMD_STD" type="text"  />   <input name="YMD_END" type="text"  /> <br>
-			종 일 수<input name="days" type="text"  /> <br>
-			총 시간<input name="hours" type="text"  /> <br>
-			장소<input name="place" type="text" /> <br>
-			대상<input name="target" type="text" /> <br>
-			강사소속<input name="강사id -> team" type="text" /> <br>
-			강사이름<input name="강사id -> uname" type="text" /> <br>
-			학점<input name="credit" type="text" /> <br>
-			
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-		</form>
+	<form action="b.jsp" method="get">
+		<input type="text" name="name">
+		<input type="submit" value=" 확인 ">
+		</form> 
+		<c:forEach var="registrationUser" items="${RegistrationUserList}">
+		               소속<input type="text"><c:out value="${registerUser.team}" /><br>
+		               이름<c:out value="${registerUser.uname}" /><br>
+		               직위<c:out value="${registerUser.rank}" /><br>
+		              취소여부<c:out value="${registerUser.cancelation}" /><br>
+               	수료여부 <c:out value="${registerUser.pass}" /><br>
+               Test점수<c:out value="${registerUser.testscore}" /><br>
+              	비고<c:out value="${registerUser.note}" /><br>
+        </c:forEach>
 	</div>
 </body>
 </html>
