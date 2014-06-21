@@ -28,6 +28,11 @@ public class LectureService {
 	@Autowired
 	private LectureUserDao lectureUserDao;
 	
+	public List<LectureUserVO> getLectureUsersForManaging(LectureVO lecture) {
+		
+		return null;
+	}
+	
 	public List<LectureVO> getLecturesRequested() {
 		LectureVO lecture = new LectureVO();
 		lecture.setApproval(LectureService.CODE_APPROVAL_NO);

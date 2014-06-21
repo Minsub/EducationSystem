@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.uni.education.service.LectureService;
 import com.uni.education.service.RegisterService;
+import com.uni.education.service.UserService;
 import com.uni.education.vo.LectureUserVO;
 import com.uni.education.vo.RegistrationVO;
 
@@ -27,6 +28,7 @@ public class RegisterLectureController {
 
 	@Autowired
 	private LectureService lectureService;
+	
 	@Autowired
 	private RegisterService registerService;
 	
