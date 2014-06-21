@@ -39,6 +39,8 @@
 			<td>강사소속</td>
 			<td>강사이름</td>
 			<td>학점</td>
+			<td>신청</td>
+			<td>삭제</td>
         </tr> 
 		<c:forEach var="lecture" items="${LectureUserList}">
             <tr>
@@ -50,6 +52,17 @@
                 <td><c:out value="${lecture.team}" /></td>
                 <td><c:out value="${lecture.uname}" /></td>
                 <td><c:out value="${lecture.credit}" /></td>
+                <td>
+               		<!-- 단일 버튼에 토글 기능을 활성화 하기 위해 data-toggle="button" 을 추가 -->
+               		<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
+               			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
+               			<input type="hidden" name="type" value="${lecture.lid}"/>
+						<button type="submit" class="btn btn-primary">신청</button>
+					</form>
+                </td>
+                <td>
+                	<input class="btn btn-danger" type="button" value="삭제">
+                </td>
             </tr>   
         </c:forEach>
     </table>
