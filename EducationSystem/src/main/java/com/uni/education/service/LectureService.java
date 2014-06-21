@@ -33,10 +33,10 @@ public class LectureService {
 		return null;
 	}
 	
-	public List<LectureVO> getLecturesRequested() {
-		LectureVO lecture = new LectureVO();
+	public List<LectureUserVO> getLecturesRequested() {
+		LectureUserVO lecture = new LectureUserVO();
 		lecture.setApproval(LectureService.CODE_APPROVAL_NO);
-		return lectureDao.getLectureDynamic(lecture);
+		return lectureUserDao.getLectureUserDynamic(lecture);
 	}
 	
 	public List<LectureVO> getAllLecture() {

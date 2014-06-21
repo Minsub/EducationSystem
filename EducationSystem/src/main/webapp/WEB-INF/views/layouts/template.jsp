@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Education System</title>
+<title>UNI Education System</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -21,8 +21,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-<div class="page-header">
-	<h1>Hyundai U&I Education System <small>descriptionr</small></h1>
+<div class="page-header" >
+	<h1>Hyundai U&I Education System <small></small></h1>
 </div>
 </head>
 
@@ -38,21 +38,29 @@
 				</button>
 				<a href="/education/jobedu" class="navbar-brand">U&I Education System</a>
 			</div>
-			<nav class="collapse navbar-collapse bs-navbar-collapse"
-				role="navigation">
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 				<ul class="nav navbar-nav">
 					<li><a href="/education/jobedu">직무교육</a></li>
 					<li><a href="/education/jobedu">그룹교육</a></li>
 					<li><a href="/education/jobedu">어학교육</a></li>
-					<li><a href="/education/logout">Logout(임시)</a></li>
+					
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">${uname} (${uid})<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Change Info.</a></li>
+							<li><a href="/education/logout">Logout</a></li>
+						</ul>
+					</li>
 				</ul>
 			</nav>
+			
 		</div>
 	</header>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-2">
 				<div class="bs-sidebar hidden-print" role="complementary">
 					<ul class="nav bs-sidenav">
 						<li><a href="/education/jobedu/registerLecture">수강신청</a></li>
@@ -67,9 +75,13 @@
 				</div>
 			</div>
 
-			<div class="col-md-9" role="main">
-				<div id="body">
-					<tiles:insertAttribute name="body" />
+			<div class="col-md-10" role="main">
+				<div class="bs-docs-section">
+	    			<div class="page-header">
+						<div id="body">
+							<tiles:insertAttribute name="body" />
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

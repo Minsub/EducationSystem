@@ -23,7 +23,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-
+<div class="page-header" align="center">
+	<h1>Hyundai U&I Education System</h1>
+</div>
 
 </head>
 <body>

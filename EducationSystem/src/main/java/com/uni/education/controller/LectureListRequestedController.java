@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.uni.education.service.LectureService;
-import com.uni.education.vo.LectureVO;
+import com.uni.education.vo.LectureUserVO;
 
 
 @Controller
@@ -28,8 +28,8 @@ public class LectureListRequestedController {
     public String setupForm(Model model, HttpSession session) {
 		logger.debug("Call LectureListRequested GET");   
 		
-		List<LectureVO> list = lectureService.getLecturesRequested();
-		model.addAttribute("lectureList", list);
+		List<LectureUserVO> list = lectureService.getLecturesRequested();
+		model.addAttribute("lectureUserList", list);
 		model.addAttribute("resultCode", 0);
 		
 		
