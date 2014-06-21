@@ -11,6 +11,8 @@ import com.uni.education.vo.UserVO;
 @Service
 public class UserService {
 	
+	public static final String DEFAULT_PW = "1234";
+	
 	@Autowired
 	private UserDao userDao;
 	
@@ -33,6 +35,16 @@ public class UserService {
 	 */
 	public List<UserVO> getUsers(UserVO user) {
 		return userDao.getUsersByDynamic(user);
+	}
+	
+	public int insertUser(UserVO user) {
+		user.setPw(DEFAULT_PW);
+		return userDao.insertUser(user);
+	}
+	
+	public int updateUser(UserVO user) {
+		user.setPw(DEFAULT_PW);
+		return userDao.updateUser(user);
 	}
 	
 	/**

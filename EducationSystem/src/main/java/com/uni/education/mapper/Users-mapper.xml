@@ -21,4 +21,38 @@
     	<if test="admin != null">AND admin = #{admin}</if>
     </where>
   </select>
+
+	<update id="updateByDynamic" parameterType="com.uni.education.vo.UserVO">
+		UPDATE users
+		<set>
+			<if test="pw != null"> pw = #{pw}</if>
+			<if test="uname != null">, uname = #{uname}</if>
+			<if test="utype != null">, utype = #{utype}</if>
+			<if test="team != null">, team = #{team}</if>
+			<if test="rank != null">, rank = #{rank}</if>
+			<if test="teacher != null">, teacher = #{teacher}</if>
+			<if test="admin != null">, admin = #{admin}</if>
+		</set>
+		WHERE uid = #{uid}
+	</update>
+  
+  <insert id="insertDynamic" parameterType="com.uni.education.vo.UserVO">
+  	INSERT INTO users (uid
+  		<if test="pw != null">,pw</if>
+    	<if test="uname != null">,uname</if>
+    	<if test="utype != null">,utype</if>
+    	<if test="team != null">,team</if>
+    	<if test="rank != null">,rank</if>
+    	<if test="teacher != null">,teacher</if>
+    	<if test="admin != null">,admin</if>
+  	) VALUES ( #{uid}
+  		<if test="pw != null">,#{pw}</if>
+    	<if test="uname != null">,#{uname}</if>
+    	<if test="utype != null">,#{utype}</if>
+    	<if test="team != null">,#{team}</if>
+    	<if test="rank != null">,#{rank}</if>
+    	<if test="teacher != null">,#{teacher}</if>
+    	<if test="admin != null">,#{admin}</if>
+  	)
+  </insert>
 </mapper>

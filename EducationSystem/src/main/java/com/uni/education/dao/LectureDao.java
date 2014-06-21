@@ -11,6 +11,8 @@ public interface LectureDao {
 	
 	public LectureVO getLectureById(final String lid);
 	
+	public List<LectureVO> getLectureDynamic(LectureVO lecture);
+	
 	public int insertLecture(LectureVO lecture);
 	
 	public int updateLecture(LectureVO lecture);

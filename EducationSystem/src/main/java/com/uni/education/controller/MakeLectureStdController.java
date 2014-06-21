@@ -32,7 +32,10 @@ public class MakeLectureStdController {
     public String processMakeLeccture(LectureVO lecture, Model model, HttpSession session) {
     	try {
     		logger.info("Call makeLectureStd POST");
+    		lecture.setTeacherID((String)(session.getAttribute("uid")));
+    		
         	int nResultCode = lectureService.insertLectureForTeacher(lecture);
+        	
         	if (nResultCode > 0) { // 성공
         		logger.info("Success to InsertLecture By Teacher");
         		model.addAttribute("resultCode", 0);

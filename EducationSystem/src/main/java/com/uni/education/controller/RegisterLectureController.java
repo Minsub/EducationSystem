@@ -47,10 +47,12 @@ public class RegisterLectureController {
     		logger.info("Call registerLecture POST, type: " + type);
     		
     		int nResultCode = 0;
+    		String uid = (String)session.getAttribute("uid");
+    		
     		if (type.equalsIgnoreCase("register")) { //수강등록작업
-    			nResultCode = registerService.registerLecture(registration.getUser_id(), registration.getLecture_id());
+    			nResultCode = registerService.registerLecture(uid, registration.getLecture_id());
     		} else {  // 수강취소
-    			nResultCode = registerService.cancelLecture(registration.getUser_id(), registration.getLecture_id());
+    			nResultCode = registerService.cancelLecture(uid, registration.getLecture_id());
     		}
     		
         	if (nResultCode > 0) { // 성공

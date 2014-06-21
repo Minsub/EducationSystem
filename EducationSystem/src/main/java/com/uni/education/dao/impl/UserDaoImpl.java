@@ -43,6 +43,16 @@ public class UserDaoImpl implements UserDao {
 		return mapper.selectForLogin(id, pw);
 	}
 
+	@Override
+	public int insertUser(UserVO user) {
+		return sqlSession.insert("Users.insertDynamic", user);
+	}
+
+	@Override
+	public int updateUser(UserVO user) {
+		return sqlSession.update("Users.updateDynamic", user);
+	}
+
 	
 	
 }

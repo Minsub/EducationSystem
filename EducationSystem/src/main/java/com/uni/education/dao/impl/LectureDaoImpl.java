@@ -56,6 +56,11 @@ public class LectureDaoImpl implements LectureDao {
 		return resultCode;
 	}
 
+	@Override
+	public List<LectureVO> getLectureDynamic(LectureVO lecture) {
+		return sqlSession.selectList("Lecture.selectDynamic", lecture);
+	}
+
 	
 
 }

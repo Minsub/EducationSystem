@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.uni.education.dao.LectureDao;
 import com.uni.education.dao.LectureUserDao;
+import com.uni.education.dao.UserDao;
 import com.uni.education.vo.LectureUserVO;
 import com.uni.education.vo.LectureVO;
+import com.uni.education.vo.UserVO;
 
 @Service
 public class LectureService {
@@ -21,7 +23,16 @@ public class LectureService {
 	private LectureDao lectureDao;
 	
 	@Autowired
+	private UserDao userDao;
+	
+	@Autowired
 	private LectureUserDao lectureUserDao;
+	
+	public List<LectureVO> getLecturesRequested() {
+		LectureVO lecture = new LectureVO();
+		lecture.setApproval(LectureService.CODE_APPROVAL_NO);
+		return lectureDao.getLectureDynamic(lecture);
+	}
 	
 	public List<LectureVO> getAllLecture() {
 		return lectureDao.getAllLecture();
@@ -42,6 +53,21 @@ public class LectureService {
 	
 	public int insertLecture(LectureVO lecture) {
 		lecture.setLid(generateID());
+		return lectureDao.insertLecture(lecture);
+	}
+	
+	public int insertLecture(LectureVO lecture, String uname) {
+		lecture.setLid(generateID());
+		UserVO user = new UserVO();
+		user.setUname(uname);
+		
+		List<UserVO> list = userDao.getUsersByDynamic(user);
+		if (list == null || list.size() < 1) {
+			return -1;
+		}
+		UserVO userTmp = list.get(0);
+		lecture.setTeacherID(userTmp.getUid());		
+		
 		return lectureDao.insertLecture(lecture);
 	}
 	

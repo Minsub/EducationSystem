@@ -16,4 +16,8 @@ public interface UserDao {
 	public List<UserVO> getUsersByDynamic(UserVO user);
 	
 	public UserVO getUserForLogin(final String id, final String pw);
+	
+	public int insertUser(UserVO user);
+	
+	public int updateUser(UserVO user);
 }
