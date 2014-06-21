@@ -32,7 +32,6 @@ public class LectureListRequestedController {
 		model.addAttribute("lectureUserList", list);
 		model.addAttribute("resultCode", 0);
 		
-		
         return "jobedu/LList_standby";
     }
 	

@@ -11,7 +11,7 @@ import com.uni.education.vo.RegistrationUserVO;
 
 
 public interface RegisterMapper {
-	@Delete("DELETE FROM lectures WHERE user_id = #{uid} and lecture_id = #{lid} ")
+	@Delete("DELETE FROM registration WHERE user_id = #{uid} and lecture_id = #{lid} ")
 	public int delete(@Param("uid") final String uid, @Param("lid") final String lid);
 	
 	@Select("SELECT * FROM registration INNER JOIN users ON user_id = uid "

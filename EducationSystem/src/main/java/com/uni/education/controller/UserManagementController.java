@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.uni.education.service.UserService;
-import com.uni.education.vo.LectureVO;
 import com.uni.education.vo.UserVO;
 
 
@@ -28,7 +27,7 @@ public class UserManagementController {
 	@RequestMapping(method = RequestMethod.GET)
     public String setupForm(String lid, Model model) {
         logger.debug("Call UserManagement GET");
-    	return "jobedu/Ulist_management";
+    	return "jobedu/UList_management";
     }
 	
 	// 검색버튼 클릭 
@@ -39,13 +38,14 @@ public class UserManagementController {
     		
     		List<UserVO> list = userService.getUsers(user);
     		model.addAttribute("userList", list);
+    		logger.debug("check result from DB / list size:" +list.size());
     		
-    		return "jobedu/Ulist_management";
+    		return "jobedu/UList_management";
     	} catch (Exception e) {
     		logger.info("Exception!!: " + e.toString());
     		e.printStackTrace();
     		model.addAttribute("resultCode", 1);
-    		return "jobedu/Ulist_management";
+    		return "jobedu/UList_management";
     	}
     }
 }

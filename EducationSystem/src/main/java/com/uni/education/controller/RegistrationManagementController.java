@@ -28,7 +28,7 @@ public class RegistrationManagementController {
 	@RequestMapping(method = RequestMethod.GET)
     public String setupForm() {
         logger.debug("Call RegistrationManaement GET");
-        return "jobedu/LList_management";
+        return "jobedu/LList_manage";
     }
 	
 	// 수정 및 생성 버튼 클릭 
@@ -45,7 +45,7 @@ public class RegistrationManagementController {
     		List<LectureUserVO> list = lectureService.getLectureUsersForManaging(lecture);
     		
     		model.addAttribute("lectureUserList", list);
-    		return "jobedu/LList_management";
+    		return "jobedu/LList_manage";
         	
     	} catch (Exception e) {
     		logger.info("Exception!!: " + e.toString());
