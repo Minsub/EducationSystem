@@ -54,13 +54,26 @@
 	
 	
 	
-<div class="well">
-			  <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-				<input class="span2" size="16" type="text" value="12-02-2012" readonly>
-				<span class="add-on"><i class="icon-calendar"></i></span>
-			  </div>
-          </div>
-          
-          
+<div class="container">
+                    <div class="row">
+                        <div class='col-sm-6'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker5' data-date-format="YYYY/MM/DD">
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker5').datetimepicker({
+                                    pickTime: false
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
 </body>
 </html>

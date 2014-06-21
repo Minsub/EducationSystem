@@ -26,9 +26,7 @@ public class RegisterDaoImpl implements RegisterDao {
 	@Override
 	public int delete(String uid, String lid) {
 		RegisterMapper mapper = sqlSession.getMapper(RegisterMapper.class);
-		int result = mapper.delete(uid, lid);
-		sqlSession.commit();
-		return result;
+		return mapper.delete(uid, lid);
 	}
 
 	@Override
