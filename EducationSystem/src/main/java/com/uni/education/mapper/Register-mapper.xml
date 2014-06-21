@@ -21,4 +21,14 @@
   	)
   </insert>
 
+	<update id="updateDynamic" parameterType="com.uni.education.vo.RegistrationVO">
+    UPDATE registration
+    <set>
+		<if test="testscore != -1"> testscore = #{testscore}</if>
+		<if test="pass != null"> ,pass = #{pass}</if>
+		<if test="cancelation != null"> , cancelation = #{cancelation}</if>
+		<if test="note != null"> , note = #{note}</if>
+    </set>
+    WHERE lid = #{lid} and uid = #{uid}
+  </update>
 </mapper>

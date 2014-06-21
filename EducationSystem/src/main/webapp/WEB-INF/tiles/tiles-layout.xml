@@ -18,5 +18,6 @@
 	</definition>
 	
 	<definition name="login" template="/WEB-INF/views/login.jsp" />
+	<definition name="test" template="/WEB-INF/views/test.jsp" />
 	
 </tiles-definitions>

@@ -19,6 +19,10 @@ public class RegisterService {
 	@Autowired
 	private UserDao userDao;
 	
+	public int updateRegistration(RegistrationVO registration) {
+		return registerDao.update(registration);
+	}
+	
 	public int registerLecture(final String uid, final String lid) {
 		RegistrationVO registration = new RegistrationVO();
 		registration.setUser_id(uid);

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,14 +9,14 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Login</title>
+<title>test</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<link href="<c:url value='/css/signin.css'/>" rel="stylesheet">
+<link href="/css/signin.css" rel="stylesheet">
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -28,7 +27,7 @@
 </head>
 <body>
 	<div class="container" >
-		<form class="form-signin" action="/education/login" method="post" >
+		<form class="form-signin" action="/education/test" method="post" >
 			<h2 class="form-signin-heading">Please sign in</h2>
 			<input name="uid" type="text" class="form-control" placeholder="User Name" autofocus> 
 			<input name="pw" type="password" class="form-control" placeholder="Password">

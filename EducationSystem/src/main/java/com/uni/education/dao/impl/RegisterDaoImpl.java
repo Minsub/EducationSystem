@@ -50,4 +50,9 @@ public class RegisterDaoImpl implements RegisterDao {
 		return mapper.selectRLbyRank(uid, rank);
 	}
 
+	@Override
+	public int update(RegistrationVO registration) {
+		return sqlSession.update("Register.updateDynamic", registration);
+	}
+
 }

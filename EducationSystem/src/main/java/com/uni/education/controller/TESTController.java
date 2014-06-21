@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -30,28 +31,16 @@ public class TESTController {
 	private RegisterService registerService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm() {
-//		String uid = "uni200567";
-//		String lid = "L100000001";
-//	
-//		int result = registerService.registerLecture(uid, lid);
-//		System.out.println(result);
-		
-		System.out.println("aaa");
-//		registerService.registerLecture(registration);
-//		
-//       for (LectureUserVO vo : list ) {
-//    	   System.out.println("-----------------------------------");
-//    	   JUtils.printVO(vo);
-//       }
-//    
-        return "login";
+    public String setupForm(String uid) {
+		logger.debug("*** TEST **** lid:" + uid);
+        return "test";
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String processLogin(UserVO user, HttpSession session) {
+    public String processLogin(UserVO user, Model model, HttpSession session) {
         
-    	return null;
+    	model.addAttribute("uid","1234567890");
+    	return "redirect:/test";
     }
 
 }

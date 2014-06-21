@@ -40,19 +40,18 @@ public class UserListInLectureController {
 	// 수정 및 생성 버튼 클릭 
     @RequestMapping(method = RequestMethod.POST)
     public String processMakeLeccture(String type, RegistrationVO registration, Model model, HttpSession session) {
-    	try {
-    		logger.info("Call UserListInLecture POST");
-    		String lid = registration.getLecture_id();
-    		String uid = registration.getUser_id();
-    		logger.debug("parameter Check/ lid:" + lid + ", uid:" + uid +", type:"+type);
-    		
+    	logger.info("Call UserListInLecture POST");
+		String lid = registration.getLecture_id();
+		String uid = registration.getUser_id();
+		logger.debug("parameter Check/ lid:" + lid + ", uid:" + uid +", type:"+type);
+    	
+		try {
     		int nResultCode = 0; 
     		if (type.equalsIgnoreCase("modify")) { // 수정 
-    			
+    			nResultCode = registerService.updateRegistration(registration);
     		} else { // 삭제 
     			nResultCode = registerService.cancelLecture(uid, lid);
     		}
-    	
     		
     		if (nResultCode > 0) { // 성공
         		logger.info("Success");
@@ -61,12 +60,14 @@ public class UserListInLectureController {
         	} else { //실패
         		logger.info("Fail to..");
         		model.addAttribute("resultCode", 1);
+        		model.addAttribute("lid", lid);
         		return "redirect:/jobedu/UserListInLecture";
         	}
         	
     	} catch (Exception e) {
     		logger.info("Exception!!: " + e.toString());
     		e.printStackTrace();
+    		model.addAttribute("lid", lid);
     		model.addAttribute("resultCode", 1);
     		return "redirect:/jobedu/UserListInLecture";
     	}
