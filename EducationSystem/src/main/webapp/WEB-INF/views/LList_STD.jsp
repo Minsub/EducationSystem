@@ -28,8 +28,9 @@
 </head>
 <body>
 	<h2>LList_STD</h2>
-	<div class="col-md-10>
+	
 		<div class="container" >
+		<div class="col-md-10">	
 		
 		<table class="table table-hover">
 			 <tr>
@@ -41,21 +42,18 @@
 				<th>점수</th>
 				<th>수료여부</th>
 				<th>비고</th>
-				<th colspan="2">검색조건</th>
 	        </tr> 
-			<c:forEach var="lecture" items="${LectureUserList}">
+			<c:forEach var="lecture" items="${RLectureList}">
 	            <tr>
-					<td><c:out value="${list.YMD_STD}" /></td>					<!-- 년 -->
-   					<td><c:out value="${list.YMD_STD}" /></td>				<!-- 월 -->
+					<td><c:out value="${lecture.YMD_STD}" /></td>					<!-- 년 -->
+   					<td><c:out value="${lecture.YMD_STD}" /></td>				<!-- 월 -->
 	                <td>		<!-- 강좌명 클릭하면 LectureDetail 로 이동 -->
 	                	<a href="LectureDetail"><c:out value="${lecture.lname}" /></a></td><!-- 강좌명 -->
-	                <td><c:out value="${list.uname}" /></td>		<!-- 사용자 이름 : 선생이름 -->
-	                <td><c:out value="${list.credit}" /></td>	<!-- 학점 -->
-	                <td><c:out value="${list.testscore}" /></td> <!-- 점수 -->
-	                <td><c:out value="${list.pass}" /></td>		<!-- 수료여부 -->
-	                <td><c:out value="${list.note}" /></td>		<!-- 비고 -->
-	                
-	                <td><c:out value="${list.times}" /></td>		<!-- 검색조건? -->
+	                <td><c:out value="${lecture.uname}" /></td>		<!-- 사용자 이름 : 선생이름 -->
+	                <td><c:out value="${lecture.credit}" /></td>	<!-- 학점 -->
+	                <td><c:out value="${lecture.testscore}" /></td> <!-- 점수 -->
+	                <td><c:out value="${lecture.pass}" /></td>		<!-- 수료여부 -->
+	                <td><c:out value="${lecture.note}" /></td>		<!-- 비고 -->
 	            </tr>   
 	        </c:forEach>
 	    </table>
