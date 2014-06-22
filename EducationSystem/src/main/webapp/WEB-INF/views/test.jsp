@@ -10,14 +10,18 @@
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 <script language="javascript"> 
-function checkResultCode(){  
-	var code = '${resultCode}';
+$.urlParam = function(name){
+    var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+    return results[1] || 0;
+}
+function checkResultCode(){
+	var code = $.urlParam('resultCode');
 	alert(code);
-} 
-window.onload=checkResultCode 
-
-
+	// TODO: Insert CODE
+}
+window.onload=checkResultCode
 </script> 	
+	
 	
 		<form class="form-signin" action="/education/test" method="post" >
 			<h2 class="form-signin-heading">Please sign in</h2>
