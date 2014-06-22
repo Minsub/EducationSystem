@@ -19,18 +19,18 @@ public interface RegisterMapper {
 	public List<RegistrationUserVO> selectRUbyLid(@Param("lid") final String lid);
 	
 	@Select("SELECT * FROM registration INNER JOIN lectures ON lecture_id = lid "
-		     + " INNER JOIN users ON user_id = uid"
-			 + " WHERE uid=#{uid} "
+		     + " INNER JOIN users ON teacherid = uid"
+			 + " WHERE user_id = #{uid} "
 			 + " AND (YMD_STD between #{sday} and #{eday} OR YMD_END between #{sday} and #{eday})")
 	public List<RegistrationLectureVO> selectRLbyDate(@Param("uid") final String uid, @Param("sday") final String sday,  @Param("eday") final String eday);
 	
 	@Select("SELECT * FROM registration AS A INNER JOIN lectures AS B ON A.lecture_id = B.lid "
-		     + " INNER JOIN users AS C ON A.user_id = C.uid"
-			 + " WHERE C.uid=#{uid} "
-			 + " AND A.RANK = #{rank} ")
+		     + " INNER JOIN users AS C ON teacherid = C.uid"
+			 + " WHERE C.user_id = #{uid} "
+			 + " AND A.rank = #{rank} ")
 	public List<RegistrationLectureVO> selectRLbyRank(@Param("uid") final String uid, @Param("rank") final String rank);
 	
-	@Select("SELECT * FROM registration INNER JOIN lectures ON lecture_id = lid "
+	@Select("SELECT * FROM registration INNER JOIN lectures ON lecture_id = lid inner join users on teacherid = uid "
 		     + "WHERE user_id = #{uid} ")
 	public List<RegistrationLectureVO> selectRLbyUid(@Param("uid") final String uid);
 	
