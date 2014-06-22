@@ -27,7 +27,10 @@
 
 </head>
 <body>
-	<h2>LList_register</h2>
+	<h2>LList_stanby</h2>
+	
+	<div class="col-md-10>
+	
 	<div class="container" >
 	<table class="table table-hover">
 		 <tr>
@@ -53,6 +56,8 @@
             </tr>   
         </c:forEach>
     </table>
+	</div>
+	
 	</div>
 </body>
 </html>

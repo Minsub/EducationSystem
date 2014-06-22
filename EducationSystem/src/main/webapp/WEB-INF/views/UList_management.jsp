@@ -50,6 +50,7 @@ function ste(state){
 </head>
 <body>
 	<h2>UList_management</h2>
+	
 	<form class="form-inline" name="uSearch" method="post" action="/education/jobedu/UserManagement">
 		<div class="form-group" align="center">
 			<select class="form-control" id="SearchCondition" onchange="ste(this.value)">
@@ -73,6 +74,7 @@ function ste(state){
 		</div>
 	</form>
 	
+	<div class="col-md-10>
 	
 	<div class="container" >
 	<table class="table table-hover">
@@ -97,6 +99,8 @@ function ste(state){
             </tr>   
         </c:forEach>
     </table>
+	</div>
+	
 	</div>
 </body>
 </html>
