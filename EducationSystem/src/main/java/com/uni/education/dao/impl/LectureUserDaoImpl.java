@@ -20,9 +20,7 @@ public class LectureUserDaoImpl implements LectureUserDao {
 	@Override
 	public List<LectureUserVO> getAllLectureUser() {
 		LectureUserMapper mapper = sqlSession.getMapper(LectureUserMapper.class);
-		List<LectureUserVO> list = mapper.selectAll();
-		sqlSession.commit();
-		return list;
+		return mapper.selectAll();
 	}
 
 	@Override
@@ -33,9 +31,7 @@ public class LectureUserDaoImpl implements LectureUserDao {
 	@Override
 	public LectureUserVO getLectureById(String lid) {
 		LectureUserMapper mapper = sqlSession.getMapper(LectureUserMapper.class);
-		LectureUserVO lecture = mapper.selectByLID(lid);
-		sqlSession.commit();
-		return lecture;
+		return mapper.selectByLID(lid);
 	}
 
 	@Override

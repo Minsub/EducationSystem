@@ -37,23 +37,21 @@ public class LectureDaoImpl implements LectureDao {
 	@Override
 	public int insertLecture(LectureVO lecture) {
 		int resultCode = sqlSession.insert("Lecture.insertDynamic", lecture);
-		//sqlSession.commit();
 		return resultCode;
 	}
 
 	@Override
 	public int updateLecture(LectureVO lecture) {
 		int resultCode = sqlSession.update("Lecture.updateDynamic", lecture);
-		//sqlSession.commit();
 		return resultCode;
 	}
 
 	@Override
 	public int deleteLecture(String lid) {
 		LectureMapper mapper = sqlSession.getMapper(LectureMapper.class);
-		int resultCode =  mapper.delete(lid);
+		int result =  mapper.delete(lid);
 		sqlSession.commit();
-		return resultCode;
+		return result;
 	}
 
 	@Override
