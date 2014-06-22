@@ -14,62 +14,130 @@
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link href="<c:url value='/css/datepicker.css'/>" rel="stylesheet">
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-
 </head>
 <body>
 	<h2>Lecture Detail</h2>
-	<div class="container" >
-		달			<input type="text" placeholder="This is an input!"> <br>
-		강좌명 강좌명	<input type="text" placeholder="This is an input!"> <br>
-		날짜 date		<div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-					  <input class="span2" size="16" type="text" value="12-02-2012">
-					  <span class="add-on"><i class="icon-th"></i></span>
-					</div>  <br>
-		시간 time		<input type="text" placeholder="This is an input!">  <br>
-		장소 select	
-		<select>
-	        <option>United States</option>
-	        <option>United Kingdom</option>
-	        <option>Bolivia</option>
-	        <option>Argentina</option>
-	        <option>New Zealand</option>
-        </select>
-        <select multiple="multiple">
-	        <option>1</option>
-	        <option>2</option>
-	        <option>3</option>
-	        <option>4</option>
-	        <option>5</option>
-    	</select>
-    
-		대상
-	   	<label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios1" value="사원">사원</label>
-	   	<label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios1" value="사원">대리</label>
-	   	<label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios1" value="사원">과장</label>
-	   	<label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios1" value="사원">차장</label>
-	   	<label class="radio"><input type="radio" name="optionsRadios" id="optionsRadios1" value="사원">부장</label>
-      	
-		강사소속 내부/외부<input type="text" placeholder="This is an input!"> <br>
-		강사이름 이름<input type="text" placeholder="This is an input!"> <br>
-		커리큘럼 text area      <textarea rows="3" placeholder="This is a textarea!"></textarea> <br>
-		수강생목록 팝업창띄우기<input type="text" placeholder="This is an input!"> <br>
-		학점 3<input type="text" placeholder="This is an input!"> <br>
-		
-     	<!-- 단일 버튼에 토글 기능을 활성화 하기 위해 data-toggle="button" 을 추가 -->
-  		<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
-  			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
-  			<input type="hidden" name="type" value="register"/>
-			<button type="submit" class="btn btn-primary">신청</button>
-		</form>	
+	
+	<div class="col-md-10>
+		<div class="container" >
+		    
+		    <DIV class="bs-example bs-example-type">
+		    	<form role=form class=form-horizontal action="/education/jobedu/registerLecture" method="post">
+					<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputEmail3> 달 </LABEL> 
+						<DIV class=col-sm-10>
+							<INPUT id=inputEmail3 class=form-control placeholder="월별">
+						</DIV>
+					</DIV>
+					
+					<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 강좌명 </LABEL> 
+						<DIV class=col-sm-10>
+							<INPUT id=inputPassword3 class=form-control type=password placeholder="강좌명">
+						</DIV>
+					</DIV>
+					
+					<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 날짜 </LABEL> 
+						<DIV class=col-sm-10>
+							<INPUT id=inputPassword3 class=form-control type=password placeholder="날짜">
+						</DIV>
+					</DIV>
+					
+					<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 시간 </LABEL> 
+						<DIV class=col-sm-10>
+							<INPUT id=inputPassword3 class=form-control type=password placeholder="시간">
+						</DIV>
+					</DIV>
+
+					<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 장소 </LABEL> 
+						<DIV class=col-sm-10>
+							<select>
+						        <option>E601</option>
+						        <option>E602</option>
+						        <option>E603</option>
+						        <option>E604</option>
+						        <option>E302</option>
+					        </select>
+						</DIV>
+					</DIV>
+					
+					<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 교육 대상 </LABEL> 
+						<DIV class=col-sm-10>
+					   		<label class="checkbox-inline"><input type="radio" name="check1" id="check1" value="SW">사원</label>
+						   	<label class="checkbox-inline"><input type="radio" name="check2" id="check2" value="DR">대리</label>
+						   	<label class="checkbox-inline"><input type="radio" name="check3" id="check3" value="GJ">과장</label>
+						   	<label class="checkbox-inline"><input type="radio" name="check4" id="check4" value="CJ">차장</label>
+						   	<label class="checkbox-inline"><input type="radio" name="check5" id="check5" value="BJ">부장</label>
+					  	</DIV>
+					</DIV>
+					
+					<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 강사 소속 </LABEL> 
+						<DIV class=col-sm-10>
+							<label class="radio-inline"><input type="radio" name="optionsRadios1" id="optionsRadios1" value="i">내부</label>
+							<label class="radio-inline"><input type="radio" name="optionsRadios2" id="optionsRadios2" value="e">외부</label>
+					  	</DIV>
+					</DIV>
+	      			
+	      			<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 강사 이름 </LABEL> 
+						<DIV class=col-sm-10>
+							<INPUT id=inputPassword3 class=form-control type=password placeholder="강사 이름을 입력하세요.">
+					  	</DIV>
+					</DIV>
+	      			
+	      			<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 커리큘럼 Description <CODE>rows</CODE> </LABEL> 
+						<DIV class=col-sm-10>
+							<TEXTAREA class=form-control rows=3 placeholder="커리큘럼을 입력하세요."></TEXTAREA>
+					  	</DIV>
+					</DIV>
+					
+					<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 수강생목록 팝업창띄우기 </LABEL> 
+						<DIV class=col-sm-10>
+							<INPUT id=inputPassword3 class=form-control type=password placeholder="강사 이름을 입력하세요.">
+					  	</DIV>
+					</DIV>
+					
+					<DIV class=form-group>
+						<LABEL class="col-sm-2 control-label" for=inputPassword3> 학점 </LABEL> 
+						<DIV class=col-sm-10>
+							<INPUT id=inputPassword3 class=form-control type=password placeholder="  학점">
+					  	</DIV>
+					</DIV>
+					
+	      			
+	      			<DIV class=form-group>
+						<DIV class="col-sm-offset-2 col-sm-10">
+							<DIV class=checkbox>
+								<LABEL> <INPUT type=checkbox> Remember me </LABEL>
+							</DIV>
+						</DIV>
+					</DIV>
+
+					<DIV class=form-group>
+						<DIV class="col-sm-offset-2 col-sm-10">
+							<BUTTON class="btn btn-primary" type=submit>Submit</BUTTON>
+						</DIV>
+					</DIV>
+				</FORM>
+			</DIV>
+		    
+		</div>
 	</div>
 </body>
 </html>
