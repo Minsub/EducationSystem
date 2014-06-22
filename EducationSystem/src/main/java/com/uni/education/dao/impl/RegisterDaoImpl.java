@@ -59,4 +59,10 @@ public class RegisterDaoImpl implements RegisterDao {
 		return mapper.selectRLbyUid(uid);
 	}
 
+	@Override
+	public RegistrationUserVO selectRUByUid(String uid) {
+		RegisterMapper mapper = sqlSession.getMapper(RegisterMapper.class);
+		return mapper.selectRUbyUid(uid);
+	}
+
 }

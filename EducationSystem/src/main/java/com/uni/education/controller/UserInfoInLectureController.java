@@ -17,36 +17,36 @@ import com.uni.education.vo.RegistrationVO;
 
 
 @Controller
-@RequestMapping(value="/jobedu/UserListInLecture")
-public class UserListInLectureController {
+@RequestMapping(value="/jobedu/UserInfoInLecture")
+public class UserInfoInLectureController {
 	
-	private static Logger logger = Logger.getLogger(UserListInLectureController.class);
+	private static Logger logger = Logger.getLogger(UserInfoInLectureController.class);
 
 	@Autowired
 	private RegisterService registerService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm(String lid, Model model) {
-        logger.info("Call UserListInLecture GET");
-        logger.debug("parameter check / lid:" + lid);
+    public String setupForm(String uid, Model model) {
+        logger.info("Call UserInfoInLecture GET");
+        logger.debug("parameter check / uid:" + uid);
         
-        List<RegistrationUserVO> list = registerService.getUserListByLid(lid);
+        RegistrationUserVO Ruser = registerService.getUserByUid(uid);
         
-        model.addAttribute("RegistrationUserList", list);
-        
-        return "jobedu/UserList_Lecture";
+        model.addAttribute("RegistrationUserList", Ruser);
+        logger.debug("check result from DB / Ruser:" + Ruser.toString());
+        return "jobedu/UserInfo_Lecture";
     }
 	
 	// 삭 버튼 클릭 
     @RequestMapping(method = RequestMethod.POST)
     public String processMakeLeccture(RegistrationVO registration, Model model, HttpSession session) {
-    	logger.info("Call UserListInLecture POST");
+    	logger.info("Call UserInfoInLecture POST");
 		String lid = registration.getLecture_id();
 		String uid = registration.getUser_id();
 		logger.debug("parameter Check/ lid:" + lid + ", uid:" + uid);
     	
 		try {
-    		int nResultCode = registerService.cancelLecture(uid, lid);
+    		int nResultCode = registerService.updateRegistration(registration);
   
     		if (nResultCode > 0) { // 성공
         		logger.info("Success");
