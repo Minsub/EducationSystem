@@ -28,19 +28,28 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".btn").click(function(){
+	$("#btn").click(function(e){
+		//모달 보이기
 		$("#myModal").modal('show');
+		//resultCode 확인 후, 성공 실패 메시지 리턴
+		
+	});
+	
+	$("#btn1").click(function(e){
+		//모달 보이기
+		$("#myModal1").modal('show');
+		//resultCode 확인 후, 성공 실패 메시지 리턴
+		
 	});
 });
 
-$(document).ready(function(){
-	$('.launch-modal').click(function(){
-		$('#myModal').modal({
-			keyboard: true
-		});
-	}); 
-});
-
+function button_event(){
+	if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+	    document.form.submit();
+	}else{   //취소
+	    return;
+	}
+}
 </script>
 
 
@@ -79,11 +88,10 @@ $(document).ready(function(){
 	               		<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
 	               			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
 	               			<input type="hidden" name="type" value="register"/>
-							<button type="submit" class="btn btn-primary">신청</button>
 							
 							<div class="bs-example">
 							    <!-- Button HTML (to Trigger Modal) -->
-							    <a href="#" class="btn btn-primary">수강신청</a>
+							    <a href="#" id="btn" class="btn btn-primary">수강신청</a>
 							    
 							    <!-- Modal HTML -->
 							    <div id="myModal" class="modal fade">
@@ -94,25 +102,50 @@ $(document).ready(function(){
 							                    <h4 class="modal-title">Confirmation</h4>
 							                </div>
 							                <div class="modal-body">
-							                    <p>Do you want to save changes you made to document before closing?</p>
-							                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+							                    <p>해당 강좌를 신청하시겠습니까?</p>
+							                    <p class="text-warning"><small>[수강신청] 버튼을 누르세요.</small></p>
 							                </div>
 							                <div class="modal-footer">
-							                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							                    <button type="button" class="btn btn-primary">Save changes</button>
+							                    <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+							                    <button type="submit" class="btn btn-primary">수강신청</button>
 							                </div>
 							            </div>
 							        </div>
 							    </div>
 							</div>
 						</form>
-						
+						<c:out value="${resultCode}" />
 	                </td>
 	                <td>
 	                	<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
 	               			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
 	               			<input type="hidden" name="type" value="delete"/>
-							<button type="submit" class="btn btn-danger">삭제</button>
+	               			
+	               			<div class="bs-example">
+							    <!-- Button HTML (to Trigger Modal) -->
+							    <a href="#" name="btn1" id="btn1" class="btn btn-danger">수강취소</a>
+							    
+							    <!-- Modal HTML -->
+							    <div id="myModal1" class="modal fade">
+							        <div class="modal-dialog">
+							            <div class="modal-content">
+							                <div class="modal-header">
+							                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							                    <h4 class="modal-title">Confirmation</h4>
+							                </div>
+							                <div class="modal-body">
+							                	<p>해당 강좌를 삭제하시겠습니까?</p>
+							                    <p class="text-warning"><small>[수강취소] 버튼을 누르세요.</small></p>
+							                </div>
+							                <div class="modal-footer">
+							                    <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+							                    <button type="submit" class="btn btn-danger">수강삭제</button>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							</div>
+							
 						</form>
 	                </td>
 	            </tr>   
