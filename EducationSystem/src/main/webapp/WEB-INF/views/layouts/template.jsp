@@ -17,16 +17,24 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<link href="<c:url value='/css/template-docs.css'/>" rel="stylesheet">
+
+
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-<div class="page-header" >
-	<h1>Hyundai U&I Education System <small></small></h1>
-</div>
+
+	
+	
+
 </head>
 
 <body>
+	<div class="page-header" >
+			<h1><img src="<c:url value='/img/logo.jpg'/>" height="70" />Hyundai U&I Education System <small></small></h1>
+	</div>
+
 	<header class="navbar navbar-inverse bs-docs-nav" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -36,7 +44,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="/education/jobedu" class="navbar-brand">U&I Education System</a>
+				<a href="/education/jobedu" class="navbar-brand">Home</a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 				<ul class="nav navbar-nav">
@@ -58,9 +66,11 @@
 		</div>
 	</header>
 
-	<div class="container">
+
+
+	<div class="container bs-docs-container">
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<div class="bs-sidebar hidden-print" role="complementary">
 					<ul class="nav bs-sidenav">
 						<li><a href="/education/jobedu/registerLecture">수강신청</a></li>
@@ -75,7 +85,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-10" role="main">
+			<div class="col-md-9" role="main">
 				<div class="bs-docs-section">
 	    			<div class="page-header">
 						<div id="body">
@@ -89,8 +99,9 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="well">
-		 		<p> Page Footer</p>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+		 		<p>Hyundai ubiquitous & information technology</p>
+		        <p>This is a private system operated for Hyundai U&I company business. All corporate policies and standards must be strictly followed. 
+2014 Hyundai U&I Co.,LTD All Rights Reserved.</p>
 		    </div>
 		</div>
 	</div>
