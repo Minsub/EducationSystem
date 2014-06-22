@@ -1,6 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-	<div class="container" >
+<link href="<c:url value='/css/signin.css'/>" rel="stylesheet">
+
+
+<link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
+<script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	
+	
 		<form class="form-signin" action="/education/test" method="post" >
 			<h2 class="form-signin-heading">Please sign in</h2>
 			<input name="uid" type="text" class="form-control" placeholder="User Name" autofocus> 
@@ -19,7 +28,6 @@
 				<button type="submit" class="btn btn-lg btn-danger btn-block">Sign-Up</button>
 			</form>
 		</div>
-		</div>	
 
 <form class="form-signin" action="/education/test" method="get">
 <div class="input-group date form_date col-md-5" data-date="" data-date-format="yyyy/MM/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
@@ -31,37 +39,22 @@
  </form>
 
 
- <div class="container">
-                    <div class="row">
-                        <div class='col-sm-6'>
-                            <div class="form-group">
-                                <div class='input-group date' id='datetimepicker5' data-date-format="YYYY/MM/DD">
-                                    <input type='text' class="form-control" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker5').datetimepicker({
-                                    pickTime: false
-                                });
-                            });
-                        </script>
-                    </div>
-                </div>
 
-<script type="text/javascript">
-    $('.form_date').datetimepicker({
-        language:  'en',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		minView: 2,
-		forceParse: 0
+        
+        
+    
+ 
+        <div class="input-group date">
+            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+
+<script>
+    $('.input-group.date').datepicker({
+        format: "yyyymmdd",
+        startDate: "2010-01-01",
+        endDate: "2020-01-01",
+        todayBtn: "linked",
+        autoclose: true,
+        todayHighlight: true
     });
 </script>
