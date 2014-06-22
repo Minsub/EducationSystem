@@ -33,7 +33,7 @@ public class TESTController {
 	@RequestMapping(method = RequestMethod.GET)
     public String setupForm(String uid) {
 		logger.debug("*** TEST **** lid:" + uid);
-        return "test";
+        return "jobedu/test";
     }
 
     @RequestMapping(method = RequestMethod.POST)
