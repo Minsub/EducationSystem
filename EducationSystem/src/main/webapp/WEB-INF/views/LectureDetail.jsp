@@ -1,55 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
 
-<title>Lecture Detail</title>
+<!-- for datepicker -->
+<link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
+<script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link href="<c:url value='/css/datepicker.css'/>" rel="stylesheet">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-</head>
-<body>
-	<h2>Lecture Detail</h2>
-	
-	<div class="col-md-10>
-		<div class="container" >
-		    
+		<h2>Lecture Detail</h2>
+   		<p class="lead">Show lecture detail</p>
+		
+		<div class="container col-md-12" >
+		
 		    <DIV class="bs-example bs-example-type">
-		    	<form role=form class=form-horizontal action="/education/jobedu/registerLecture" method="post">
-					<DIV class=form-group>
+		    	<form role=form action="/education/jobedu/registerLecture" method="post">
+					
+					<div class="row">
+					<DIV class=form-inline>
 						<LABEL class="col-sm-2 control-label" for=inputEmail3> 달 </LABEL> 
 						<DIV class=col-sm-10>
 							<INPUT id=inputEmail3 class=form-control placeholder="월별">
 						</DIV>
 					</DIV>
+					</div>
 					
-					<DIV class=form-group>
+					<div class="row">
+					<DIV class=form-inline>
 						<LABEL class="col-sm-2 control-label" for=inputPassword3> 강좌명 </LABEL> 
 						<DIV class=col-sm-10>
-							<INPUT id=inputPassword3 class=form-control type=password placeholder="강좌명">
+							<INPUT id=inputPassword3 class=form-control type=text placeholder="강좌명">
 						</DIV>
 					</DIV>
+					</div>
+
+					<div class="row">
+			        <div class="input-group date">
+			        	<LABEL class="col-sm-2 control-label" for=inputPassword3> 날짜 </LABEL>
+			        	<DIV class="form-inline col-sm-2">
+				            <input type="text" class="form-control">
+				            <span class="input-group-addon">
+				            <i class="glyphicon glyphicon-calendar"></i>
+				            </span>
+				        </div>
+			        </div>
+			        </div>
+			        
+			        
+			        <div class="input-group date">
+			        	<LABEL class="col-sm-2 control-label" for=inputPassword3> 날짜 </LABEL>
+			            <input type="text" class="col-xs-2 form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+			        </div>
 					
-					<DIV class=form-group>
-						<LABEL class="col-sm-2 control-label" for=inputPassword3> 날짜 </LABEL> 
+  
+			        <DIV class="form-inline date">
+			        	<LABEL class="col-sm-2 control-label" for=inputPassword3> 날짜 </LABEL> 
 						<DIV class=col-sm-10>
-							<INPUT id=inputPassword3 class=form-control type=password placeholder="날짜">
+							<input type="text" class="form-control">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 						</DIV>
 					</DIV>
 					
@@ -138,6 +144,34 @@
 			</DIV>
 		    
 		</div>
-	</div>
-</body>
-</html>
+	
+<script>
+    $('.input-group.date').datepicker({
+        format: "yyyymmdd",
+        startDate: "2010-01-01",
+        endDate: "2020-01-01",
+        todayBtn: "linked",
+        autoclose: true,
+        todayHighlight: true
+    });
+    
+    $('.input-inline.date').datepicker({
+        format: "yyyymmdd",
+        startDate: "2010-01-01",
+        endDate: "2020-01-01",
+        todayBtn: "linked",
+        autoclose: true,
+        todayHighlight: true
+    });
+    
+    $('.form-group.date').datepicker({
+        format: "yyyymmdd",
+        startDate: "2010-01-01",
+        endDate: "2020-01-01",
+        todayBtn: "linked",
+        autoclose: true,
+        todayHighlight: true
+    });
+</script>
+	
+	

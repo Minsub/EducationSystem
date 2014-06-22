@@ -4,8 +4,8 @@
 
 	<h2>MakeLecture_STD</h2>
 	
-	<div class="container" >
-		<div class="col-md-10" >
+	<div class="col-md-10" >
+		<div class="container" >
 		    <DIV class="bs-example bs-example-type">
 		    	<form role=form class=form-horizontal action="/education/jobedu/makeLectureStd" method="post">
 					<DIV class=form-group>
