@@ -31,8 +31,9 @@ public class TESTController {
 	private RegisterService registerService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm(String uid) {
+    public String setupForm(String uid, Model model) {
 		logger.debug("*** TEST **** lid:" + uid);
+		model.addAttribute("resultCode", 0);
         return "jobedu/test";
     }
 

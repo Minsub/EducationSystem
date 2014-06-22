@@ -12,6 +12,7 @@ public class RegistrationLectureVO {
 	private String lname;
 	private String YMD_STD;
 	private String YMD_END;
+	private String days;
 	private String credit;
 	// User Info. (Teacher)
 	private String uname;		//사용자 이름 
@@ -109,7 +110,12 @@ public class RegistrationLectureVO {
 	public void setUrank(String urank) {
 		this.urank = urank;
 	}
-	
+	public String getDays() {
+		return days;
+	}
+	public void setDays(String days) {
+		this.days = days;
+	}
 	
 	
 }

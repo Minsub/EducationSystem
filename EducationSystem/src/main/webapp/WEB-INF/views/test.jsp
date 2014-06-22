@@ -8,7 +8,20 @@
 
 <link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-	
+
+<script language="javascript"> 
+
+function cnj_alrtBox(){ 
+alert("CGI 와 JavaScript가 만났을 때=CnJ ") 
+	var code = GetURLParameter('resultCode');
+	alert(code);
+
+} 
+
+window.onload=cnj_alrtBox 
+
+
+</script> 	
 	
 		<form class="form-signin" action="/education/test" method="post" >
 			<h2 class="form-signin-heading">Please sign in</h2>
