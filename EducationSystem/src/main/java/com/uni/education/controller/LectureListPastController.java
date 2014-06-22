@@ -31,6 +31,8 @@ public class LectureListPastController {
 		
 		List<RegistrationLectureVO> list = registerService.getLectureListByUid(uid);
 		model.addAttribute("RLectureList", list);
+		
+		logger.debug("check result from DB / list size:" + list.size());
 		return "jobedu/LList_STD";
     }
 
