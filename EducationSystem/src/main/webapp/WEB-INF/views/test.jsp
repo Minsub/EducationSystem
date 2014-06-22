@@ -10,15 +10,11 @@
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 <script language="javascript"> 
-
-function cnj_alrtBox(){ 
-alert("CGI 와 JavaScript가 만났을 때=CnJ ") 
-	var code = GetURLParameter('resultCode');
+function checkResultCode(){  
+	var code = '${resultCode}';
 	alert(code);
-
 } 
-
-window.onload=cnj_alrtBox 
+window.onload=checkResultCode 
 
 
 </script> 	
