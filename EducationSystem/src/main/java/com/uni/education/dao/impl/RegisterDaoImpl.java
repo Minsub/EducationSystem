@@ -53,4 +53,10 @@ public class RegisterDaoImpl implements RegisterDao {
 		return sqlSession.update("Register.updateDynamic", registration);
 	}
 
+	@Override
+	public List<RegistrationLectureVO> selectByUid(String uid) {
+		RegisterMapper mapper = sqlSession.getMapper(RegisterMapper.class);
+		return mapper.selectRLbyUid(uid);
+	}
+
 }

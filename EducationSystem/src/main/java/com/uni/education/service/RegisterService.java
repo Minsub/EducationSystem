@@ -54,5 +54,9 @@ public class RegisterService {
 	public List<RegistrationLectureVO> getLectureListByRank(String uid, String rank) {
 		return registerDao.selectByRank(uid, rank);
 	}
+	
+	public List<RegistrationLectureVO> getLectureListByUid(String uid) {
+		return registerDao.selectByUid(uid);
+	}
 } 
 

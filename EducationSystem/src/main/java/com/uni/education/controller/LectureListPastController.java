@@ -25,9 +25,13 @@ public class LectureListPastController {
 	private RegisterService registerService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm(String startDay, String endDay, String rank, Model model, HttpSession session) {
-		logger.debug("Call LectureListPast GET");   
-        return "jobedu/LList_STD";
+    public String setupForm(Model model, HttpSession session) {
+		logger.debug("Call LectureListPast GET");
+		String uid = (String)session.getAttribute("uid");
+		
+		List<RegistrationLectureVO> list = registerService.getLectureListByUid(uid);
+		model.addAttribute("RLectureList", list);
+		return "jobedu/LList_STD";
     }
 
 	@RequestMapping(method = RequestMethod.POST)

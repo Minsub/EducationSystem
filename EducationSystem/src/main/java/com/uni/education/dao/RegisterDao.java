@@ -17,5 +17,9 @@ public interface RegisterDao {
 	
 	public List<RegistrationLectureVO> selectByRank(final String uid, final String rank);
 	
+	public List<RegistrationLectureVO> selectByUid(final String uid);
+	
 	public int update(RegistrationVO registration);
+	
+	
 }

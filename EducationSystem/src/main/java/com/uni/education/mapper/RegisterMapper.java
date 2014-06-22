@@ -29,4 +29,9 @@ public interface RegisterMapper {
 			 + " WHERE C.uid=#{uid} "
 			 + " AND A.RANK = #{rank} ")
 	public List<RegistrationLectureVO> selectRLbyRank(@Param("uid") final String uid, @Param("rank") final String rank);
+	
+	@Select("SELECT * FROM registration INNER JOIN lectures ON lecture_id = lid "
+		     + "WHERE user_id #{uid} ")
+	public List<RegistrationLectureVO> selectRLbyUid(@Param("uid") final String uid);
+	
 }

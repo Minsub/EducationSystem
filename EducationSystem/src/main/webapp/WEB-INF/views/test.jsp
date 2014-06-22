@@ -12,19 +12,18 @@
 
 <title>test</title>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
 <!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<link href="<c:url value='/css/datepicker.css'/>" rel="stylesheet">
+
+<link href="<c:url value='/css/bootstrap-datetimepicker.min.css'/>" rel="stylesheet" type="text/css" media="screen">
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="<c:url value='/js/bootstrap-datepicker.js'/>"></script>
-<script src="/education/js/bootstrap-datepicker.js"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<c:url value='/js/bootstrap-datetimepicker.js'/>"></script>
 
 
 <body>
@@ -48,13 +47,19 @@
 				<button type="submit" class="btn btn-lg btn-danger btn-block">Sign-Up</button>
 			</form>
 		</div>
-		</div>
-	
-	
-	
-	
-	
-<div class="container">
+		</div>	
+
+<form class="form-signin" action="/education/test" method="get">
+<div class="input-group date form_date col-md-5" data-date="" data-date-format="yyyy/MM/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input name="uid" class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+                <button type="submit" class="btn btn-lg btn-danger btn-block">TEST</button>
+ </form>
+
+
+ <div class="container">
                     <div class="row">
                         <div class='col-sm-6'>
                             <div class="form-group">
@@ -75,5 +80,18 @@
                         </script>
                     </div>
                 </div>
+
+<script type="text/javascript">
+    $('.form_date').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+</script>
 </body>
 </html>
