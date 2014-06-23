@@ -11,14 +11,14 @@
   <select id="selectByDynamic" resultType="com.uni.education.vo.UserVO">
     select * from users
     <where>
-    	<if test="uid != null">uid = #{uid}</if>
-    	<if test="pw != null">AND pw = #{pw}</if>
-    	<if test="uname != null">AND uname = #{uname}</if>
-    	<if test="utype != null">AND utype = #{utype}</if>
-    	<if test="team != null">AND team = #{team}</if>
-    	<if test="rank != null">AND rank = #{rank}</if>
-    	<if test="teacher != null">AND teacher = #{teacher}</if>
-    	<if test="admin != null">AND admin = #{admin}</if>
+    	<if test="uid != null and uid != ''">uid = #{uid}</if>
+    	<if test="pw != null ">AND pw = #{pw}</if>
+    	<if test="uname != null and uname != ''">AND uname = #{uname}</if>
+    	<if test="utype != null and utype != ''">AND utype = #{utype}</if>
+    	<if test="team != null and team != ''">AND team = #{team}</if>
+    	<if test="rank != null and rank != ''">AND rank = #{rank}</if>
+    	<if test="teacher != null and teacher != ''">AND teacher = #{teacher}</if>
+    	<if test="admin != null and admin != ''">AND admin = #{admin}</if>
     </where>
   </select>
 
