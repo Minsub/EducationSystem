@@ -33,14 +33,13 @@ public class RegisterLectureController {
 	private RegisterService registerService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm(int resultCode, Model model) {
+    public String setupForm(Model model) {
         logger.debug("Call registerLecture GET");
         
         Date date = new Date(System.currentTimeMillis());
         List<LectureUserVO> list = lectureService.getLectureUserForRegistration(new SimpleDateFormat("yyyyMM").format(date));
         model.addAttribute("LectureUserList", list);
         logger.debug("getLuectureUserList by YMD, SIZE:" + list.size());
-        model.addAttribute("resultCode", resultCode);
         return "jobedu/LList_register";
     }
 
