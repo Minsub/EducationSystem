@@ -13,17 +13,13 @@
 	
 	
 		<h2>Lecture Detail</h2>
-		<ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Library</a></li>
-  <li class="active">Data</li>
-</ol>
+		
    		<p class="lead">Show lecture detail</p>
 		
 		
 		
 		    <DIV class="bs-example bs-example-type">
-		    	<form role=form action="/education/jobedu/makeLectureAdmin" method="post">
+		    	<form role=form action="/education/jobedu/registerLecture" method="post">
 					
 					<div class="row">
 					<DIV class=form-inline>

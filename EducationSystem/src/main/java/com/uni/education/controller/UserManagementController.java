@@ -35,6 +35,7 @@ public class UserManagementController {
     public String processMakeLeccture(UserVO user, Model model, HttpSession session) {
     	try {
     		logger.info("Call UserManagement POST");
+    		logger.debug("check parameter/ name:" + user.getUname() + ", team:" + user.getTeam() + ", rank:" + user.getRank());
     		
     		List<UserVO> list = userService.getUsers(user);
     		model.addAttribute("userList", list);
