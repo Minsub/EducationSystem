@@ -25,13 +25,26 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <script language="javascript">
-
+function showDiv() {
+	var teacher = "<%=(String)session.getAttribute("teacher")%>";
+	var admin = "<%=(String)session.getAttribute("admin")%>";
+	
+	if (teacher == null || teacher == "N") {
+		$(".teacher").hide();
+	}
+	
+	if (admin == null || admin == "N") {
+		$(".admin").hide();	
+	}
+	
+}
+//window.onload=showDiv
 </script>	
 	
 
 </head>
 
-<body>
+<body onload="showDiv()">
 	<div class="page-header" >
 			<h1><img src="<c:url value='/img/logo.jpg'/>" height="70" />Hyundai U&I Education System <small></small></h1>
 	</div>
@@ -76,23 +89,21 @@
 					<ul class="nav bs-sidenav">
 						<li><a href="/education/jobedu/registerLecture">수강신청</a></li>
 						<li><a href="/education/jobedu/LectureListPast">수강내역</a></li>
-						<li><a href="/education/jobedu/makeLectureStd">강좌개설 신청</a></li>
+						<li class="teacher"><a href="/education/jobedu/makeLectureStd">강좌개설 신청</a></li>
 						</br>
-						<li><a href="/education/jobedu/UserManagement">사용자관리</a></li>
-						<li><a href="/education/jobedu/LectureListRequested">요청중인 강좌</a></li>
-						<li><a href="/education/jobedu/makeLectureAdmin">강좌개설</a></li>
-						<li><a href="/education/jobedu/RegistrationManaement">수강신청 관리</a></li>
+						
+						<li class="admin"><a href="/education/jobedu/UserManagement">사용자관리</a></li>
+						<li class="admin"><a href="/education/jobedu/LectureListRequested">요청중인 강좌</a></li>
+						<li class="admin"><a href="/education/jobedu/makeLectureAdmin">강좌개설</a></li>
+						<li class="admin"><a href="/education/jobedu/RegistrationManaement">수강신청 관리</a></li>
+						
 					</ul>
 				</div>
 			</div>
 
 			<div class="col-md-9" role="main">
-				<div class="bs-docs-section">
-	    			<div class="page-header">
-						<div id="body">
-							<tiles:insertAttribute name="body" />
-						</div>
-					</div>
+				<div id="body">
+					<tiles:insertAttribute name="body" />
 				</div>
 			</div>
 		</div>

@@ -46,8 +46,9 @@ public class LoginController {
 			 session.setAttribute("uname", user.getUname());
 			 session.setAttribute("team", user.getTeam());
 			 session.setAttribute("rank", user.getRank());
-			 session.setAttribute("teahcer", user.getTeacher());
-			 session.setAttribute("dmin", user.getAdmin());
+			 session.setAttribute("teacher", user.getTeacher());
+			 session.setAttribute("admin", user.getAdmin());
+			 logger.debug("check result form db/  uname:" + user.getUname()  + ", teacher:" + user.getTeacher());
 			 return "redirect:/jobedu";
 		} else {
 			logger.info("Failed to login, ID:[" + uid + "]");
