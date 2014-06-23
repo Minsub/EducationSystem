@@ -27,52 +27,25 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-function ste(state){
-	  f=document.form1;
-	  if(state=='yearSearch'){
-		  f.elements["1"].style.display='';
-		  f.elements["2"].style.display='none';
-		  f.elements["3"].style.display='none';
-		  f.elements["4"].style.display='none';
-	  }
-	  else if(state=='monthSearch') {
-		  f.elements["1"].style.display='none';
-		  f.elements["2"].style.display='';
-		  f.elements["3"].style.display='none';
-		  f.elements["4"].style.display='none';
-	  }
-	  else if(state=='lecSearch') {
-		  f.elements["1"].style.display='none';
-		  f.elements["2"].style.display='none';
-		  f.elements["3"].style.display='';
-		  f.elements["4"].style.display='none';
-	  }
-	  else if(state=='lecTypeSearch') {
-		  f.elements["1"].style.display='none';
-		  f.elements["2"].style.display='none';
-		  f.elements["3"].style.display='none';
-		  f.elements["4"].style.display='';
-	  }
-}
+	function fncLecSearch() {
+		document.uSearch.action="education/jobedu/RegistrationManaement";
+		document.uSearch.submit();
+	}
+	function fncGetLecUserList(lecId) {
+		document.getElementsById('lid').value=lecId;
+		document.uSearch.action="education/jobedu/UserListInLecture";
+		document.uSearch.submit();
+	}
 </script>
-
 </head>
 <body>
 	<h2>UList_management</h2>
-	<form class="form-inline" name="uSearch" method="post" action="/education/jobedu/UserManagement">
+	<form class="form-inline" name="uSearch" method="post" action="">
 		<div class="form-group" align="center">
-		
-			<select class="form-control" id="SearchCondition" onchange="ste(this.value)">
-				<option value="yearSearch">년도</option>
-				<option value="monthSearch">월</option>
-				<option value="lecSearch">강좌명</option>
-				<option value="lecTypeSearch">교육타입</option>
-			</select>
-			
+			<input type="hidden" name="lid" id="uid" value="">
 			<!-- 검색조건 리스트 -->
-			<input type="text" class="form-control" id="1" name="year">
-			<input type="text" class="form-control" id="3" name="team" style="display='none';">
-			<select class="form-control" id="2" name="month" style="display='none';">
+			년도<input type="text" class="form-control" name="year">
+			월<select class="form-control" name="month">
 				<option value="01">1월</option> <option value="02">2월</option>
 				<option value="03">3월</option> <option value="04">4월</option>
 				<option value="05">5월</option> <option value="06">6월</option>
@@ -80,7 +53,7 @@ function ste(state){
 				<option value="09">9월</option> <option value="10">10월</option>
 				<option value="11">11월</option> <option value="12">12월</option>
 			</select>
-			<select class="form-control" id="4" name="rank" style="display='none';">
+			직급<select class="form-control" name="rank">
 				<option value="사원">사원</option>
 				<option value="대리">대리</option>
 				<option value="과장">과장</option>
@@ -88,7 +61,7 @@ function ste(state){
 				<option value="부장">부장</option>
 			</select>
 			
-			<button type="submit" class="btn btn-lg btn-primary btn-block">검색</button>
+			<button class="btn btn-lg btn-primary btn-block" onClick="fncLecSearch()">검색</button>
 		</div>
 	</form>
 			
@@ -104,7 +77,7 @@ function ste(state){
             <tr>
                 <td><c:out value="${lecture.lname}" /></td>
                 <td><c:out value="${lecture.team}" /></td>
-                <td><c:out value="${lecture.lname}" /></td>
+                <td><a href="" onClick="fncGetLecUserList('<c:out value="${lecture.lname}" />')"><c:out value="${lecture.lname}" /></a></td>
                 <td><c:out value="${lecture.teacherID}" /></td>
                 <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
             </tr>   

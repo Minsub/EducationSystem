@@ -18,46 +18,60 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
+<!-- Select theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-select.min.css">
+
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
 
-
+	function fncGetDetail(userId){
+		document.getElementsById('uid').value=userId;
+		document.uSearch.action="education/jobedu/UserDetail";
+		document.uSearch.submit();
+	}
+</script>
 
 </head>
 <body>
-	<h2>LList_stanby</h2>
+	<h2>UList_management</h2>
+	<form class="form-inline" name="uSearch" method="post" action="">
+		<div class="form-group" align="center">
+			<input type="hidden" name="uid" id="uid" value="">
+			<!-- 검색조건 리스트 -->
+			이름<input type="text" class="form-control" name="uname">
+			팀<input type="text" class="form-control" name="team" >
+			직급<select class="form-control" name="rank">
+				<option value="사원">사원</option>
+				<option value="대리">대리</option>
+				<option value="과장">과장</option>
+				<option value="차장">차장</option>
+				<option value="부장">부장</option>
+			</select>	
+			
+			<button class="btn btn-lg btn-primary btn-block" onclick="fncGetList()">검색</button>
+		</div>
 	
-	<div class="col-md-10>
-	
-	<div class="container" >
-	<table class="table table-hover">
-		 <tr>
-            <td>강좌명</td>
-			<td>날짜</td>
-			<td>시간</td>
-			<td>장소</td>
-			<td>대상</td>
-			<td>강사소속</td>
-			<td>강사이름</td>
-			<td>학점</td>
-        </tr> 
-		<c:forEach var="lecture" items="${LectureUserList}">
-            <tr>
-                <td><c:out value="${lecture.lname}" /></td>
-                <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
-                <td><c:out value="${lecture.times}" /></td>
-                <td><c:out value="${lecture.place}" /></td>
-                <td><c:out value="${lecture.target}" /></td>
-                <td><c:out value="${lecture.team}" /></td>
-                <td><c:out value="${lecture.uname}" /></td>
-                <td><c:out value="${lecture.credit}" /></td>
-            </tr>   
-        </c:forEach>
-    </table>
-	</div>
-	
-	</div>
+		<div class="container" >
+		<table class="table table-hover">
+			 <tr>
+	            <td>강좌명</td>
+				<td>강사이름</td>
+				<td>기간</td>
+	        </tr> 
+			<c:forEach var="lectureUserList" items="${lectureUserList}">
+	            <tr>
+	                <td><a href="" onClick="fncGetDetail('<c:out value="${user.uid}" />')"><c:out value="${user.uid}" /></a></td>
+	                <td><c:out value="${lectureUserList.lname}" /></td>
+	                <td><c:out value="${lectureUserList.uname}" /></td>
+	                <td><c:out value="${lectureUserList.days}" /></td>
+	            </tr>   
+	        </c:forEach>
+	    </table>
+		</div>
+	</form>
+	<button class="btn btn-lg btn-primary btn-block" onclick="fncPopup()">생성</button>
 </body>
 </html>

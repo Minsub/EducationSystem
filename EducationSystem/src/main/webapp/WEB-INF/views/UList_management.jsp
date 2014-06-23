@@ -25,82 +25,71 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
 <script type="text/javascript">
-function ste(state){
-	  f=document.form1;
-	  if(state=='nameSearch'){
-		  f.elements["1"].style.display='';
-		  f.elements["2"].style.display='none';
-		  f.elements["3"].style.display='none';
-	  }
-	  else if(state=='teamSearch') {
-		  f.elements["1"].style.display='none';
-		  f.elements["2"].style.display='';
-		  f.elements["3"].style.display='none';
-	  }
-	  else if(state=='teamSearch') {
-		  f.elements["1"].style.display='none';
-		  f.elements["2"].style.display='none';
-		  f.elements["3"].style.display='';
-	  }
-}
+
+	function fncGetDetail(userId){
+		document.getElementsById('uid').value=userId;
+		document.uSearch.action="education/jobedu/UserDetail";
+		document.uSearch.submit();
+	}
+	
+	function fncGetList(){
+		document.uSearch.action="education/jobedu/UserManagement";
+		document.uSearch.submit();
+	}
+
+	function fncPopup(){
+		var url = "education/jobedu/UserDetail";
+		window.open(url, "popup1", "left=70,top=70, width=400,height=588, toolbar=no, menubar=no, scrollbars=no, resizable=no");
+	}
 </script>
 
 </head>
 <body>
 	<h2>UList_management</h2>
-	
-	<form class="form-inline" name="uSearch" method="post" action="/education/jobedu/UserManagement">
+<<<<<<< HEAD
+	<form class="form-inline" name="uSearch" method="post" action="">
 		<div class="form-group" align="center">
-			<select class="form-control" id="SearchCondition" onchange="ste(this.value)">
-				<option value="nameSearch">이름</option>
-				<option value="teamSearch">팀</option>
-				<option value="rankSearch">직급</option>
-			</select>
-			
+			<input type="hidden" name="uid" id="uid" value="">
 			<!-- 검색조건 리스트 -->
-			<input type="text" class="form-control" id="1" name="uname">
-			<input type="text" class="form-control" id="2" name="team" style="display='none';">
-			<select class="form-control" id="3" name="rank" style="display='none';">
+			이름<input type="text" class="form-control" name="uname">
+			팀<input type="text" class="form-control" name="team" >
+			직급<select class="form-control" name="rank">
 				<option value="사원">사원</option>
 				<option value="대리">대리</option>
 				<option value="과장">과장</option>
 				<option value="차장">차장</option>
 				<option value="부장">부장</option>
-			</select>
+			</select>	
 			
-			<button type="submit" class="btn btn-lg btn-primary btn-block">검색</button>
+			<button class="btn btn-lg btn-primary btn-block" onclick="fncGetList()">검색</button>
+		</div>
+	
+		<div class="container" >
+		<table class="table table-hover">
+			 <tr>
+	            <td>사번</td>
+				<td>소속</td>
+				<td>직급</td>
+				<td>이름</td>
+				<td>강사 권한</td>
+				<td>타입</td>
+				<td>관리자여부</td>
+	        </tr> 
+			<c:forEach var="user" items="${userList}">
+	            <tr>
+	                <td><a href="" onClick="fncGetDetail('<c:out value="${user.uid}" />')"><c:out value="${user.uid}" /></a></td>
+	                <td><c:out value="${user.team}" /></td>
+	                <td><c:out value="${user.rank}" /></td>
+	                <td><c:out value="${user.uname}" /></td>
+	                <td><c:out value="${user.teacher}" /></td>
+	                <td><c:out value="${user.utype}" /></td>
+	                <td><c:out value="${user.admin}" /></td>
+	            </tr>   
+	        </c:forEach>
+	    </table>
 		</div>
 	</form>
-	
-	<div class="col-md-10>
-	
-	<div class="container" >
-	<table class="table table-hover">
-		 <tr>
-            <td>사번</td>
-			<td>소속</td>
-			<td>직급</td>
-			<td>이름</td>
-			<td>강사 권한</td>
-			<td>타입</td>
-			<td>관리자여부</td>
-        </tr> 
-		<c:forEach var="user" items="${userList}">
-            <tr>
-                <td><c:out value="${user.uid}" /></td>
-                <td><c:out value="${user.team}" /></td>
-                <td><c:out value="${user.rank}" /></td>
-                <td><c:out value="${user.uname}" /></td>
-                <td><c:out value="${user.teacher}" /></td>
-                <td><c:out value="${user.utype}" /></td>
-                <td><c:out value="${user.admin}" /></td>
-            </tr>   
-        </c:forEach>
-    </table>
-	</div>
-	
-	</div>
+	<button class="btn btn-lg btn-primary btn-block" onclick="fncPopup()">생성</button>
 </body>
 </html>

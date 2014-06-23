@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Make Lecture Admin</title>
+<title>User Info Lecture</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -23,6 +23,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+
+	function fncModifyUser() {
+		document.uSearch.action="education/jobedu/UserDetail";
+		document.uSearch.submit();
+	}
+</script>
+
 </head>
 <body>
 	<h2>User Info Lecture</h2>
@@ -30,16 +38,16 @@
 	<form action="b.jsp" method="get">
 		<input type="text" name="name">
 		<input type="submit" value=" 확인 ">
-		</form> 
-		<c:forEach var="registrationUser" items="${RegistrationUserList}">
-		               소속<input type="text"><c:out value="${registerUser.team}" /><br>
-		               이름<c:out value="${registerUser.uname}" /><br>
-		               직위<c:out value="${registerUser.rank}" /><br>
-		              취소여부<c:out value="${registerUser.cancelation}" /><br>
-               	수료여부 <c:out value="${registerUser.pass}" /><br>
-               Test점수<c:out value="${registerUser.testscore}" /><br>
-              	비고<c:out value="${registerUser.note}" /><br>
-        </c:forEach>
+			소속<input type="text" value = "<c:out value="${registerUser.team}" />"><br>
+			이름<input type="text" value = "<c:out value="${registerUser.uname}" />"><br>
+			직위<input type="text" value = "<c:out value="${registerUser.rank}" />"><br>
+			취소여부<input type="text" value = "<c:out value="${registerUser.cancelation}" />"><br>
+            수료여부<input type="text" value = "<c:out value="${registerUser.pass}" />"><br>
+            Test점수<input type="text" value = "<c:out value="${registerUser.testscore}" />"><br>
+            비고<input type="text" value = "<c:out value="${registerUser.note}" />"><br>
+   	</form> 
+   	<button class="btn btn-lg btn-primary btn-block" onclick="fncModifyUser()">수정</button>
+   	<button class="btn btn-lg btn-primary btn-block" onclick="history.back();">취소</button>
 	</div>
 </body>
 </html>
