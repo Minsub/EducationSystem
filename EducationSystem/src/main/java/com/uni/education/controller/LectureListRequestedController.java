@@ -30,7 +30,6 @@ public class LectureListRequestedController {
 		
 		List<LectureUserVO> list = lectureService.getLecturesRequested();
 		model.addAttribute("lectureUserList", list);
-		model.addAttribute("resultCode", 0);
 		
         return "jobedu/LList_standby";
     }
@@ -45,17 +44,17 @@ public class LectureListRequestedController {
         	if (nResultCode > 0) { // 성공
         		logger.info("Success to delete Lecture By Admin");
         		model.addAttribute("resultCode", 0);
-        		return "redirect:/LectureListRequested";
+        		return "redirect:/jobedu/LectureListRequested";
         	} else { //실패
         		logger.info("Fail to Delete lecture By admin");
         		model.addAttribute("resultCode", 1);
-        		return "redirect:/LectureListRequested";
+        		return "redirect:/jobedu/LectureListRequested";
         	}
     	} catch (Exception e) {
     		logger.info("Exception!!: " + e.toString());
     		e.printStackTrace();
     		model.addAttribute("resultCode", 1);
-    		return "redirect:/LectureListRequested";
+    		return "redirect:/jobedu/LectureListRequested";
     	}
     }
 }
