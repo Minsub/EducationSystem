@@ -84,7 +84,7 @@ function showDiv() {
 
 	<div class="container bs-docs-container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-xs-2">
 				<div class="bs-sidebar hidden-print" role="complementary">
 					<ul class="nav bs-sidenav">
 						<li><a href="/education/jobedu/registerLecture">수강신청</a></li>
@@ -101,7 +101,7 @@ function showDiv() {
 				</div>
 			</div>
 
-			<div class="col-md-9" role="main">
+			<div class="col-xs-10" role="main">
 				<div id="body">
 					<tiles:insertAttribute name="body" />
 				</div>

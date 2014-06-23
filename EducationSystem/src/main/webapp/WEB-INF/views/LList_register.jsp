@@ -40,99 +40,97 @@ $(document).ready(function(){
 
 	<h2>LList_register</h2>
 	
-	<div class="container" >
-		<div class="col-md-10">
-			<table class="table table-hover">
-				 <tr>
-		            <th>강좌명</th>
-					<th>날짜</th>
-					<th>시간</th>
-					<th>장소</th>
-					<th>대상</th>
-					<th>강사소속</th>
-					<th>강사이름</th>
-					<th>학점</th>
-					<th>신청</th>
-					<th>삭제</th>
-		        </tr> 
-				<c:forEach var="lecture" items="${LectureUserList}">
-		            <tr>
-		                <td>		<!-- 강좌명 클릭하면 LectureDetail 로 이동 -->
-		                	<a href="LectureDetail"><c:out value="${lecture.lname}" /></a></td>
-		                <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
-		                <td><c:out value="${lecture.times}" /></td>
-		                <td><c:out value="${lecture.place}" /></td>
-		                <td><c:out value="${lecture.target}" /></td>
-		                <td><c:out value="${lecture.team}" /></td>
-		                <td><c:out value="${lecture.uname}" /></td>
-		                <td><c:out value="${lecture.credit}" /></td>
-		                <td>
-		               		<!-- 단일 버튼에 토글 기능을 활성화 하기 위해 data-toggle="button" 을 추가 -->
-		               		<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
-		               			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
-		               			<input type="hidden" name="type" value="register"/>
-								
-								<div class="bs-example">
-								    <!-- Button HTML (to Trigger Modal) -->
-								    <a href="#" id="btn" class="btn btn-primary">수강신청</a>
-								    
-								    <!-- Modal HTML -->
-								    <div id="myModal" class="modal fade">
-								        <div class="modal-dialog">
-								            <div class="modal-content">
-								                <div class="modal-header">
-								                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								                    <h4 class="modal-title">Confirmation</h4>
-								                </div>
-								                <div class="modal-body">
-								                    <p>해당 강좌를 신청하시겠습니까?</p>
-								                    <p class="text-warning"><small>[수강신청] 버튼을 누르세요.</small></p>
-								                </div>
-								                <div class="modal-footer">
-								                    <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-								                    <button id="registerBtn" type="submit" class="btn btn-primary">수강신청</button>
-								                </div>
-								            </div>
-								        </div>
-								    </div>
-								    
-								    
-								</div>
-							</form>
-		                </td>
-		                <td>
-		                	<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
-		               			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
-		               			<input type="hidden" name="type" value="delete"/>
-		               			
-		               			<div class="bs-example">
-								    <!-- Button HTML (to Trigger Modal) -->
-								    <a href="#" name="btn1" id="btn1" class="btn btn-danger">수강취소</a>
-								    
-								    <!-- Modal HTML -->
-								    <div id="myModal1" class="modal fade">
-								        <div class="modal-dialog">
-								            <div class="modal-content">
-								                <div class="modal-header">
-								                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								                    <h4 class="modal-title">Confirmation</h4>
-								                </div>
-								                <div class="modal-body">
-								                	<p>해당 강좌를 삭제하시겠습니까?</p>
-								                    <p class="text-warning"><small>[수강취소] 버튼을 누르세요.</small></p>
-								                </div>
-								                <div class="modal-footer">
-								                    <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-								                    <button id="cancelBtn" type="submit" class="btn btn-danger">수강삭제</button>
-								                </div>
-								            </div>
-								        </div>
-								    </div>
-								</div>
-							</form>
-		                </td>
-		            </tr>   
-		        </c:forEach>
-		    </table>
-		</div>
+	<div>
+		<table class="table table-hover">
+			 <tr>
+	            <th>강좌명</th>
+				<th>날짜</th>
+				<th>시간</th>
+				<th>장소</th>
+				<th>대상</th>
+				<th>강사소속</th>
+				<th>강사이름</th>
+				<th>학점</th>
+				<th>신청</th>
+				<th>삭제</th>
+	        </tr> 
+			<c:forEach var="lecture" items="${LectureUserList}">
+	            <tr>
+	                <td>		<!-- 강좌명 클릭하면 LectureDetail 로 이동 -->
+	                	<a href="LectureDetail"><c:out value="${lecture.lname}" /></a></td>
+	                <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
+	                <td><c:out value="${lecture.times}" /></td>
+	                <td><c:out value="${lecture.place}" /></td>
+	                <td><c:out value="${lecture.target}" /></td>
+	                <td><c:out value="${lecture.team}" /></td>
+	                <td><c:out value="${lecture.uname}" /></td>
+	                <td><c:out value="${lecture.credit}" /></td>
+	                <td>
+	               		<!-- 단일 버튼에 토글 기능을 활성화 하기 위해 data-toggle="button" 을 추가 -->
+	               		<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
+	               			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
+	               			<input type="hidden" name="type" value="register"/>
+							
+							<div class="bs-example">
+							    <!-- Button HTML (to Trigger Modal) -->
+							    <a href="#" id="btn" class="btn btn-primary">수강신청</a>
+							    
+							    <!-- Modal HTML -->
+							    <div id="myModal" class="modal fade">
+							        <div class="modal-dialog">
+							            <div class="modal-content">
+							                <div class="modal-header">
+							                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							                    <h4 class="modal-title">Confirmation</h4>
+							                </div>
+							                <div class="modal-body">
+							                    <p>해당 강좌를 신청하시겠습니까?</p>
+							                    <p class="text-warning"><small>[수강신청] 버튼을 누르세요.</small></p>
+							                </div>
+							                <div class="modal-footer">
+							                    <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+							                    <button id="registerBtn" type="submit" class="btn btn-primary">수강신청</button>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    
+							</div>
+						</form>
+	                </td>
+	                <td>
+	                	<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
+	               			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
+	               			<input type="hidden" name="type" value="delete"/>
+	               			
+	               			<div class="bs-example">
+							    <!-- Button HTML (to Trigger Modal) -->
+							    <a href="#" name="btn1" id="btn1" class="btn btn-danger">수강취소</a>
+							    
+							    <!-- Modal HTML -->
+							    <div id="myModal1" class="modal fade">
+							        <div class="modal-dialog">
+							            <div class="modal-content">
+							                <div class="modal-header">
+							                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							                    <h4 class="modal-title">Confirmation</h4>
+							                </div>
+							                <div class="modal-body">
+							                	<p>해당 강좌를 삭제하시겠습니까?</p>
+							                    <p class="text-warning"><small>[수강취소] 버튼을 누르세요.</small></p>
+							                </div>
+							                <div class="modal-footer">
+							                    <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+							                    <button id="cancelBtn" type="submit" class="btn btn-danger">수강삭제</button>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							</div>
+						</form>
+	                </td>
+	            </tr>   
+	        </c:forEach>
+	    </table>
 	</div>
