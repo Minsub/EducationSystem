@@ -5,7 +5,6 @@
 	<h2>Make Lecture Admin</h2>
 
 		<form class="form-signin" action="/education/jobedu/makeLectureAdmin" method="post" >
-			<input name="?????" type="text" /> <br>
 			강좌명<input name="lname" type="text" /> <br>
 			커리큘럼 <input name="curriculum" type="text"  /> <br>
 			날짜(ex 20140701)<input name="YMD_STD" type="text"  /> ~ <input name="YMD_END" type="text"  /> <br>

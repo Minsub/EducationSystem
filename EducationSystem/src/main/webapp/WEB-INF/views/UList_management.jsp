@@ -29,12 +29,12 @@
 
 	function fncGetDetail(userId){
 		document.getElementsById('uid').value=userId;
-		document.uSearch.action="education/jobedu/UserDetail";
+		document.uSearch.action="/education/jobedu/UserDetail";
 		document.uSearch.submit();
 	}
 	
 	function fncGetList(){
-		document.uSearch.action="education/jobedu/UserManagement";
+		document.uSearch.action="/education/jobedu/UserManagement";
 		document.uSearch.submit();
 	}
 
@@ -47,7 +47,6 @@
 </head>
 <body>
 	<h2>UList_management</h2>
-<<<<<<< HEAD
 	<form class="form-inline" name="uSearch" method="post" action="">
 		<div class="form-group" align="center">
 			<input type="hidden" name="uid" id="uid" value="">

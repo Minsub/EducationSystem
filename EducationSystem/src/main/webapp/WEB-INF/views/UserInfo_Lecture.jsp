@@ -25,28 +25,31 @@
 
 <script type="text/javascript">
 
-	function fncModifyUser() {
+	function fncModifyUser(uId, lid) {
+		document.getElementsById('user_id').value=uId;
+		document.getElementsById('lecture_id').value=lId;
 		document.uSearch.action="education/jobedu/UserDetail";
 		document.uSearch.submit();
 	}
+	
 </script>
 
 </head>
 <body>
 	<h2>User Info Lecture</h2>
 	<div class="container" >
-	<form action="b.jsp" method="get">
-		<input type="text" name="name">
-		<input type="submit" value=" 확인 ">
+	<form class="form-inline" name="uSearch" method="post" action="">
+	<input type="hidden" name="user_id" id="user_id" value="">
+	
 			소속<input type="text" value = "<c:out value="${registerUser.team}" />"><br>
 			이름<input type="text" value = "<c:out value="${registerUser.uname}" />"><br>
 			직위<input type="text" value = "<c:out value="${registerUser.rank}" />"><br>
 			취소여부<input type="text" value = "<c:out value="${registerUser.cancelation}" />"><br>
-            수료여부<input type="text" value = "<c:out value="${registerUser.pass}" />"><br>
+           	 수료여부<input type="text" value = "<c:out value="${registerUser.pass}" />"><br>
             Test점수<input type="text" value = "<c:out value="${registerUser.testscore}" />"><br>
             비고<input type="text" value = "<c:out value="${registerUser.note}" />"><br>
    	</form> 
-   	<button class="btn btn-lg btn-primary btn-block" onclick="fncModifyUser()">수정</button>
+   	<button class="btn btn-lg btn-primary btn-block" onclick="fncModifyUser('<c:out value="${registerUser.user_id}" />','<c:out value="${registerUser.lecture_id}" />')">수정</button>
    	<button class="btn btn-lg btn-primary btn-block" onclick="history.back();">취소</button>
 	</div>
 </body>
