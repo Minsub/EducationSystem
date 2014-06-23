@@ -8,21 +8,20 @@
   <select id="selectByDynamic" resultType="com.uni.education.vo.LectureVO">
     SELECT * FROM lectures
     <where>
-    	<if test="lid != null">lid = #{lid}</if>
-		<if test="lname != null"> AND lname = #{lname}</if>
-		<if test="YMD_STD != null"> AND YMD_STD = #{YMD_STD}</if>
-		<if test="YMD_END != null"> AND YMD_END = #{YMD_END}</if>
-		<if test="times != null"> AND times = #{times}</if>
-		<if test="days != null"> AND days = #{days}</if>
-		<if test="hours != null"> AND hours = #{hours}</if>
-		<if test="place != null"> AND place = #{place}</if>
-		<if test="target != null"> AND target = #{target}</if>
-		<if test="teacherID != null"> AND teacherID = #{teacherID}</if>
+    	<if test="lid != null and lid != ''">lid = #{lid}</if>
+		<if test="lname != null and lname != ''"> AND lname = #{lname}</if>
+		<if test="YMD_STD != null and YMD_STD != '' and YMD_END != null and YMD_END != ''"> AND (YMD_STD between #{YMD_STD} and #{YMD_END} or YMD_END between #{YMD_STD} and #{YMD_END})</if>
+		<if test="times != null and times != ''"> AND times = #{times}</if>
+		<if test="days != null and days != ''"> AND days = #{days}</if>
+		<if test="hours != null and hours != ''"> AND hours = #{hours}</if>
+		<if test="place != null and place != ''"> AND place = #{place}</if>
+		<if test="target != null and target != ''"> AND target = #{target}</if>
+		<if test="teacherID != null and teacherID != ''"> AND teacherID = #{teacherID}</if>
 		<if test="credit != 0"> AND credit = #{credit}</if>
-		<if test="ltype != null"> AND ltype = #{ltype}</if>
-		<if test="institution != null"> AND institution = #{institution}</if>
-		<if test="curriculum != null"> AND curriculum = #{curriculum}</if>
-		<if test="approval != null"> AND approval = #{approval}</if>
+		<if test="ltype != null and ltype != ''"> AND ltype = #{ltype}</if>
+		<if test="institution != null and institution != ''"> AND institution = #{institution}</if>
+		<if test="curriculum != null and curriculum != ''"> AND curriculum = #{curriculum}</if>
+		<if test="approval != null and approval != ''"> AND approval = #{approval}</if>
     </where>
   </select>
   
