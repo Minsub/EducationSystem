@@ -37,11 +37,16 @@
 		<DIV class="form-group date">
         	<LABEL class="col-xs-2 control-label" for=YMD_STD> 날짜 </LABEL> 
 			<DIV class=col-lg-4>
-				<input type="text" class="form-control">
+					<input type="text" class="form-control">
 				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 			</DIV>
 		</DIV>
-					
+
+		<div>
+			<LABEL class="col-xs-2 control-label" for=YMD_STD> 날짜 </LABEL>	
+			Check in: <input type="text" class="span2" value="" id="dpd1" >
+			Check out: <input type="text" class="span2" value="" id="dpd2" >
+		</div>
 		
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=uname> 강사 이름 </LABEL> 
