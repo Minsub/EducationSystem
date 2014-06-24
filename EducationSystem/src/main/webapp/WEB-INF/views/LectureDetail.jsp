@@ -6,6 +6,9 @@
 <link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
+<link href="/css/datepicker.css" rel="stylesheet">
+<script src="/js/bootstrap-datepicker.js"></script>
+
 <h2>Lecture Detail</h2>
  	<p class="lead">Show lecture detail</p>
 
@@ -34,26 +37,31 @@
 		  	</DIV>
 		</DIV>
 		
-		<DIV class="form-group date">
-        	<LABEL class="col-xs-2 control-label" for=YMD_STD> 날짜 </LABEL> 
-			<DIV class=col-lg-4>
-					<input type="text" class="form-control">
-				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-			</DIV>
-		</DIV>
-
-		<div>
-			<LABEL class="col-xs-2 control-label" for=YMD_STD> 날짜 </LABEL>	
-			Check in: <input type="text" class="span2" value="" id="dpd1" >
-			Check out: <input type="text" class="span2" value="" id="dpd2" >
-		</div>
-		
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=uname> 강사 이름 </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id=inputPassword3 class=form-control type=password placeholder="강사 이름을 입력하세요."
+				<INPUT id=inputPassword3 class=form-control type=text placeholder="강사 이름을 입력하세요."
 						value="<c:out value="${LectureUser.uname}" />" disabled>
 		  	</DIV>
+		  	
+		  	<div class=col-lg-1>
+		  	</div>
+		  	
+		  	<LABEL class="col-sm-2 control-label" for=ltype> 강사 소속 </LABEL> 
+			<DIV class=col-lg-2>
+				<INPUT id=ltype class=form-control type=text placeholder="강사 소속"
+						value="<c:out value="${LectureUser.ltype}" />" disabled>	<!-- ltype & institution -->
+			</DIV>
+		</DIV>
+			  
+		<DIV class="input-group date">
+        	<LABEL class="col-xs-2 control-label" for=YMD_STD> 날짜 </LABEL> 
+			<DIV class=col-lg-3>
+				<input type="text" class="form-control">
+				<span class="input-group-addon">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</span>
+			</DIV>
 		</DIV>
 		
 		<DIV class=form-group>
@@ -74,7 +82,7 @@
 		
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=hours> 기간 (시간) </LABEL> 
-			<DIV class=col-lg-6>
+			<DIV class=col-lg-3>
 				<INPUT id=hours class=form-control type=text placeholder="기간 (시간)"
 						value="<c:out value="${LectureUser.hours}" />" disabled>
 			</DIV>
@@ -83,7 +91,7 @@
 		<!-- Lecture Detail 에서 활성화 시킬 text 부분 -->
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=place> 장소 </LABEL> 
-			<DIV class=col-lg-6>
+			<DIV class=col-lg-3>
 				<INPUT id=place class=form-control type=text placeholder="장소"
 						value="<c:out value="${LectureUser.place}" />" disabled>
 			</DIV>
@@ -91,17 +99,9 @@
 		
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=target> 교육 대상 </LABEL> 
-			<DIV class=col-lg-6>
+			<DIV class=col-lg-3>
 				<INPUT id=target class=form-control type=text placeholder="교육 대상"
 						value="<c:out value="${LectureUser.target}" />" disabled>
-			</DIV>
-		</DIV>
-		
-		<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=ltype> 강사 소속 </LABEL> 
-			<DIV class=col-lg-6>
-				<INPUT id=ltype class=form-control type=text placeholder="강사 소속"
-						value="<c:out value="${LectureUser.ltype}" />" disabled>	<!-- ltype & institution -->
 			</DIV>
 		</DIV>
 		

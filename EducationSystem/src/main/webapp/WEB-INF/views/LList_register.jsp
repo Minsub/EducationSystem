@@ -25,7 +25,6 @@ $(document).ready(function(){
 		//모달 보이기
 		$("#myModal1").modal('show');
 		//resultCode 확인 후, 성공 실패 메시지 리턴
-		
 	});
 	
 	$("#registerBtn").click(function(e){
@@ -54,27 +53,29 @@ $(document).ready(function(){
 				<th>신청</th>
 				<th>삭제</th>
 	        </tr> 
-			<c:forEach var="lecture" items="${LectureUserList}">
+			<c:forEach var="lectureUser" items="${LectureUserList}">
 	            <tr>
 	                <td>		<!-- 강좌명 클릭하면 LectureDetail 로 이동 -->
-	                	<a href="LectureDetail"><c:out value="${lecture.lname}" /></a></td>
-	                <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
-	                <td><c:out value="${lecture.times}" /></td>
-	                <td><c:out value="${lecture.place}" /></td>
-	                <td><c:out value="${lecture.target}" /></td>
-	                <td><c:out value="${lecture.team}" /></td>
-	                <td><c:out value="${lecture.uname}" /></td>
-	                <td><c:out value="${lecture.credit}" /></td>
+	                	<!-- <a href="LectureDetail"><c:out value="${lectureUser.lname}" /></a></td> -->
+	                	<a href="LectureDetail?lid=<c:out value="${lectureUser.lid}"/>"><c:out value="${lectureUser.lname}" /></a></td><!-- 강좌명 -->
+	                <td><c:out value="${lectureUser.YMD_STD} ~ ${lectureUser.YMD_END}" /></td>
+	                <td><c:out value="${lectureUser.times}" /></td>
+	                <td><c:out value="${lectureUser.place}" /></td>
+	                <td><c:out value="${lectureUser.target}" /></td>
+	                <td><c:out value="${lectureUser.team}" /></td>
+	                <td><c:out value="${lectureUser.uname}" /></td>
+	                <td><c:out value="${lectureUser.credit}" /></td>
 	                <td>
 	               		<!-- 단일 버튼에 토글 기능을 활성화 하기 위해 data-toggle="button" 을 추가 -->
 	               		<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
-	               			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
+	               			<input type="hidden" name="lecture_id" value="${lectureUser.lid}"/>
 	               			<input type="hidden" name="type" value="register"/>
 							
 							<div class="bs-example">
 							    <!-- Button HTML (to Trigger Modal) -->
-							    <a href="#" id="btn" class="btn btn-primary">수강신청</a>
-							    
+							    <!-- <a href="#" id="btn" class="btn btn-primary">수강신청</a>  -->
+							    <button id="btn" type="button" class="btn btn-primary">수강신청</button>
+							    							    
 							    <!-- Modal HTML -->
 							    <div id="myModal" class="modal fade">
 							        <div class="modal-dialog">
@@ -95,18 +96,38 @@ $(document).ready(function(){
 							        </div>
 							    </div>
 							    
+							    <!-- Modal HTML -->
+							    <div id="confirmModal" class="modal fade">
+							        <div class="modal-dialog">
+							            <div class="modal-content">
+							                <div class="modal-header">
+							                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							                    <h4 class="modal-title">Confirmation</h4>
+							                </div>
+							                <div class="modal-body">
+							                    <p>해당 강좌를 신청하시겠습니까?</p>
+							                    <p class="text-warning"><small>[수강신청] 버튼을 누르세요.</small></p>
+							                </div>
+							                <div class="modal-footer">
+							                    <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+							                    <button id="registerBtn" type="submit" class="btn btn-primary">수강신청</button>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
 							    
 							</div>
 						</form>
 	                </td>
 	                <td>
 	                	<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
-	               			<input type="hidden" name="lecture_id" value="${lecture.lid}"/>
+	               			<input type="hidden" name="lecture_id" value="${lectureUser.lid}"/>
 	               			<input type="hidden" name="type" value="delete"/>
 	               			
 	               			<div class="bs-example">
 							    <!-- Button HTML (to Trigger Modal) -->
-							    <a href="#" name="btn1" id="btn1" class="btn btn-danger">수강취소</a>
+							    <!-- <a href="#" name="btn1" id="btn1" class="btn btn-danger">수강취소</a>  -->
+							    <button id="btn1" type="button" class="btn btn-danger">수강취소</button>
 							    
 							    <!-- Modal HTML -->
 							    <div id="myModal1" class="modal fade">
@@ -127,6 +148,8 @@ $(document).ready(function(){
 							            </div>
 							        </div>
 							    </div>
+							    
+							    
 							</div>
 						</form>
 	                </td>
