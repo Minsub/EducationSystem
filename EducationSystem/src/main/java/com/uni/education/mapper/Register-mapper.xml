@@ -31,4 +31,5 @@
     </set>
     WHERE lid = #{lid} and uid = #{uid}
   </update>
+
 </mapper>

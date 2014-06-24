@@ -14,10 +14,12 @@
 <title>UNI Education System</title>
 
 <!-- Latest compiled and minified CSS -->
+<link href="<c:url value='/css/template-docs.css'/>" rel="stylesheet">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<link href="<c:url value='/css/template-docs.css'/>" rel="stylesheet">
+
+<!-- <link href="<c:url value='/css/bootstrap-responsive.css'/>" rel="stylesheet">  -->
 
 
 <!-- Latest compiled and minified JavaScript -->
@@ -45,6 +47,8 @@ function showDiv() {
 </head>
 
 <body onload="showDiv()">
+
+<div id="wrap">
 	<div class="page-header" >
 			<h1><img src="<c:url value='/img/logo.jpg'/>" height="70" />Hyundai U&I Education System <small></small></h1>
 	</div>
@@ -90,7 +94,7 @@ function showDiv() {
 						<li><a href="/education/jobedu/registerLecture">수강신청</a></li>
 						<li><a href="/education/jobedu/LectureListPast">수강내역</a></li>
 						<li class="teacher"><a href="/education/jobedu/makeLectureStd">강좌개설 신청</a></li>
-						</br>
+						<br>
 						
 						<li class="admin"><a href="/education/jobedu/UserManagement">사용자관리</a></li>
 						<li class="admin"><a href="/education/jobedu/LectureListRequested">요청중인 강좌</a></li>
@@ -108,6 +112,8 @@ function showDiv() {
 			</div>
 		</div>
 	</div>
+</div>
+<div id="footer">
 	<div class="container">
 		<div class="col-md-12">
 			<div class="well">
@@ -117,6 +123,6 @@ function showDiv() {
 		    </div>
 		</div>
 	</div>
-
+</div>
 </body>
 </html>

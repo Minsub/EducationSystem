@@ -2,22 +2,23 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-<link href="<c:url value='/css/signin.css'/>" rel="stylesheet">
-
-
 <link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
-
-	
-	
+<div class="ms-header">
+	<h1> 수정 세부 정보</h1>
+	<div class="ms-breadcrumb">
+		<ol class="breadcrumb">
+		  <li><a href="#">Home</a></li>
+		  <li><a href="#">Library</a></li>
+		  <li class="active">Data</li>
+		</ol>
+	</div>
+</div>
 		<h2>Lecture Detail</h2>
 		
    		<p class="lead">Show lecture detail</p>
-		
-		
-		
+
 		    <DIV class="bs-example bs-example-type">
 		    	<form role=form action="/education/jobedu/registerLecture" method="post">
 					

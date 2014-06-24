@@ -1,3 +1,40 @@
+html,body {
+	height: 100%;
+}
+
+/* 꼬리말을 아래로 보내기위해 페이지 본문을 감쌈 */
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by it's height */
+	margin: 0 auto -100px;
+}
+
+/* 여기서 꼬리말의 고정높이를 설정 */
+#push,#footer {
+	height: 100px;
+}
+
+
+/*
+각 페이지에 들어가는 헤더 cSS
+*/
+.ms-header {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  padding-top:    5px;
+  padding-bottom: 5px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #ffff00;
+  border-radius: 5px;
+}
+
+.ms-breadcrumb {
+
+  padding-left:    10px;
+  padding-right: 10px;
+}
 
 /*
  * Side navigation
@@ -13,7 +50,7 @@
 
 /* First level of nav */
 .bs-sidenav {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 30px;
   padding-top:    10px;
   padding-bottom: 10px;
@@ -132,3 +169,5 @@
   background-color: #f0f7fd;
   border-color: #d0e3f0;
 }
+
+

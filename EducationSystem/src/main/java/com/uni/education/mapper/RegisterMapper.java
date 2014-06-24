@@ -15,11 +15,11 @@ public interface RegisterMapper {
 	public int delete(@Param("uid") final String uid, @Param("lid") final String lid);
 	
 	@Select("SELECT * FROM registration INNER JOIN users ON user_id = uid "
-			 +"WHERE lid=#{lid}")
+			 +"WHERE lecture_id=#{lid}")
 	public List<RegistrationUserVO> selectRUbyLid(@Param("lid") final String lid);
 	
 	@Select("SELECT * FROM registration INNER JOIN users ON user_id = uid "
-			+ "WHERE uid = #{uid}")
+			+ "WHERE lecture_id = #{uid}")
 	public RegistrationUserVO selectRUbyUid(@Param("uid") final String uid);
 	
 	@Select("SELECT * FROM registration INNER JOIN lectures ON lecture_id = lid "

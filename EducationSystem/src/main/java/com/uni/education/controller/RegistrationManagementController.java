@@ -33,7 +33,7 @@ public class RegistrationManagementController {
 	
 	// 수정 및 생성 버튼 클릭 
     @RequestMapping(method = RequestMethod.POST)
-    public String processMakeLeccture(LectureVO lecture, Model model, HttpSession session) {
+    public String processMakeLeccture(LectureUserVO lecture, Model model, HttpSession session) {
     	try {
     		logger.info("Call RegistrationManaement POST");
     		String YMD_STD = lecture.getYMD_STD();
