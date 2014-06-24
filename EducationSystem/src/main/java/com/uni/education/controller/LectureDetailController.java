@@ -30,13 +30,15 @@ public class LectureDetailController {
     public String setupForm(String lid,Model model) {
 		try {
 	        logger.debug("Call registerLecture GET");
+	        logger.debug("check parameter/ lid:" + lid);
 	        
 	        LectureUserVO lectureUser = lectureService.getLectureUserById(lid);
 	        List<RegistrationUserVO> ruList = registerService.getUserListByLid(lid);
 	        
-	        model.addAttribute("resultCode", 0);
+	        
 	        model.addAttribute("LectureUser", lectureUser); //해당 수업의 디테일
 	        model.addAttribute("RUserList", ruList);//해당 수업에 등록된 User
+	        logger.debug("check result from DB/ list size:" + ruList.size() + ", lectureUser:" + lectureUser.toString());
 	        
 	        return "jobedu/LectureDetail";
 		} catch (Exception e) {
