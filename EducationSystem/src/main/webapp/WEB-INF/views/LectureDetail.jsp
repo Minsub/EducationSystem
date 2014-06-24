@@ -35,13 +35,24 @@
 		</DIV>
 		
 		<DIV class="form-group date">
-        	<LABEL class="col-xs-2 control-label" for=YMD_STD> 날짜 </LABEL> 
-			<DIV class=col-lg-4>
-				<input type="text" class="form-control">
-				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-			</DIV>
+        	<LABEL class="col-xs-2 control-label" for=YMD_STD> 시작날짜 </LABEL> 
+			<DIV class=col-lg-3>
+				<div class="input-group date">
+		            <input type="text1" class="form-control">
+		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+		        </div>
+	        </div>
 		</DIV>
-					
+		
+        <DIV class="form-group date">
+        	<LABEL class="col-xs-2 control-label" for=YMD_END> 종료날짜 </LABEL> 
+			<DIV class=col-lg-3>
+				<div class="input-group date">
+		            <input type="text1" class="form-control">
+		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+		        </div>
+	        </div>
+		</DIV>
 		
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=uname> 강사 이름 </LABEL> 
@@ -163,15 +174,6 @@
 	
 <script>
     $('.input-group.date').datepicker({
-        format: "yyyymmdd",
-        startDate: "2010-01-01",
-        endDate: "2020-01-01",
-        todayBtn: "linked",
-        autoclose: true,
-        todayHighlight: true
-    });
-    
-    $('.input-inline.date').datepicker({
         format: "yyyymmdd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
