@@ -28,9 +28,8 @@ public class LectureService {
 	@Autowired
 	private LectureUserDao lectureUserDao;
 	
-	public List<LectureUserVO> getLectureUsersForManaging(LectureVO lecture) {
-		
-		return null;
+	public List<LectureUserVO> getLectureUsersForManaging(LectureUserVO lecture) {
+		return lectureUserDao.getLectureUserDynamic(lecture);
 	}
 	
 	public List<LectureUserVO> getLecturesRequested() {

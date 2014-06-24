@@ -10,5 +10,8 @@
 	 다양한 과목이 개설될 수 있으며, 직원들이 직접 강사가 되어 수업을 진행할 수 있고 외부강사가 진행하는 강의가 있다.</p>
 </div>
 
+<br>
+<br>
+<img src="<c:url value='/img/logo_dreamitmakeit.png'/>" class="img-thumbnail" />
 
-<P>  The time on the server is ${serverTime}. </P></br>
+

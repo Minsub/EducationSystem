@@ -2,22 +2,38 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-<link href="<c:url value='/css/signin.css'/>" rel="stylesheet">
-
-
 <link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 
-	
-	
+<div class="bs-callout bs-callout-info">
+	<h4>직무교육</h4>
+	<p>직원들의 직무와 관련된 교육을 실시합니다. 매월 강의 목록에서 직원들은 원하는 강의를 선택하여 수강할 수 있습니다.
+	 다양한 과목이 개설될 수 있으며, 직원들이 직접 강사가 되어 수업을 진행할 수 있고 외부강사가 진행하는 강의가 있다.</p>
+	 <div class="ms-breadcrumb">
+		<ol class="breadcrumb">
+		  <li><a href="#">Home</a></li>
+		  <li><a href="#">Library</a></li>
+		  <li class="active">Data</li>
+		</ol>
+	</div>
+</div>
+
+
+<div class="ms-header">
+	<h1> 수정 세부 정보</h1>
+	<div class="ms-breadcrumb">
+		<ol class="breadcrumb">
+		  <li><a href="#">Home</a></li>
+		  <li><a href="#">Library</a></li>
+		  <li class="active">Data</li>
+		</ol>
+	</div>
+</div>
 		<h2>Lecture Detail</h2>
 		
    		<p class="lead">Show lecture detail</p>
-		
-		
-		
+
 		    <DIV class="bs-example bs-example-type">
 		    	<form role=form action="/education/jobedu/registerLecture" method="post">
 					
