@@ -22,7 +22,7 @@
 				<td><c:out value="${lecture.YMD_STD}" /></td>					<!-- 년 -->
   					<td><c:out value="${lecture.YMD_STD}" /></td>				<!-- 월 -->
                 <td>		<!-- 강좌명 클릭하면 LectureDetail 로 이동 -->
-                	<a href="LectureDetail"><c:out value="${lecture.lname}" /></a></td><!-- 강좌명 -->
+                	<a href="LectureDetail?lid=<c:out value="${lecture.lecture_id}"/>"><c:out value="${lecture.lname}" /></a></td><!-- 강좌명 -->
                 <td><c:out value="${lecture.uname}" /></td>		<!-- 사용자 이름 : 선생이름 -->
                 <td><c:out value="${lecture.credit}" /></td>	<!-- 학점 -->
                 <td><c:out value="${lecture.testscore}" /></td> <!-- 점수 -->
