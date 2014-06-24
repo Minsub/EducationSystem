@@ -49,9 +49,7 @@ public class LectureDaoImpl implements LectureDao {
 	@Override
 	public int deleteLecture(String lid) {
 		LectureMapper mapper = sqlSession.getMapper(LectureMapper.class);
-		int result =  mapper.delete(lid);
-		sqlSession.commit();
-		return result;
+		return mapper.delete(lid);
 	}
 
 	@Override
