@@ -15,7 +15,7 @@
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=inputEmail3> 달 </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id=inputEmail3 class=form-control type=text placeholder="월별" 
+				<INPUT id="" class=form-control type=text placeholder="월별" 
 						value="<c:out value="${lectureUser.YMD_STD}" />" disabled>		<!-- 일단 시작날짜로 세팅 -->
 			</DIV>
 		</DIV>
@@ -187,5 +187,3 @@
         todayHighlight: true
     });
 </script>
-	
-	

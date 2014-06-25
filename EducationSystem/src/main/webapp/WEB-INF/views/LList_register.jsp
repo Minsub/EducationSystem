@@ -24,14 +24,15 @@ function checkResultCode(){
 }
 window.onload=checkResultCode;
 
-// btn(수강신청) & btn1(수강삭제) event에 따른 modal 출력
+// id속성 : #btn(수강신청) #btn1(수강삭제)
+// name속성 : button[name=registerLecture](수강신청) button[name=cancelLecture](수강삭제)
 $(document).ready(function(){
-	$("#btn").click(function(e){
+	$("button[name=registerLecture]").click(function(e){
 		//모달 보이기
 		$("#myModal").modal('show');
 	});
 	
-	$("#btn1").click(function(e){
+	$("button[name=cancelLecture]").click(function(e){
 		//모달 보이기
 		$("#myModal1").modal('show');
 	});
@@ -85,7 +86,7 @@ $(document).ready(function(){
 							<div class="bs-example">
 							    <!-- Button HTML (to Trigger Modal) -->
 							    <!-- <a href="#" id="btn" class="btn btn-primary">수강신청</a>  -->
-							    <button id="btn" type="button" class="btn btn-primary">수강신청</button>
+							    <button id="btn" name="registerLecture" type="button" class="btn btn-primary">수강신청</button>
 							    							    
 							    <!-- Modal HTML -->
 							    <div id="myModal" class="modal fade">
@@ -137,7 +138,7 @@ $(document).ready(function(){
 	               			<div class="bs-example">
 							    <!-- Button HTML (to Trigger Modal) -->
 							    <!-- <a href="#" name="btn1" id="btn1" class="btn btn-danger">수강취소</a>  -->
-							    <button id="btn1" type="button" class="btn btn-danger">수강취소</button>
+							    <button id="btn1" name="cancelLecture" type="button" class="btn btn-danger">수강취소</button>
 							    
 							    <!-- Modal HTML -->
 							    <div id="myModal1" class="modal fade">
