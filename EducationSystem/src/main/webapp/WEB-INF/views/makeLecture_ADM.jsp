@@ -5,6 +5,26 @@
 <!-- for datepicker -->
 <link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+
+<script type="text/javascript">
+// redirect 이후, resultCode 에 따라 modal 창 선택하여 출력
+$.urlParam = function(name){
+    var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+    return results[1] || 0;
+}
+function checkResultCode(){
+	var code = $.urlParam('resultCode');
+	// TODO: Insert CODE
+	if(code==0){
+		$("#registerSuccessModal").modal('show');
+	} else {
+		$("#registerFailModal").modal('show');
+	}
+}
+window.onload=checkResultCode;
+</script>
+
 		
 <h2>Make Lecture Admin</h2>
  	<!-- <p class="lead">Show lecture detail</p> -->
@@ -28,7 +48,7 @@
         	<LABEL class="col-xs-2 control-label" for=YMD_STD> 시작날짜 </LABEL> 
 			<DIV class=col-lg-3>
 				<div class="input-group date">
-		            <input type="text1" class="form-control">
+		            <input id="YMD_STD" type="text" class="form-control">
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 		        </div>
 	        </div>
@@ -38,7 +58,7 @@
         	<LABEL class="col-xs-2 control-label" for=YMD_END> 종료날짜 </LABEL> 
 			<DIV class=col-lg-3>
 				<div class="input-group date">
-		            <input type="text1" class="form-control">
+		            <input id="YMD_END" type="text" class="form-control">
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 		        </div>
 	        </div>
@@ -47,7 +67,7 @@
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=uname> 강사 이름 </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id=inputPassword3 class=form-control type=text placeholder="강사 이름을 입력하세요.">
+				<INPUT id=lname class=form-control type=text placeholder="강사 이름을 입력하세요.">
 		  	</DIV>
 		  	
 		  	<LABEL class="col-xs-2 control-label" for=radio> 강사 소속 </LABEL> 
@@ -60,19 +80,19 @@
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=times> 시작~종료시간 </LABEL> 
 			<DIV class=col-lg-6>
-				<INPUT id=times class=form-control type=text placeholder="시작~종료시간">
+				<INPUT id="times" class="form-control" type="text" placeholder="시작~종료시간">
 			</DIV>
 		</DIV>
 
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=days> 기간 (일) </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id=days class=form-control type=text placeholder="기간 (일)">
+				<INPUT id="days" class="form-control" type="text" placeholder="기간 (일)">
 			</DIV>
 			
 			<LABEL class="col-sm-2 control-label" for=hours> 기간 (시간) </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id=hours class=form-control type=text placeholder="기간 (시간)">
+				<INPUT id="hours" class="form-control" type="text" placeholder="기간 (시간)">
 			</DIV>
 		</DIV>
 		
@@ -80,7 +100,7 @@
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=place> 장소 </LABEL> 
 			<DIV class=col-lg-6>
-				<select>
+				<select id="place">
 			        <option>E601</option>
 			        <option>E602</option>
 			        <option>E603</option>
@@ -95,24 +115,10 @@
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=target> 교육 대상 </LABEL> 
 			<DIV class=col-lg-6>
-				<INPUT id=target class=form-control type=text placeholder="교육 대상"
-						value="<c:out value="${lectureUser.target}" />" disabled>
+				<INPUT id="target" class="form-control" type="text" placeholder="교육 대상">
 			</DIV>
 		</DIV>
-		
-		<!-- 강좌 개설에서 활성화 시켜야할 select 부분 -->
-		<!-- <DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=inputPassword3> 장소 </LABEL> 
-			<DIV class=col-sm-10>
-				<select>
-			        <option>E601</option>
-			        <option>E602</option>
-			        <option>E603</option>
-			        <option>E604</option>
-			        <option>E302</option>
-		        </select>
-			</DIV>
-		</DIV>
+		<!-- 
 		
 		<DIV class=form-group>
 			<label class="col-sm-2 control-label" for=checkbox> 교육 대상 </label> 
@@ -125,38 +131,63 @@
 		  	</DIV>
 		</DIV>
 		
-		<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=radio> 강사 소속 </LABEL> 
-			<DIV class=col-sm-10>
-				<label class="radio-inline"><input type="radio" name="radio" id="radio" value="i">내부</label>
-				<label class="radio-inline"><input type="radio" name="radio" id="radio" value="e">외부</label>
-		  	</DIV>
-		</DIV>
-		
 		  -->
     			
     			
     	<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=inputPassword3> 커리큘럼 Description <CODE>rows</CODE> </LABEL> 
 			<DIV class=col-sm-10>
-				<TEXTAREA class=form-control rows=3 placeholder="커리큘럼을 입력하세요."></TEXTAREA>
-		  	</DIV>
-		</DIV>
-		
-		<!-- modal로 띄우자 -->
-		<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=inputPassword3> 수강생목록 팝업창띄우기 </LABEL> 
-			<DIV class=col-sm-10>
-				<INPUT id=inputPassword3 class=form-control type=password placeholder="강사 이름을 입력하세요.">
+				<TEXTAREA id="curriculum" class="form-control" rows="3" placeholder="커리큘럼을 입력하세요."></TEXTAREA>
 		  	</DIV>
 		</DIV>
 		
 		<DIV class=form-group>
 			<DIV class="col-sm-offset-2 col-sm-10">
 				<BUTTON class="btn btn-primary" type=submit>Submit</BUTTON>
+				<button class="btn btn-lg btn-primary btn-block" type="submit" style="display:inline; width:170px; margin:20px">수정</button>
+				<button class="btn btn-lg btn-primary btn-block" type="submit" style="display:inline; width:170px; margin:20px">생성</button>
+				<button class="btn btn-lg btn-danger btn-block" onclick="history.back();" style="display:inline;width:170px; margin:20px">취소</button>
 			</DIV>
+			
+			<!-- Modal HTML -->
+		    <div id="registerSuccessModal" class="modal fade">
+		        <div class="modal-dialog">
+		            <div class="modal-content">
+		                <div class="modal-header">
+		                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                    <h4 class="modal-title">Confirmation</h4>
+		                </div>
+		                <div class="modal-body">
+		                    <p>신청 성공!</p>
+		                    <p class="text-warning"><small>수강 내역 페이지에서 신청 과목을 확인하세요.</small></p>
+		                </div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    
+		    <!-- Modal HTML -->
+		    <div id="registerFailModal" class="modal fade">
+		        <div class="modal-dialog">
+		            <div class="modal-content">
+		                <div class="modal-header">
+		                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                    <h4 class="modal-title">Confirmation</h4>
+		                </div>
+		                <div class="modal-body">
+		                    <p>신청 실패!</p>
+		                    <p class="text-warning"><small>이미 신청한 강좌입니다.</small></p>
+		                </div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    
 		</DIV>
-		
 		
 	</FORM>
 </div>
@@ -181,7 +212,7 @@
     });
 </script>
 
-
+<!-- 
 
 <script>
 	$(document).ready(function() {
@@ -219,14 +250,4 @@
 			</div>
 		</form>
 
-<script>
-	$('.input-group.date').datepicker({
-	    format: "yyyymmdd",
-	    startDate: "20100101",
-	    endDate: "20200101",
-	    todayBtn: "linked",
-	    autoclose: true,
-	    todayHighlight: true
-	});
-
-</script>
+ -->

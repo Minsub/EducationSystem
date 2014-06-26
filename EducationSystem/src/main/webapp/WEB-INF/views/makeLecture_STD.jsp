@@ -7,7 +7,6 @@
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 <script type="text/javascript">
-
 // redirect 이후, resultCode 에 따라 modal 창 선택하여 출력
 $.urlParam = function(name){
     var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
