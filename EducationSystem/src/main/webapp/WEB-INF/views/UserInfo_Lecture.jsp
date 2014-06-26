@@ -41,9 +41,9 @@
 	<form class="form-inline" name="uSearch" method="post" action="">
 	<input type="hidden" name="user_id" id="user_id" value="">
 	
-			소속<input type="text" value = "<c:out value="${registerUser.team}" />"><br>
-			이름<input type="text" value = "<c:out value="${registerUser.uname}" />"><br>
-			직위<input type="text" value = "<c:out value="${registerUser.rank}" />"><br>
+			소속<input type="text" value = "<c:out value="${registerUser.team}" />"  disabled><br>
+			이름<input type="text" value = "<c:out value="${registerUser.uname}" />"  disabled><br>
+			직위<input type="text" value = "<c:out value="${registerUser.rank}" />"  disabled><br>
 			취소여부<input type="text" value = "<c:out value="${registerUser.cancelation}" />"><br>
            	 수료여부<input type="text" value = "<c:out value="${registerUser.pass}" />"><br>
             Test점수<input type="text" value = "<c:out value="${registerUser.testscore}" />"><br>

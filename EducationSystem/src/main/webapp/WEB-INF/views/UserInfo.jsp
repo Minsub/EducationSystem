@@ -13,7 +13,7 @@
 			타입<input name="utype" type="text"  /> <br>
 			관리자여부<input name="admin" type="text"  /> <br>
 			
-			<button class="btn btn-lg btn-primary btn-block" type="submit">확인</button>
-			<button class="btn btn-lg btn-primary btn-block" onclick="history.back();">취소</button>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" style="width:100px;">확인</button>
+			<button class="btn btn-lg btn-primary btn-block" onclick="history.back();" style="width:100px;">취소</button>
 		</form>
 	</div>
