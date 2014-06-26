@@ -113,16 +113,18 @@ function showDiv() {
 		</div>
 	</div>
 </div>
-<div id="footer">
-	<div class="container">
-		<div class="col-md-12">
-			<div class="well">
-		 		<p>Hyundai Ubiquitous & Information technology</p>
-		        <p>This is a private system operated for Hyundai U&I company business. All corporate policies and standards must be strictly followed. 
-				<br>2014 Hyundai U&I Co.,LTD All Rights Reserved.</p>
-		    </div>
-		</div>
-	</div>
+
+
+
+	
+<!--
+<div class="well">
+		<p>Hyundai Ubiquitous & Information technology</p>
+       <p>This is a private system operated for Hyundai U&I company business. All corporate policies and standards must be strictly followed. 
+	<br>2014 Hyundai U&I Co.,LTD All Rights Reserved.</p>
+
+
 </div>
+ -->
 </body>
 </html>
