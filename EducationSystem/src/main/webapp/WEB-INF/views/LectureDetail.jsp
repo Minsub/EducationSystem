@@ -7,7 +7,7 @@
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 <h2>Lecture Detail</h2>
- 	<p class="lead">Show lecture detail</p>
+ 	<!-- <p class="lead">Show lecture detail</p> -->
 
 <div>
    	<form role=form class=form-horizontal action="/education/jobedu/registerLecture" method="post">
@@ -15,7 +15,7 @@
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=inputEmail3> 달 </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id=inputEmail3 class=form-control type=text placeholder="월별" 
+				<INPUT id="" class=form-control type=text placeholder="월별" 
 						value="<c:out value="${lectureUser.YMD_STD}" />" disabled>		<!-- 일단 시작날짜로 세팅 -->
 			</DIV>
 		</DIV>
@@ -60,8 +60,14 @@
 				<INPUT id=inputPassword3 class=form-control type=password placeholder="강사 이름을 입력하세요."
 						value="<c:out value="${lectureUser.uname}" />" disabled>
 		  	</DIV>
+		  	
+		  	<LABEL class="col-xs-2 control-label" for=ltype> 강사 소속 </LABEL> 
+			<DIV class=col-lg-3>
+				<INPUT id=ltype class=form-control type=text placeholder="강사 소속"
+						value="<c:out value="${lectureUser.ltype}" />" disabled>	<!-- ltype & institution -->
+			</DIV>
 		</DIV>
-		
+				
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=times> 시작~종료시간 </LABEL> 
 			<DIV class=col-lg-6>
@@ -72,20 +78,18 @@
 
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=days> 기간 (일) </LABEL> 
-			<DIV class=col-lg-6>
+			<DIV class=col-lg-3>
 				<INPUT id=days class=form-control type=text placeholder="기간 (일)"
 						value="<c:out value="${lectureUser.days}" />" disabled>
 			</DIV>
-		</DIV>
-		
-		<DIV class=form-group>
+			
 			<LABEL class="col-sm-2 control-label" for=hours> 기간 (시간) </LABEL> 
-			<DIV class=col-lg-6>
+			<DIV class=col-lg-3>
 				<INPUT id=hours class=form-control type=text placeholder="기간 (시간)"
 						value="<c:out value="${lectureUser.hours}" />" disabled>
 			</DIV>
 		</DIV>
-
+		
 		<!-- Lecture Detail 에서 활성화 시킬 text 부분 -->
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=place> 장소 </LABEL> 
@@ -100,14 +104,6 @@
 			<DIV class=col-lg-6>
 				<INPUT id=target class=form-control type=text placeholder="교육 대상"
 						value="<c:out value="${lectureUser.target}" />" disabled>
-			</DIV>
-		</DIV>
-		
-		<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=ltype> 강사 소속 </LABEL> 
-			<DIV class=col-lg-6>
-				<INPUT id=ltype class=form-control type=text placeholder="강사 소속"
-						value="<c:out value="${lectureUser.ltype}" />" disabled>	<!-- ltype & institution -->
 			</DIV>
 		</DIV>
 		
@@ -191,5 +187,3 @@
         todayHighlight: true
     });
 </script>
-	
-	

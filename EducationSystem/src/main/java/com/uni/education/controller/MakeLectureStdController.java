@@ -39,17 +39,17 @@ public class MakeLectureStdController {
         	if (nResultCode > 0) { // 성공
         		logger.info("Success to InsertLecture By Teacher");
         		model.addAttribute("resultCode", 0);
-        		return "redirect:/jobedu";
+        		return "redirect:/jobedu/makeLectureStd";
         	} else { //실패
         		logger.info("Fail to InsertLecture By Teacher");
         		model.addAttribute("resultCode", 1);
-        		return "jobedu/makeLecture_STD";
+        		return "redirect:/jobedu/makeLectureStd";
         	}
     	} catch (Exception e) {
     		logger.info("Exception!!: " + e.toString());
     		e.printStackTrace();
     		model.addAttribute("resultCode", 1);
-    		return "jobedu/makeLecture_STD";
+    		return "redirect:/jobedu/makeLectureStd";
     	}
     }
 }
