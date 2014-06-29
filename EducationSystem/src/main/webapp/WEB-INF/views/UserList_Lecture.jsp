@@ -19,8 +19,7 @@
 </script>
 
 	<h2>LList_register</h2>
-	
-	<div class="container" >
+
 	<table class="table table-hover">
 		 <tr>
             <td>소속</td>
@@ -34,8 +33,7 @@
 		<c:forEach var="registerUser" items="${RegistrationUserList}">
             <tr>
                 <td><c:out value="${registerUser.team}" /></td>
-                <td><c:out value="${registerUser.uname}" /></td>
-                <td><a href="" onClick="fncGetLecUserDetail('<c:out value="${registerUser.lecture_id}" />','<c:out value="${registerUser.user_id}" />')"><c:out value="${registerUser.uname" /></a></td>
+                <td><a href="/education/jobedu/UserInfoInLecture?uid=<c:out value="${registerUser.user_id}" />"><c:out value="${registerUser.uname}" /></a></td>
                 <td><c:out value="${registerUser.rank}" /></td>
                 <td><c:out value="${registerUser.cancelation}" /></td>
                 <td><c:out value="${registerUser.pass}" /></td>
@@ -44,5 +42,5 @@
             </tr>
         </c:forEach>
     </table>
-    <button class="btn btn-lg btn-primary btn-block" onclick="fncDelUser('<c:out value="${registerUser.user_id}" />','<c:out value="${registerUser.lecture_id}" />')">삭제</button>
-	</div>
+    <button align="center" class="btn btn-lg btn-primary btn-block" style="width:100px"onclick="fncDelUser('<c:out value="${registerUser.user_id}" />','<c:out value="${registerUser.lecture_id}" />')">삭제</button>
+	

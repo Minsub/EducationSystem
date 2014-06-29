@@ -30,9 +30,8 @@
 				<td>삭제</td>
 	        </tr> 
 			<c:forEach var="lectureUser" items="${lectureUserList}">
-				<input type="hidden" name="lid" id="lid" value="<c:out value="${lectureUser.lid}" />">
 	            <tr>
-	                <td><a href="makeLectureAdmin?lid=" onClick="fncGetADM('<c:out value="${lectureUser.lid}" />')"><c:out value="${lectureUser.lname}" /></a></td>
+	                <td><a href="/education/jobedu/makeLectureAdmin?lid=<c:out value="${lectureUser.lid}" />"><c:out value="${lectureUser.lname}" /></a></td>
 	 <!--           <a href="/education/jobedu/makeLectureAdmin" onClick="fncGetADM('<c:out value="${lectureUser.lid}" />')"><c:out value="${lectureUser.lname}" /></a></td>   --> 
 	                <td><c:out value="${lectureUser.uname}" /></td> 
 	                <td><c:out value="${lectureUser.days}" /></td>

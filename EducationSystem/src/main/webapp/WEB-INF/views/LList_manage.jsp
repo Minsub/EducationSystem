@@ -12,6 +12,7 @@
 		document.uSearch.action="/education/jobedu/RegistrationManaement";
 		document.uSearch.submit();
 	}
+	
 	function fncGetLecUserList(lecId) {
 		var targetURL;
 		targetURL="/education/jobedu/UserListInLecture" + lecID;
@@ -63,7 +64,8 @@
             <tr>
                 <td><c:out value="${lecture.lname}" /></td>
                 <td><c:out value="${lecture.team}" /></td>
-                <td><a href="" onClick="fncGetLecUserList('<c:out value="${lecture.lid}" />')"><c:out value="${lecture.lname}" /></a></td>
+                
+                <td><a href="/education/jobedu/UserListInLecture?lid=<c:out value="${lecture.lid}"/>"><c:out value="${lecture.lname}" /></a></td>
                 <td><c:out value="${lecture.teacherID}" /></td>
                 <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
             </tr>   

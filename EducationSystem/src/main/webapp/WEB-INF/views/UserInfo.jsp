@@ -4,16 +4,46 @@
 
 	<h2>User Info</h2>
 	<div class="container" >
-		<form class="form-signin" action="/education/jobedu/UserDetail" method="post" >
-			사번<input name="uid" type="text" /> <br>
-			소속<input name="team" type="text" /> <br>
-			직급<input name="rank" type="text"  /> <br>
-			이름<input name="uname" type="text"  />  <br>
-			강사여부<input name="teacher" type="text"  />  <br>
-			타입<input name="utype" type="text"  /> <br>
-			관리자여부<input name="admin" type="text"  /> <br>
+		<form class=form-horizontal action="/education/jobedu/UserDetail" method="post" >
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=uid> 사번 </LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=uid class=form-control type=text placeholder="사번" value="<c:out value="${user.uid}" />">
+			</DIV>
 			
-			<button class="btn btn-lg btn-primary btn-block" type="submit" style="width:100px;">확인</button>
-			<button class="btn btn-lg btn-primary btn-block" onclick="history.back();" style="width:100px;">취소</button>
+			<LABEL class="col-xs-2 control-label" for=team> 소속 </LABEL> 
+			<DIV class=col-lg-2>
+				<INPUT id=team class=form-control type=text placeholder="  소속"  value="<c:out value="${user.team}" />">
+		  	</DIV>
+			</DIV>
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=uname> 이름 </LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=uname class=form-control type=text placeholder="이름"  value="<c:out value="${user.uname}" />">
+			</DIV>
+			</DIV>
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=teacher> 강사여부 </LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=teacher class=form-control type=text placeholder="Y/N"  value="<c:out value="${user.teacher}" />">
+			</DIV>
+			</DIV>
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=utype> 타입 </LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=utype class=form-control type=text placeholder="일반/개발"  value="<c:out value="${user.utype}" />">
+			</DIV>
+			</DIV>
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=admin> 관리자여부</LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=admin class=form-control type=text placeholder="Y/N"  value="<c:out value="${user.admin}" />">
+			</DIV>
+			</DIV>
+			
+			<div align="center">
+			<button class="btn btn-lg btn-primary btn-block" type="submit" style="display:inline;width:100px;margin:20px">확인</button>
+			<button class="btn btn-lg btn-primary btn-block" onclick="history.back();" style="display:inline;width:100px;margin:20px">취소</button>
+			</div>
 		</form>
 	</div>

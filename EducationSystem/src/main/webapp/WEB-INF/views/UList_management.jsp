@@ -4,11 +4,11 @@
 
 <script type="text/javascript">
 
-	function fncGetDetail(userId){
-		document.getElementsById('uid').value=userId;
-		document.uSearch.action="/education/jobedu/UserDetail";
-		document.uSearch.submit();
-	}
+//	function fncGetDetail(userId){
+//		document.getElementsById('uid').value=userId;
+//		document.uSearch.action="/education/jobedu/UserDetail";
+//		document.uSearch.submit();
+//	}
 	
 	function fncGetList(){
 		document.uSearch.action="/education/jobedu/UserManagement";
@@ -58,7 +58,7 @@
 	        </tr> 
 			<c:forEach var="user" items="${userList}">
 	            <tr>
-	                <td><a href="/education/jobedu/UserDetail" onClick="fncGetDetail('<c:out value="${user.uid}" />')"><c:out value="${user.uid}" /></a></td>
+	            	<td><a href="/education/jobedu/UserDetail?uid=<c:out value="${user.uid}" />"><c:out value="${user.uid}" /></a></td>
 	                <td><c:out value="${user.team}" /></td>
 	                <td><c:out value="${user.rank}" /></td>
 	                <td><c:out value="${user.uname}" /></td>
