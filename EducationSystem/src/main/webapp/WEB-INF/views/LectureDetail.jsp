@@ -7,7 +7,6 @@
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 <h2>Lecture Detail</h2>
- 	<!-- <p class="lead">Show lecture detail</p> -->
 
 <div>
    	<form role=form class=form-horizontal action="/education/jobedu/registerLecture" method="post">
@@ -16,7 +15,7 @@
 			<LABEL class="col-xs-2 control-label" for=inputEmail3> 달 </LABEL> 
 			<DIV class=col-lg-3>
 				<INPUT id="" class=form-control type=text placeholder="월별" 
-						value="<c:out value="${lectureUser.YMD_STD}" />" disabled>		<!-- 일단 시작날짜로 세팅 -->
+						value="<c:out value="${LectureUser.YMD_STD}" />" disabled>		<!-- 일단 시작날짜로 세팅 -->
 			</DIV>
 		</DIV>
 		
@@ -24,13 +23,13 @@
 			<LABEL class="col-xs-2 control-label" for=lname> 강좌명 </LABEL> 
 			<DIV class=col-lg-4>
 				<INPUT id=lname class=form-control type=text placeholder="강좌명"
-						value="<c:out value="${lectureUser.lname}" />" disabled>
+						value="<c:out value="${LectureUser.lname}" />" disabled>
 			</DIV>
 			
 			<LABEL class="col-xs-2 control-label" for=credit> 학점 </LABEL> 
 			<DIV class=col-lg-2>
-				<INPUT id=credit class=form-control type=password placeholder="  학점"
-						value="<c:out value="${lectureUser.credit}" />" disabled>
+				<INPUT id=credit class=form-control type=text placeholder="  학점"
+						value="<c:out value="${LectureUser.credit}" />" disabled>
 		  	</DIV>
 		</DIV>
 		
@@ -38,7 +37,8 @@
         	<LABEL class="col-xs-2 control-label" for=YMD_STD> 시작날짜 </LABEL> 
 			<DIV class=col-lg-3>
 				<div class="input-group date">
-		            <input type="text1" class="form-control">
+		            <input id="YMD_STD" class="form-control" type="text" 
+		            		value="<c:out value="${LectureUser.YMD_STD}" />" disabled>
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 		        </div>
 	        </div>
@@ -48,7 +48,8 @@
         	<LABEL class="col-xs-2 control-label" for=YMD_END> 종료날짜 </LABEL> 
 			<DIV class=col-lg-3>
 				<div class="input-group date">
-		            <input type="text1" class="form-control">
+		            <input id="YMD_END" class="form-control" type="text" 
+		            		value="<c:out value="${LectureUser.YMD_END}" />" disabled>
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 		        </div>
 	        </div>
@@ -57,14 +58,14 @@
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=uname> 강사 이름 </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id=inputPassword3 class=form-control type=password placeholder="강사 이름을 입력하세요."
-						value="<c:out value="${lectureUser.uname}" />" disabled>
+				<INPUT id=inputPassword3 class=form-control type=text placeholder="강사 이름을 입력하세요."
+						value="<c:out value="${LectureUser.uname}" />" disabled>
 		  	</DIV>
 		  	
 		  	<LABEL class="col-xs-2 control-label" for=ltype> 강사 소속 </LABEL> 
 			<DIV class=col-lg-3>
 				<INPUT id=ltype class=form-control type=text placeholder="강사 소속"
-						value="<c:out value="${lectureUser.ltype}" />" disabled>	<!-- ltype & institution -->
+						value="<c:out value="${LectureUser.ltype}" />" disabled>	<!-- ltype & institution -->
 			</DIV>
 		</DIV>
 				
@@ -72,7 +73,7 @@
 			<LABEL class="col-sm-2 control-label" for=times> 시작~종료시간 </LABEL> 
 			<DIV class=col-lg-6>
 				<INPUT id=times class=form-control type=text placeholder="시작~종료시간"
-						value="<c:out value="${lectureUser.times}" />" disabled>
+						value="<c:out value="${LectureUser.times}" />" disabled>
 			</DIV>
 		</DIV>
 
@@ -80,13 +81,13 @@
 			<LABEL class="col-sm-2 control-label" for=days> 기간 (일) </LABEL> 
 			<DIV class=col-lg-3>
 				<INPUT id=days class=form-control type=text placeholder="기간 (일)"
-						value="<c:out value="${lectureUser.days}" />" disabled>
+						value="<c:out value="${LectureUser.days}" />" disabled>
 			</DIV>
 			
 			<LABEL class="col-sm-2 control-label" for=hours> 기간 (시간) </LABEL> 
 			<DIV class=col-lg-3>
 				<INPUT id=hours class=form-control type=text placeholder="기간 (시간)"
-						value="<c:out value="${lectureUser.hours}" />" disabled>
+						value="<c:out value="${LectureUser.hours}" />" disabled>
 			</DIV>
 		</DIV>
 		
@@ -95,7 +96,7 @@
 			<LABEL class="col-sm-2 control-label" for=place> 장소 </LABEL> 
 			<DIV class=col-lg-6>
 				<INPUT id=place class=form-control type=text placeholder="장소"
-						value="<c:out value="${lectureUser.place}" />" disabled>
+						value="<c:out value="${LectureUser.place}" />" disabled>
 			</DIV>
 		</DIV>
 		
@@ -103,7 +104,29 @@
 			<LABEL class="col-sm-2 control-label" for=target> 교육 대상 </LABEL> 
 			<DIV class=col-lg-6>
 				<INPUT id=target class=form-control type=text placeholder="교육 대상"
-						value="<c:out value="${lectureUser.target}" />" disabled>
+						value="<c:out value="${LectureUser.target}" />" disabled>
+			</DIV>
+		</DIV>
+		
+		<DIV class=form-group>
+			<LABEL class="col-sm-2 control-label" for="curriculum"> 커리큘럼 Description <CODE>rows</CODE> </LABEL> 
+			<DIV class=col-sm-10>
+				<TEXTAREA id="" class=form-control rows=3 placeholder="커리큘럼을 입력하세요."
+						value="<c:out value="${LectureUser.curriculum}" />" disabled></TEXTAREA>
+		  	</DIV>
+		</DIV>
+		
+		<!-- modal로 띄우자 -->
+		<DIV class=form-group>
+			<LABEL class="col-sm-2 control-label" for=inputPassword3> 수강생목록 팝업창띄우기 </LABEL> 
+			<DIV class=col-sm-10>
+				<INPUT id=inputPassword3 class=form-control type=password placeholder="강사 이름을 입력하세요.">
+		  	</DIV>
+		</DIV>
+		
+		<DIV class=form-group>
+			<DIV class="col-sm-offset-2 col-sm-10">
+				<BUTTON class="btn btn-primary" onclick="history.back();">Go to back</BUTTON>
 			</DIV>
 		</DIV>
 		
@@ -141,29 +164,6 @@
 		</DIV>
 		
 		  -->
-    			
-    			
-    	<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=inputPassword3> 커리큘럼 Description <CODE>rows</CODE> </LABEL> 
-			<DIV class=col-sm-10>
-				<TEXTAREA class=form-control rows=3 placeholder="커리큘럼을 입력하세요."></TEXTAREA>
-		  	</DIV>
-		</DIV>
-		
-		<!-- modal로 띄우자 -->
-		<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=inputPassword3> 수강생목록 팝업창띄우기 </LABEL> 
-			<DIV class=col-sm-10>
-				<INPUT id=inputPassword3 class=form-control type=password placeholder="강사 이름을 입력하세요.">
-		  	</DIV>
-		</DIV>
-		
-		<DIV class=form-group>
-			<DIV class="col-sm-offset-2 col-sm-10">
-				<BUTTON class="btn btn-primary" type=submit>Submit</BUTTON>
-			</DIV>
-		</DIV>
-		
 		
 	</FORM>
 </div>

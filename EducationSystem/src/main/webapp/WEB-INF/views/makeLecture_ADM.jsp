@@ -104,8 +104,10 @@
 		</DIV>
 		
 		<DIV class=form-group>
-				<button class="btn btn-lg btn-primary btn-block" type="submit" style="display:inline; width:170px; margin:20px">확인</button>
-				<button class="btn btn-lg btn-danger btn-block" onclick="history.back();" style="display:inline;width:170px; margin:20px">취소</button>
+			<DIV class="col-sm-offset-2 col-sm-10">
+				<button class="btn btn-primary" type="submit">Submit</button>
+				<button class="btn btn-danger" onclick="history.back();">Cancel</button>
+			</DIV>
 		</div>
 
 	</FORM>
