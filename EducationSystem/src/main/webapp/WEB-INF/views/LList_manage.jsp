@@ -46,7 +46,15 @@
 			<td>강좌명</td>
 			<td><input type="text" class="form-control" name="lname"  style="display:inline;"></td>
 			<td>교육타입</td>
-			<td> <input type="text" class="form-control" name="ltype"  style="display:inline;"></td>
+			<td>
+			<DIV class=col-lg-6>
+				<select id="ltype">
+					<option value=""></option>
+			        <option value="Normal">Normal</option>
+			        <option value="Developer">Developer</option>
+		        </select>
+		    </DIV>
+			</td>
 			<td><button class="btn btn-lg btn-primary btn-block" onClick="fncLecSearch()" style="width:70px; display:inline;">검색</button></td>
 			</tr>
 			</table>
@@ -54,18 +62,17 @@
 	<br><br>
 	<table class="table table-hover">
 		 <tr>
-            <td>년도</td>
-			<td>월</td>
-			<td>강좌명</td>
+            <td>강좌명</td>
+			<td>일 수</td>
+			<td>교육대상</td>
 			<td>강사이름</td>
 			<td>날짜</td>
         </tr> 
 		<c:forEach var="lecture" items="${lectureUserList}">
             <tr>
-                <td><c:out value="${lecture.lname}" /></td>
-                <td><c:out value="${lecture.team}" /></td>
-                
                 <td><a href="/education/jobedu/UserListInLecture?lid=<c:out value="${lecture.lid}"/>"><c:out value="${lecture.lname}" /></a></td>
+                <td><c:out value="${lecture.days}" /></td>
+                <td><c:out value="${lecture.target}" /></td>
                 <td><c:out value="${lecture.teacherID}" /></td>
                 <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
             </tr>   
@@ -75,8 +82,17 @@
 <script>
 	$('.input-group.date').datepicker({
 	    format: "yyyymmdd",
-	    startDate: "20100101",
-	    endDate: "20200101",
+	    startDate: "2010-01-01",
+	    endDate: "2020-01-01",
+	    todayBtn: "linked",
+	    autoclose: true,
+	    todayHighlight: true
+	});
+	
+	$('.form-group.date').datepicker({
+	    format: "yyyymmdd",
+	    startDate: "2010-01-01",
+	    endDate: "2020-01-01",
 	    todayBtn: "linked",
 	    autoclose: true,
 	    todayHighlight: true

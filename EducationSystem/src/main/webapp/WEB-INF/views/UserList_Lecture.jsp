@@ -18,7 +18,7 @@
 	}
 </script>
 
-	<h2>LList_register</h2>
+	<h2>UserList_Lecture</h2>
 
 	<table class="table table-hover">
 		 <tr>

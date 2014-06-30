@@ -1,27 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>User Info Lecture</title>
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 
@@ -34,23 +13,52 @@
 	
 </script>
 
-</head>
-<body>
-	<h2>User Info Lecture</h2>
-	<div class="container" >
-	<form class="form-inline" name="uSearch" method="post" action="">
-	<input type="hidden" name="user_id" id="user_id" value="">
+	<h2>User Info in Lecture</h2>
 	
-			소속<input type="text" value = "<c:out value="${registerUser.team}" />"  disabled><br>
-			이름<input type="text" value = "<c:out value="${registerUser.uname}" />"  disabled><br>
-			직위<input type="text" value = "<c:out value="${registerUser.rank}" />"  disabled><br>
-			취소여부<input type="text" value = "<c:out value="${registerUser.cancelation}" />"><br>
-           	 수료여부<input type="text" value = "<c:out value="${registerUser.pass}" />"><br>
-            Test점수<input type="text" value = "<c:out value="${registerUser.testscore}" />"><br>
-            비고<input type="text" value = "<c:out value="${registerUser.note}" />"><br>
-   	</form> 
-   	<button class="btn btn-lg btn-primary btn-block" onclick="fncModifyUser('<c:out value="${registerUser.user_id}" />','<c:out value="${registerUser.lecture_id}" />')">수정</button>
-   	<button class="btn btn-lg btn-primary btn-block" onclick="history.back();">취소</button>
-	</div>
-</body>
-</html>
+	<form class=form-horizontal action="/education/jobedu/UserInfoInLecture" method="post" >
+			<DIV class=form-group>	
+			<LABEL class="col-xs-2 control-label" for=team> 소속 </LABEL> 
+			<DIV class=col-lg-2>
+				<INPUT id=team class=form-control type=text placeholder="  소속"  value="<c:out value="${registerUser.team}" />" disabled>
+		  	</DIV>
+			</DIV>
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=uname> 이름 </LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=uname class=form-control type=text placeholder="이름"  value="<c:out value="${registerUser.uname}" />" disabled>
+			</DIV>
+			</DIV>
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=rank> 직위 </LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=rank class=form-control type=text placeholder="Y/N"  value="<c:out value="${registerUser.rank}" />">
+			</DIV>
+			</DIV>
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=cancelation> 취소 여부 </LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=cancelation class=form-control type=text placeholder="Y/N"  value="<c:out value="${registerUser.cancelation}" />">
+			</DIV>
+			<LABEL class="col-xs-2 control-label" for=pass> 수료 여부</LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=pass class=form-control type=text placeholder="Y/N"  value="<c:out value="${registerUser.pass}" />">
+			</DIV>
+			</DIV>
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=testscore> Test 점수</LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=testscore class=form-control type=text  value="<c:out value="${registerUser.testscore}" />">
+			</DIV>
+			</DIV>
+			<DIV class=form-group>
+			<LABEL class="col-xs-2 control-label" for=note> 비고</LABEL> 
+			<DIV class=col-lg-4>
+				<INPUT id=note class=form-control type=text placeholder=""  value="<c:out value="${registerUser.note}" />">
+			</DIV>
+			</DIV>
+			
+			<div align="center">
+			<button class="btn btn-lg btn-primary btn-block" type="submit" style="display:inline;width:100px;margin:20px">확인</button>
+			<button class="btn btn-lg btn-primary btn-block" onclick="history.back();" style="display:inline;width:100px;margin:20px">취소</button>
+			</div>
+		</form>

@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 	<h2>User Info</h2>
-	<div class="container" >
 		<form class=form-horizontal action="/education/jobedu/UserDetail" method="post" >
 			<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=uid> 사번 </LABEL> 
@@ -46,4 +45,3 @@
 			<button class="btn btn-lg btn-primary btn-block" onclick="history.back();" style="display:inline;width:100px;margin:20px">취소</button>
 			</div>
 		</form>
-	</div>
