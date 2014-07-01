@@ -18,7 +18,7 @@
 	}
 </script>
 
-	<h2>UserList_Lecture</h2>
+	<h2>강좌 수강생 관리</h2>
 
 	<table class="table table-hover">
 		 <tr>
@@ -29,6 +29,7 @@
             <td>수료여부</td>
             <td>TEST점수</td>
             <td>비고</td>
+            <td>수강생 삭제</td>
         </tr> 
 		<c:forEach var="registerUser" items="${RegistrationUserList}">
             <tr>
@@ -39,8 +40,9 @@
                 <td><c:out value="${registerUser.pass}" /></td>
                 <td><c:out value="${registerUser.testscore}" /></td>
                 <td><c:out value="${registerUser.note}" /></td>
+                <td><button class="btn btn-danger" style="width:100px"onclick="fncDelUser('<c:out value="${registerUser.user_id}" />','<c:out value="${registerUser.lecture_id}" />')">삭제</button></td>
             </tr>
         </c:forEach>
     </table>
-    <button align="center" class="btn btn-lg btn-primary btn-block" style="width:100px"onclick="fncDelUser('<c:out value="${registerUser.user_id}" />','<c:out value="${registerUser.lecture_id}" />')">삭제</button>
+    
 	

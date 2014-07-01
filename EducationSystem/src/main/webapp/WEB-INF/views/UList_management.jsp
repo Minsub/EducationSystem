@@ -22,7 +22,7 @@
 </script>
 
 
-	<h2>UList_management</h2>
+	<h2>사용자 관리</h2>
 	
 	<form class="form-inline" name="uSearch" method="post" action="">
 		<input type="hidden" name="uid" id="uid" value="">
@@ -42,7 +42,7 @@
 				<option value="차장">차장</option>
 				<option value="부장">부장</option>
 			</select></td>	
-			<td><button class="btn btn-lg btn-primary btn-block" onclick="fncGetList()"  style="width:70px;">검색</button></td>
+			<td><button class="btn btn-primary" onclick="fncGetList()"  style="width:70px;margin:10px">검색</button></td>
 		</table>
 	<br><br>
 		
@@ -69,6 +69,6 @@
 	        </c:forEach>
 	    </table>
 	</form>
-	<div align="left"><button class="btn btn-lg btn-primary btn-block" onclick="fncPopup()" style="width:100px;">생성</button></div>
+	<div align="left"><button class="btn btn-primary" onclick="fncPopup()" style="width:100px;">생성</button></div>
 </body>
 </html>

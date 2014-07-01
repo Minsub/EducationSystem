@@ -17,7 +17,7 @@
 	}
 </script>
 
-	<h2>LList_standby</h2>
+	<h2>요청중인 강좌</h2>
 	
 	<form class="form-inline" name="uSearch" method="post" action="">
 			
@@ -27,7 +27,7 @@
 	            <td>강좌명</td>
 				<td>강사이름</td>
 				<td>기간</td>
-				<td>삭제</td>
+				<td>승인거부</td>
 	        </tr> 
 			<c:forEach var="lectureUser" items="${lectureUserList}">
 	            <tr>
@@ -35,7 +35,7 @@
 	 <!--           <a href="/education/jobedu/makeLectureAdmin" onClick="fncGetADM('<c:out value="${lectureUser.lid}" />')"><c:out value="${lectureUser.lname}" /></a></td>   --> 
 	                <td><c:out value="${lectureUser.uname}" /></td> 
 	                <td><c:out value="${lectureUser.days}" /></td>
-	                <td><button class="btn btn-lg btn-primary btn-block" onclick="fncDel('<c:out value="${lectureUser.lid}" />')" style="width:60px;">삭제</button></td>
+	                <td><button class="btn btn-primary" onclick="fncDel('<c:out value="${lectureUser.lid}" />')" style="width:60px;">삭제</button></td>
 	            </tr>   
 	        </c:forEach>
 	    </table>

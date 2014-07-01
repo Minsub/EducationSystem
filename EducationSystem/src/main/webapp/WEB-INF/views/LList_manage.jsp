@@ -25,7 +25,7 @@
 	
 </script>
 
-	<h2>LList_management</h2>
+	<h2>강좌 관리</h2>
 	<form class="form-inline" name="uSearch" method="post" action="">
 			<input type="hidden" name="lid" id="lid" value="">
 			<!-- 검색조건 리스트 -->
@@ -55,7 +55,7 @@
 		        </select>
 		    </DIV>
 			</td>
-			<td><button class="btn btn-lg btn-primary btn-block" onClick="fncLecSearch()" style="width:70px; display:inline;">검색</button></td>
+			<td><button class="btn btn-primary" onClick="fncLecSearch()" style="width:70px; display:inline;">검색</button></td>
 			</tr>
 			</table>
 	</form>

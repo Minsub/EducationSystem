@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-	<h2>User Info</h2>
+	<h2>사용자 정보</h2>
 		<form class=form-horizontal action="/education/jobedu/UserDetail" method="post" >
 			<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=uid> 사번 </LABEL> 
@@ -41,7 +41,7 @@
 			</DIV>
 			
 			<div align="center">
-			<button class="btn btn-lg btn-primary btn-block" type="submit" style="display:inline;width:100px;margin:20px">확인</button>
-			<button class="btn btn-lg btn-primary btn-block" onclick="history.back();" style="display:inline;width:100px;margin:20px">취소</button>
+			<button class="btn btn-primary" type="submit" style="display:inline;width:100px;margin:20px">확인</button>
+			<button class="btn btn-danger" onclick="history.back();" style="display:inline;width:100px;margin:20px">취소</button>
 			</div>
 		</form>

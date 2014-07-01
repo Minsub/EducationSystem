@@ -13,7 +13,7 @@
 	
 </script>
 
-	<h2>User Info in Lecture</h2>
+	<h2>강좌 수강생 정보</h2>
 	
 	<form class=form-horizontal action="/education/jobedu/UserInfoInLecture" method="post" >
 			<DIV class=form-group>	
@@ -64,7 +64,7 @@
 			</DIV>
 			
 			<div align="center">
-			<button class="btn btn-lg btn-primary btn-block" type="submit" style="display:inline;width:100px;margin:20px">확인</button>
-			<button class="btn btn-lg btn-primary btn-block" onclick="history.back();" style="display:inline;width:100px;margin:20px">취소</button>
+			<button class="btn btn-primary" type="submit" style="display:inline;width:100px;margin:20px">확인</button>
+			<button class="btn btn-danger" onclick="history.back();" style="display:inline;width:100px;margin:20px">취소</button>
 			</div>
 		</form>
