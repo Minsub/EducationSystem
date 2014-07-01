@@ -49,7 +49,7 @@ $(document).ready(function(){
 });
 </script>
 
-	<h2>LList_register</h2>
+	<h2>수강 등록</h2>
 	
 	<div>
 		<table class="table table-hover">

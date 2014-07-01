@@ -24,7 +24,7 @@ function checkResultCode(){
 window.onload=checkResultCode;
 </script>
 
-	<h2>MakeLecture_STD</h2>
+	<h2>강좌개설 신청 (수강생용)</h2>
 	
 <DIV>
 	<form role=form class=form-horizontal action="/education/jobedu/makeLectureStd" method="post">
@@ -38,7 +38,7 @@ window.onload=checkResultCode;
 		
 		<DIV class="form-group date">
         	<LABEL class="col-xs-2 control-label" for=YMD_STD> 시작날짜 </LABEL> 
-			<DIV class=col-lg-3>
+			<DIV class="col-lg-3">
 				<div class="input-group date">
 		            <input type="text" class="form-control">
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -48,7 +48,7 @@ window.onload=checkResultCode;
 		
         <DIV class="form-group date">
         	<LABEL class="col-xs-2 control-label" for=YMD_END> 종료날짜 </LABEL> 
-			<DIV class=col-lg-3>
+			<DIV class="col-lg-3">
 				<div class="input-group date">
 		            <input type="text" class="form-control">
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -132,7 +132,7 @@ window.onload=checkResultCode;
 	-->
 <script>
     $('.input-group.date').datepicker({
-        format: "yyyymmdd",
+        format: "yyyy-mm-dd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",
@@ -141,7 +141,7 @@ window.onload=checkResultCode;
     });
     
     $('.form-group.date').datepicker({
-        format: "yyyymmdd",
+        format: "yyyy-mm-dd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",

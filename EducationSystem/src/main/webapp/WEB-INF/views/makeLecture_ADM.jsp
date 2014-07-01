@@ -6,7 +6,7 @@
 <link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 		
-<h2>강좌 개설</h2>
+<h2>강좌 개설 (관리자용)</h2>
 
 <div>
 	<form role=form class=form-horizontal action="/education/jobedu/makeLectureAdmin" method="post">	
@@ -107,7 +107,7 @@
 		
 <script>
     $('.input-group.date').datepicker({
-        format: "yyyymmdd",
+        format: "yyyy-mm-dd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",
@@ -116,7 +116,7 @@
     });
     
     $('.form-group.date').datepicker({
-        format: "yyyymmdd",
+        format: "yyyy-mm-dd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",

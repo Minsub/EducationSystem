@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-	<h2>LList_STD</h2>
+	<h2>수강 내역</h2>
+	<p>회원님께서 신청한 수강 내역을 확인할 수 있습니다.</p>
 	
 	<div>	
 	
