@@ -45,10 +45,10 @@
 			</td>
 			<td>강좌명</td>
 			<td><input type="text" class="form-control" name="lname"  style="display:inline;"></td>
-			<td>교육타입</td>
+			<td>교육대상</td>
 			<td>
 			<DIV class=col-lg-6>
-				<select id="ltype">
+				<select name="utype">
 					<option value=""></option>
 			        <option value="Normal">Normal</option>
 			        <option value="Developer">Developer</option>

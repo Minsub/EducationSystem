@@ -77,16 +77,9 @@
 		<!-- select 확인 필요 -->
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=place> 장소 </LABEL> 
-			<DIV class=col-lg-6>
-				<select id="place" value="<c:out value="${lecture.place}" />">
-			        <option>E601</option>
-			        <option>E602</option>
-			        <option>E603</option>
-			        <option>E604</option>
-			        <option>E302</option>
-		        </select>
-		        
-		        <!-- <INPUT id=place class=form-control type=text placeholder="장소"> -->
+			
+			<DIV class=col-lg-3>
+				<INPUT id="place" class="form-control" type="text" placeholder="교육 장소" value="<c:out value="${lecture.place}" />">
 			</DIV>
 		</DIV>
 		
@@ -103,12 +96,11 @@
 		  	</DIV>
 		</DIV>
 		
-		<DIV class=form-group>
-			<DIV class="col-sm-offset-2 col-sm-10">
-				<button class="btn btn-primary" type="submit">Submit</button>
-				<button class="btn btn-danger" onclick="history.back();">Cancel</button>
-			</DIV>
-		</div>
+		<DIV align="center" class="col-sm-offset-2 col-sm-10">
+			<button class="btn btn-primary" type="submit" style="display:inline;width:100px;margin:10px">확인</button>
+			<button class="btn btn-danger" onclick="history.back();" style="display:inline;width:100px;margin:10px">취소</button>
+		</DIV>
+		
 
 	</FORM>
 </div>

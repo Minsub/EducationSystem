@@ -19,42 +19,48 @@
 			<DIV class=form-group>	
 			<LABEL class="col-xs-2 control-label" for=team> 소속 </LABEL> 
 			<DIV class=col-lg-2>
-				<INPUT id=team class=form-control type=text placeholder="  소속"  value="<c:out value="${registerUser.team}" />" disabled>
+				<INPUT id=team class=form-control type=text placeholder="  소속"  value="<c:out value="${RegistrationUserList.team}" />" disabled>
 		  	</DIV>
-			</DIV>
-			<DIV class=form-group>
+		  	</DIV>
+		  	<DIV class=form-group>	
 			<LABEL class="col-xs-2 control-label" for=uname> 이름 </LABEL> 
 			<DIV class=col-lg-4>
-				<INPUT id=uname class=form-control type=text placeholder="이름"  value="<c:out value="${registerUser.uname}" />" disabled>
+				<INPUT id=uname class=form-control type=text placeholder="이름"  value="<c:out value="${RegistrationUserList.uname}" />" disabled>
 			</DIV>
-			</DIV>
-			<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=rank> 직위 </LABEL> 
 			<DIV class=col-lg-4>
-				<INPUT id=rank class=form-control type=text placeholder="Y/N"  value="<c:out value="${registerUser.rank}" />">
+				<INPUT id=rank class=form-control type=text  value="<c:out value="${RegistrationUserList.rank}" />" disabled>
 			</DIV>
 			</DIV>
+			
 			<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=cancelation> 취소 여부 </LABEL> 
 			<DIV class=col-lg-4>
-				<INPUT id=cancelation class=form-control type=text placeholder="Y/N"  value="<c:out value="${registerUser.cancelation}" />">
+				<select id="cancelation" value="<c:out value="${RegistrationUserList.cancelation}" />">
+			        <option value="Y">Y</option>
+			        <option value="N">N</option>
+		        </select>
 			</DIV>
 			<LABEL class="col-xs-2 control-label" for=pass> 수료 여부</LABEL> 
 			<DIV class=col-lg-4>
-				<INPUT id=pass class=form-control type=text placeholder="Y/N"  value="<c:out value="${registerUser.pass}" />">
+				<select id="pass" value="<c:out value="${RegistrationUserList.pass}" />">
+			        <option value="Y">Y</option>
+			        <option value="N">N</option>
+		        </select>
 			</DIV>
 			</DIV>
 			<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=testscore> Test 점수</LABEL> 
 			<DIV class=col-lg-4>
-				<INPUT id=testscore class=form-control type=text  value="<c:out value="${registerUser.testscore}" />">
+				<INPUT id=testscore class=form-control type=text  value="<c:out value="${RegistrationUserList.testscore}" />">
 			</DIV>
 			</DIV>
+			
 			<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=note> 비고</LABEL> 
-			<DIV class=col-lg-4>
-				<INPUT id=note class=form-control type=text placeholder=""  value="<c:out value="${registerUser.note}" />">
-			</DIV>
+			<DIV class=col-sm-10>
+				<TEXTAREA id=note name=note class=form-control rows=4 placeholder="비고를 입력하세요." value="<c:out value="${RegistrationUserList.note}" />"></TEXTAREA>
+		  	</DIV>
 			</DIV>
 			
 			<div align="center">
