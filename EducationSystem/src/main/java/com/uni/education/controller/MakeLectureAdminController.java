@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.uni.education.utils.JUtils;
 import com.uni.education.service.LectureService;
 import com.uni.education.vo.LectureVO;
 
@@ -43,15 +44,20 @@ public class MakeLectureAdminController {
     public String processMakeLeccture(LectureVO lecture, String uname, Model model, HttpSession session) {
     	try {
     		logger.info("Call makeLectureAdmin POST");
+    		logger.debug("check parameter/ uname:" + uname);
+    		
+    		JUtils.printVO(lecture);
     		
     		LectureVO lectureTMP = lectureService.getLectureById(lecture.getLid());
     		int nResultCode = 1;
     		
     		if (lectureTMP == null) { // 새로 입력된 LECTURE
+    			logger.debug("insert New Lecture");
     			lecture.setApproval(LectureService.CODE_APPROVAL_YES);
     			nResultCode = lectureService.insertLecture(lecture, uname);
     			
     		} else { // Teacher가 생성하고 관리자가 수정하는 LECTURE
+    			logger.debug("uodate Lecture from making by Employee");
     			lecture.setApproval(LectureService.CODE_APPROVAL_YES);
     			nResultCode = lectureService.updateLecture(lecture);
     		}
