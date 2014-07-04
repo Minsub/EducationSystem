@@ -44,9 +44,9 @@ public class MakeLectureAdminController {
     public String processMakeLeccture(LectureVO lecture, String uname, Model model, HttpSession session) {
     	try {
     		logger.info("Call makeLectureAdmin POST");
+    		lecture.encording();
+    		uname = new String(uname.getBytes("8859_1"), "UTF-8");
     		logger.debug("check parameter/ uname:" + uname);
-    		
-    		JUtils.printVO(lecture);
     		
     		LectureVO lectureTMP = lectureService.getLectureById(lecture.getLid());
     		int nResultCode = 1;

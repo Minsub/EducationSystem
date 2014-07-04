@@ -36,6 +36,7 @@ public class RegistrationManagementController {
     public String processMakeLeccture(LectureUserVO lecture, Model model, HttpSession session) {
     	try {
     		logger.info("Call RegistrationManaement POST");
+    		lecture.encording();
     		String YMD_STD = lecture.getYMD_STD();
     		String YMD_END = lecture.getYMD_END();
     		String uType = lecture.getUtype();

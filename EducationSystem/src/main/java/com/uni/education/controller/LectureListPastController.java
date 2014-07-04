@@ -40,6 +40,8 @@ public class LectureListPastController {
     public String processGetList(String startDay, String endDay, String rank, Model model, HttpSession session) {
 		try {
 	        logger.debug("Call LectureListPast POST");
+	        rank = new String(rank.getBytes("8859_1"), "UTF-8");
+	        logger.debug("check parameter/ startDay:"+startDay + ", endDay:" + endDay + ", rank:" + rank);
 	        String uid = (String)session.getAttribute("uid");
 	        
 	        List<RegistrationLectureVO> list = null;

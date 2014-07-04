@@ -41,6 +41,7 @@ public class UserInfoInLectureController {
     @RequestMapping(method = RequestMethod.POST)
     public String processMakeLeccture(RegistrationVO registration, Model model, HttpSession session) {
     	logger.info("Call UserInfoInLecture POST");
+    	registration.encording();
 		String lid = registration.getLecture_id();
 		String uid = registration.getUser_id();
 		logger.debug("parameter Check/ lid:" + lid + ", uid:" + uid);

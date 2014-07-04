@@ -1,5 +1,7 @@
 package com.uni.education.vo;
 
+import java.io.UnsupportedEncodingException;
+
 public class LectureUserVO {
 	// LECTURE INFO
 	private String lid;			//강좌 고유 ID
@@ -23,6 +25,33 @@ public class LectureUserVO {
 	private String team;		//소속
 	private String rank;		//직급
 	
+	public void encording() {
+		try {
+			if (lname != null) {
+				lname = new String(lname.getBytes("8859_1"), "UTF-8");
+			}
+			if (place != null) {
+				place = new String(place.getBytes("8859_1"), "UTF-8");
+			}
+			if (institution != null) {
+				institution = new String(institution.getBytes("8859_1"), "UTF-8");
+			}
+			if (curriculum != null) {
+				curriculum = new String(curriculum.getBytes("8859_1"), "UTF-8");
+			}
+			if (uname != null) {
+				uname = new String(uname.getBytes("8859_1"), "UTF-8");
+			}
+			if (team != null) {
+				team = new String(team.getBytes("8859_1"), "UTF-8");
+			}
+			if (rank != null) {
+				rank = new String(rank.getBytes("8859_1"), "UTF-8");
+			}
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public String getLid() {
 		return lid;
