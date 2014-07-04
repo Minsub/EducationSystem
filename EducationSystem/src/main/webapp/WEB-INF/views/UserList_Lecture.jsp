@@ -19,7 +19,7 @@
 </script>
 
 	<h2>강좌 수강생 관리</h2>
-
+<form role=form class=form-horizontal action="/education/jobedu/UserListInLecture" method="post">
 	<table class="table table-hover">
 		 <tr>
             <td>소속</td>
@@ -32,6 +32,8 @@
             <td>수강생 삭제</td>
         </tr> 
 		<c:forEach var="registerUser" items="${RegistrationUserList}">
+			<input name=user_id type="hidden" value="<c:out value="${registerUser.user_id}" />">
+			<input name=lecture_id type="hidden" value="<c:out value="${registerUser.lecture_id}" />">
             <tr>
                 <td><c:out value="${registerUser.team}" /></td>
                 <td><a href="/education/jobedu/UserInfoInLecture?uid=<c:out value="${registerUser.user_id}" />"><c:out value="${registerUser.uname}" /></a></td>
@@ -40,9 +42,11 @@
                 <td><c:out value="${registerUser.pass}" /></td>
                 <td><c:out value="${registerUser.testscore}" /></td>
                 <td><c:out value="${registerUser.note}" /></td>
-                <td><button class="btn btn-danger" style="width:100px"onclick="fncDelUser('<c:out value="${registerUser.user_id}" />','<c:out value="${registerUser.lecture_id}" />')">삭제</button></td>
-            </tr>
+                <td><button class="btn btn-danger" style="width:100px" type="submit">삭제</button></td>
+  <!--               <td><button class="btn btn-danger" style="width:100px"onclick="fncDelUser('<c:out value="${registerUser.user_id}" />','<c:out value="${registerUser.lecture_id}" />')">삭제</button></td>
+   -->          </tr>
         </c:forEach>
     </table>
+</form>
     
 	

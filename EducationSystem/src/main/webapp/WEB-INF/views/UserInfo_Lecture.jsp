@@ -7,7 +7,7 @@
 	function fncModifyUser(uId, lid) {
 		document.getElementsById('user_id').value=uId;
 		document.getElementsById('lecture_id').value=lId;
-		document.uSearch.action="education/jobedu/UserDetail";
+		document.uSearch.action="education/jobedu/UserInfoInLecture";
 		document.uSearch.submit();
 	}
 	
@@ -15,7 +15,9 @@
 
 	<h2>강좌 수강생 정보</h2>
 	
-	<form class=form-horizontal action="/education/jobedu/UserInfoInLecture" method="post" >
+	<form role=form class=form-horizontal action="/education/jobedu/UserInfoInLecture" method="post" >
+		<INPUT name=user_id type=hidden value="<c:out value="${RegistrationUserList.user_id}" />">
+		<INPUT name=lecture_id type=hidden value="<c:out value="${RegistrationUserList.lecture_id}" />">
 			<DIV class=form-group>	
 			<LABEL class="col-xs-2 control-label" for=team> 소속 </LABEL> 
 			<DIV class=col-lg-2>
@@ -64,7 +66,7 @@
 			</DIV>
 			
 			<div align="center">
-			<button class="btn btn-primary" type="submit" style="display:inline;width:100px;margin:20px">확인</button>
-			<button class="btn btn-danger" onclick="history.back();" style="display:inline;width:100px;margin:20px">취소</button>
+				<button class="btn btn-primary" type="submit" style="display:inline;width:100px;margin:20px">확인</button>
+				<button class="btn btn-danger" onclick="history.back();" style="display:inline;width:100px;margin:20px">취소</button>
 			</div>
-		</form>
+	</form>

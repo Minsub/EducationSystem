@@ -13,12 +13,12 @@
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=lname> 강좌명 </LABEL> 
 			<DIV class=col-lg-4>
-				<INPUT id=lname class=form-control type=text placeholder="강좌명" value="<c:out value="${lecture.lname}" />">
+				<INPUT name=lname class=form-control type=text placeholder="강좌명" value="<c:out value="${lecture.lname}" />">
 			</DIV>
 			
 			<LABEL class="col-xs-2 control-label" for=credit> 학점 </LABEL> 
 			<DIV class=col-lg-2>
-				<INPUT id=credit class=form-control type=text placeholder="  학점" value="<c:out value="${lecture.credit}" />">
+				<INPUT name=credit class=form-control type=text placeholder="  학점" value="<c:out value="${lecture.credit}" />">
 		  	</DIV>
 		</DIV>
 		
@@ -26,7 +26,7 @@
         	<LABEL class="col-xs-2 control-label" for=YMD_STD> 시작날짜 </LABEL> 
 			<DIV class=col-lg-3>
 				<div class="input-group date">
-		            <input id="YMD_STD" type="text" class="form-control" value="<c:out value="${lecture.YMD_STD}" />">
+		            <input name="YMD_STD" type="text" class="form-control" value="<c:out value="${lecture.YMD_STD}" />">
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 		        </div>
 	        </div>
@@ -36,7 +36,7 @@
         	<LABEL class="col-xs-2 control-label" for=YMD_END> 종료날짜 </LABEL> 
 			<DIV class=col-lg-3>
 				<div class="input-group date">
-		            <input id="YMD_END" type="text" class="form-control" value="<c:out value="${lecture.YMD_END}" />">
+		            <input name="YMD_END" type="text" class="form-control" value="<c:out value="${lecture.YMD_END}" />">
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 		        </div>
 	        </div>
@@ -45,7 +45,7 @@
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=uname> 강사 이름 </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id=lname class=form-control type=text placeholder="강사 이름을 입력하세요." >
+				<INPUT name=lname class=form-control type=text placeholder="강사 이름을 입력하세요." >
 		  	</DIV>
 		  	
 		  	<LABEL class="col-xs-2 control-label" for=radio> 강사 소속 </LABEL> 
@@ -58,19 +58,19 @@
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=times> 시작~종료시간 </LABEL> 
 			<DIV class=col-lg-6>
-				<INPUT id="times" class="form-control" type="text" placeholder="시작~종료시간">
+				<INPUT name="times" class="form-control" type="text" placeholder="시작~종료시간">
 			</DIV>
 		</DIV>
 
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=days> 기간 (일) </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id="days" class="form-control" type="text" placeholder="기간 (일)" value="<c:out value="${lecture.days}" />">
+				<INPUT name="days" class="form-control" type="text" placeholder="기간 (일)" value="<c:out value="${lecture.days}" />">
 			</DIV>
 			
 			<LABEL class="col-sm-2 control-label" for=hours> 기간 (시간) </LABEL> 
 			<DIV class=col-lg-3>
-				<INPUT id="hours" class="form-control" type="text" placeholder="기간 (시간)" value="<c:out value="${lecture.hours}" />">
+				<INPUT name="hours" class="form-control" type="text" placeholder="기간 (시간)" value="<c:out value="${lecture.hours}" />">
 			</DIV>
 		</DIV>
 		
@@ -79,20 +79,20 @@
 			<LABEL class="col-sm-2 control-label" for=place> 장소 </LABEL> 
 			
 			<DIV class=col-lg-3>
-				<INPUT id="place" class="form-control" type="text" placeholder="교육 장소" value="<c:out value="${lecture.place}" />">
+				<INPUT name="place" class="form-control" type="text" placeholder="교육 장소" value="<c:out value="${lecture.place}" />">
 			</DIV>
 		</DIV>
 		
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=target> 교육 대상 </LABEL> 
 			<DIV class=col-lg-6>
-				<INPUT id="target" class="form-control" type="text" placeholder="교육 대상" value="<c:out value="${lecture.target}" />">
+				<INPUT name="target" class="form-control" type="text" placeholder="교육 대상" value="<c:out value="${lecture.target}" />">
 			</DIV>
 		</DIV>
     	<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=inputPassword3> 커리큘럼 Description <CODE>rows</CODE> </LABEL> 
 			<DIV class=col-sm-10>
-				<TEXTAREA id="curriculum" class="form-control" rows="3" placeholder="커리큘럼을 입력하세요." value="<c:out value="${lecture.curriculum}" />"></TEXTAREA>
+				<TEXTAREA name="curriculum" class="form-control" rows="3" placeholder="커리큘럼을 입력하세요." value="<c:out value="${lecture.curriculum}" />"></TEXTAREA>
 		  	</DIV>
 		</DIV>
 		
