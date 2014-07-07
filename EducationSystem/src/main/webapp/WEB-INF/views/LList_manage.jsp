@@ -50,8 +50,8 @@
 			<DIV class=col-lg-6>
 				<select name="ltype">
 					<option value=""></option>
-			        <option value="내부">내부</option>
-			        <option value="외부">외부</option>
+			        <option value="IN">내부</option>
+			        <option value="OUT">외부</option>
 		        </select>
 		    </DIV>
 			</td>
@@ -65,6 +65,7 @@
             <td>강좌명</td>
 			<td>일 수</td>
 			<td>교육대상</td>
+			<td>강의타입</td>
 			<td>강사이름</td>
 			<td>날짜</td>
         </tr> 
@@ -73,6 +74,7 @@
                 <td><a href="/education/jobedu/UserListInLecture?lid=<c:out value="${lecture.lid}"/>"><c:out value="${lecture.lname}" /></a></td>
                 <td><c:out value="${lecture.days}" /></td>
                 <td><c:out value="${lecture.target}" /></td>
+                <td><c:out value="${lecture.ltype}" /></td>
                 <td><c:out value="${lecture.teacherID}" /></td>
                 <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
             </tr>   

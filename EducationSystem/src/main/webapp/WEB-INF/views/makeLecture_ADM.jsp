@@ -49,10 +49,10 @@
 				<INPUT id=uname name=uname class=form-control type=text placeholder="강사 이름을 입력하세요." >
 		  	</DIV>
 		  	
-		  	<LABEL class="col-xs-2 control-label" for=radio> 강사 소속 </LABEL> 
+		  	<LABEL class="col-xs-2 control-label" for=ltype> 강사 소속 </LABEL> 
 			<DIV class=col-lg-3>
-				<label class="radio-inline"><input type="radio" name="radio" id="ltype" value="i">내부</label>
-				<label class="radio-inline"><input type="radio" name="radio" id="ltype" value="e">외부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="IN">내부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="OUT">외부</label>
 			</DIV>
 		</DIV>
 				
