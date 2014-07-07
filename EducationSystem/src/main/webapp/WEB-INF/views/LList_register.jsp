@@ -109,7 +109,7 @@ $(document).ready(function(){
 							    </div>
 							    
 							    <!-- Modal HTML -->
-							    <div id="registerSuccessModal" class="modal fade">
+							    <div id="registerSuccessModal" name="registerSuccessModal" class="modal fade">
 							        <div class="modal-dialog">
 							            <div class="modal-content">
 							                <div class="modal-header">
@@ -117,8 +117,27 @@ $(document).ready(function(){
 							                    <h4 class="modal-title">Confirmation</h4>
 							                </div>
 							                <div class="modal-body">
-							                    <p>신청 성공!</p>
-							                    <p class="text-warning"><small>수강 내역 페이지에서 신청 과목을 확인하세요.</small></p>
+							                    <p>처리가 성공하였습니다!</p>
+							                    <p class="text-warning"><small>수강 내역 페이지에서 신청 내역을 확인하세요.</small></p>
+							                </div>
+							                <div class="modal-footer">
+							                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    <!-- Modal HTML -->
+							    <div id="registerFailModal" name="registerFailModal" class="modal fade">
+							        <div class="modal-dialog">
+							            <div class="modal-content">
+							                <div class="modal-header">
+							                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							                    <h4 class="modal-title">Confirmation</h4>
+							                </div>
+							                <div class="modal-body">
+							                    <p>처리가 실패하였습니다!</p>
+							                    <p class="text-warning"><small>정상적으로 동작을 완료할 수 없습니다.</small></p>
 							                </div>
 							                <div class="modal-footer">
 							                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
@@ -161,7 +180,7 @@ $(document).ready(function(){
 							    </div>
 							    
 							    <!-- Modal HTML -->
-							    <div id="registerFailModal" class="modal fade">
+							    <div id="registerSuccessModal" name="registerSuccessModal" class="modal fade">
 							        <div class="modal-dialog">
 							            <div class="modal-content">
 							                <div class="modal-header">
@@ -169,8 +188,27 @@ $(document).ready(function(){
 							                    <h4 class="modal-title">Confirmation</h4>
 							                </div>
 							                <div class="modal-body">
-							                    <p>신청 실패!</p>
-							                    <p class="text-warning"><small>이미 신청한 강좌입니다.</small></p>
+							                    <p>처리가 성공하였습니다!</p>
+							                    <p class="text-warning"><small>수강 내역 페이지에서 신청 내역을 확인하세요.</small></p>
+							                </div>
+							                <div class="modal-footer">
+							                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    <!-- Modal HTML -->
+							    <div id="registerFailModal" name="registerFailModal" class="modal fade">
+							        <div class="modal-dialog">
+							            <div class="modal-content">
+							                <div class="modal-header">
+							                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							                    <h4 class="modal-title">Confirmation</h4>
+							                </div>
+							                <div class="modal-body">
+							                    <p>처리가 실패하였습니다!</p>
+							                    <p class="text-warning"><small>정상적으로 동작을 완료할 수 없습니다.</small></p>
 							                </div>
 							                <div class="modal-footer">
 							                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
