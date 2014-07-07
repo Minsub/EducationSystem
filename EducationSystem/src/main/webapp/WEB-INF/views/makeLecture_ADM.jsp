@@ -91,7 +91,7 @@
 			</DIV>
 		</DIV>
     	<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=inputPassword3> 커리큘럼 Description <CODE>rows</CODE> </LABEL> 
+			<LABEL class="col-sm-2 control-label" for=inputPassword3> 커리큘럼 Description </LABEL> 
 			<DIV class=col-sm-10>
 				<TEXTAREA id=curriculum name="curriculum" class="form-control" rows="3" placeholder="커리큘럼을 입력하세요." value="<c:out value="${lecture.curriculum}" />"></TEXTAREA>
 		  	</DIV>
