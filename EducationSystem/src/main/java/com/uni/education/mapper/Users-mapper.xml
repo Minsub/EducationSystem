@@ -22,7 +22,7 @@
     </where>
   </select>
 
-	<update id="updateByDynamic" parameterType="com.uni.education.vo.UserVO">
+	<update id="updateDynamic" parameterType="com.uni.education.vo.UserVO">
 		UPDATE users
 		<set>
 			<if test="pw != null and pw != ''"> pw = #{pw}</if>
