@@ -4,21 +4,12 @@
 
 <script type="text/javascript">
 
-//	function fncGetDetail(userId){
-//		document.getElementsById('uid').value=userId;
-//		document.uSearch.action="/education/jobedu/UserDetail";
-//		document.uSearch.submit();
-//	}
 	
 	function fncGetList(){
 		document.uSearch.action="/education/jobedu/UserManagement";
 		document.uSearch.submit();
 	}
 
-	function fncPopup(){
-		var url = "/education/jobedu/UserDetail";
-		window.open(url, "popup1", "left=70,top=70, width=400,height=588, toolbar=no, menubar=no, scrollbars=no, resizable=no");
-	}
 </script>
 
 
@@ -69,6 +60,8 @@
 	        </c:forEach>
 	    </table>
 	</form>
-	<div align="left"><button class="btn btn-primary" onclick="fncPopup()" style="width:100px;">생성</button></div>
+	<div align="left"><a href="/education/jobedu/UserDetail">
+	<button class="btn btn-primary" style="width:100px;">생성</button>
+	</a></div>
 </body>
 </html>

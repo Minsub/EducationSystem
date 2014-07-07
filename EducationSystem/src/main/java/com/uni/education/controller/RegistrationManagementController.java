@@ -39,9 +39,9 @@ public class RegistrationManagementController {
     		lecture.encording();
     		String YMD_STD = lecture.getYMD_STD();
     		String YMD_END = lecture.getYMD_END();
-    		String uType = lecture.getUtype();
+    		String lType = lecture.getLtype();
     		String lName = lecture.getLname();
-    		logger.debug("parameter Check/ YMD_STD:" + YMD_STD + ", YMD_END:" + YMD_END + ", utype:" + uType + ", lname:" + lName);
+    		logger.debug("parameter Check/ YMD_STD:" + YMD_STD + ", YMD_END:" + YMD_END + ", lType:" + lType + ", lname:" + lName);
     		
     		List<LectureUserVO> list = lectureService.getLectureUsersForManaging(lecture);
     		

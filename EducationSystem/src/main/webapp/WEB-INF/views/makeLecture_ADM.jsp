@@ -10,6 +10,7 @@
 
 <div>
 	<form role=form class=form-horizontal action="/education/jobedu/makeLectureAdmin" method="post">	
+		<INPUT id=lid name=lid class=form-control type=hidden value="<c:out value="${lecture.lid}" />">
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=lname> 강좌명 </LABEL> 
 			<DIV class=col-lg-4>

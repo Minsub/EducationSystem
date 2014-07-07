@@ -45,13 +45,13 @@
 			</td>
 			<td>강좌명</td>
 			<td><input type="text" class="form-control" name="lname"  style="display:inline;"></td>
-			<td>교육대상</td>
+			<td>강의타입</td>
 			<td>
 			<DIV class=col-lg-6>
-				<select name="utype">
+				<select name="ltype">
 					<option value=""></option>
-			        <option value="Normal">Normal</option>
-			        <option value="Developer">Developer</option>
+			        <option value="내부">내부</option>
+			        <option value="외부">외부</option>
 		        </select>
 		    </DIV>
 			</td>
