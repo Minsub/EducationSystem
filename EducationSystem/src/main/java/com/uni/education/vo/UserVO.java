@@ -1,5 +1,7 @@
 package com.uni.education.vo;
 
+import java.io.UnsupportedEncodingException;
+
 public class UserVO {
 	private String uid;		//사용자 고유 ID
 	private String pw;		//비밀번호
@@ -10,6 +12,21 @@ public class UserVO {
 	private String teacher;	//강사 권한 여부 (Y/N)
 	private String admin;	//관리자 권한 여부 (Y/N)
 	
+	public void encording() {
+		try {
+			if (uname != null) {
+				uname = new String(uname.getBytes("8859_1"), "UTF-8");
+			}
+			if (team != null) {
+				team = new String(team.getBytes("8859_1"), "UTF-8");
+			}
+			if (rank != null) {
+				rank = new String(rank.getBytes("8859_1"), "UTF-8");
+			}
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public String getUid() {
 		return uid;

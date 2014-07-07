@@ -1,5 +1,7 @@
 package com.uni.education.vo;
 
+import java.io.UnsupportedEncodingException;
+
 public class LectureVO {
 	private String lid;			//강좌 고유 ID
 	private String lname;		//강좌이름
@@ -16,6 +18,25 @@ public class LectureVO {
 	private String institution;	//외부교육일 경우, 교육기관 이름
 	private String curriculum;	//커리큘럼
 	private String approval;	//"개설 완료 여부 (Y/N) (강사가 신청중인 강좌거나, 관라자가 수정중이면 N)"
+	
+	public void encording() {
+		try {
+			if (lname != null) {
+				lname = new String(lname.getBytes("8859_1"), "UTF-8");
+			}
+			if (place != null) {
+				place = new String(place.getBytes("8859_1"), "UTF-8");
+			}
+			if (institution != null) {
+				institution = new String(institution.getBytes("8859_1"), "UTF-8");
+			}
+			if (curriculum != null) {
+				curriculum = new String(curriculum.getBytes("8859_1"), "UTF-8");
+			}
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public String getLid() {
 		return lid;

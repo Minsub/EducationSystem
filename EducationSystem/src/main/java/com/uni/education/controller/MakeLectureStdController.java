@@ -32,6 +32,9 @@ public class MakeLectureStdController {
     public String processMakeLeccture(LectureVO lecture, Model model, HttpSession session) {
     	try {
     		logger.info("Call makeLectureStd POST");
+    		lecture.encording();
+    		
+    		logger.debug("check parameter/ lname:" + lecture.getLname());
     		lecture.setTeacherID((String)(session.getAttribute("uid")));
     		
         	int nResultCode = lectureService.insertLectureForTeacher(lecture);

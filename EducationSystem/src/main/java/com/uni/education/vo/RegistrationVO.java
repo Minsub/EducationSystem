@@ -1,5 +1,7 @@
 package com.uni.education.vo;
 
+import java.io.UnsupportedEncodingException;
+
 public class RegistrationVO {
 	private String user_id;		//사용자 ID		
 	private String lecture_id;	//강좌 ID
@@ -8,6 +10,16 @@ public class RegistrationVO {
 	private String pass;		//수료여부 (Y/N)
 	private String cancelation;	//취소여부 (Y/N)
 	private String note;		//비고 (취소사유, 결석 사유 등)
+	
+	public void encording() {
+		try {
+			if (note != null) {
+				note = new String(note.getBytes("8859_1"), "UTF-8");
+			}
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public String getUser_id() {
 		return user_id;

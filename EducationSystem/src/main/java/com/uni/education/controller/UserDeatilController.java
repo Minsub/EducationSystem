@@ -40,6 +40,7 @@ public class UserDeatilController {
     public String processMakeLeccture(UserVO user, Model model, HttpSession session) {
     	try {
     		logger.info("Call UserDetail POST");
+    		user.encording();
     		
     		UserVO userTmp = userService.getUserByUID(user.getUid());
     		int nResultCode = 0;
