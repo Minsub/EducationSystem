@@ -41,7 +41,7 @@ window.onload=checkResultCode;
         	<LABEL class="col-xs-2 control-label" for=YMD_STD> 시작날짜 </LABEL> 
 			<DIV class="col-lg-3">
 				<div class="input-group date">
-		            <input type="text" class="form-control">
+		            <input id="YMD_STD" name="YMD_STD" type="text" class="form-control">
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 		        </div>
 	        </div>
@@ -51,7 +51,7 @@ window.onload=checkResultCode;
         	<LABEL class="col-xs-2 control-label" for=YMD_END> 종료날짜 </LABEL> 
 			<DIV class="col-lg-3">
 				<div class="input-group date">
-		            <input type="text" class="form-control">
+		            <input id="YMD_END" name="YMD_END" type="text" class="form-control">
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 		        </div>
 	        </div>
@@ -61,9 +61,8 @@ window.onload=checkResultCode;
 		<DIV class=form-group>
 			<label class="col-xs-2 control-label" for=checkbox> 교육 대상 </label> 
 			<DIV class=col-sm-10>
-		   		<label class="radio-inline"><input type="radio" name="radio" id="radio" value="SW">직무교육</label>
-			   	<label class="radio-inline"><input type="radio" name="radio" id="radio" value="DR">그룹교육</label>
-			   	<label class="radio-inline"><input type="radio" name="radio" id="radio" value="GJ">어학교육</label>
+		   		<label class="radio-inline"><input type="radio" name="radio" id="radio" value="DEV">Developer</label>
+			   	<label class="radio-inline"><input type="radio" name="radio" id="radio" value="NOR">Normal</label>
 		  	</DIV>
 		</DIV>
 		
@@ -133,7 +132,7 @@ window.onload=checkResultCode;
 	-->
 <script>
     $('.input-group.date').datepicker({
-        format: "yyyy-mm-dd",
+        format: "yyyymmdd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",
@@ -142,7 +141,7 @@ window.onload=checkResultCode;
     });
     
     $('.form-group.date').datepicker({
-        format: "yyyy-mm-dd",
+        format: "yyyymmdd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",

@@ -108,7 +108,7 @@
 		
 <script>
     $('.input-group.date').datepicker({
-        format: "yyyy-mm-dd",
+        format: "yyyymmdd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",
@@ -117,7 +117,7 @@
     });
     
     $('.form-group.date').datepicker({
-        format: "yyyy-mm-dd",
+        format: "yyyymmdd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",
