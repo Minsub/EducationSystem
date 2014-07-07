@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.uni.education.utils.JUtils;
 import com.uni.education.service.LectureService;
 import com.uni.education.vo.LectureVO;
 
@@ -33,7 +34,7 @@ public class MakeLectureStdController {
     	try {
     		logger.info("Call makeLectureStd POST");
     		lecture.encording();
-    		
+    	
     		logger.debug("check parameter/ lname:" + lecture.getLname());
     		lecture.setTeacherID((String)(session.getAttribute("uid")));
     		

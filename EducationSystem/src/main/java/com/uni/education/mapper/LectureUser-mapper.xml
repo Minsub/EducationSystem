@@ -6,7 +6,7 @@
 <mapper namespace="LectureUser">
   
   <select id="selectDynamic" resultType="com.uni.education.vo.LectureUserVO">
-    SELECT * FROM lectures A INNER JOIN users B ON A.teacherid = B.uid
+    SELECT * FROM lectures A LEFT OUTER JOIN users B ON A.teacherid = B.uid
     <where>
     	<if test="lid != null and lid != ''">lid = #{lid}</if>
 		<if test="lname != null and lname != ''"> AND lname = #{lname}</if>
