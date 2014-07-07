@@ -120,10 +120,14 @@
 		<DIV class=form-group>
 			<LABEL class="col-sm-2 control-label" for=inputPassword3> 수강생목록 팝업창띄우기 </LABEL> 
 			<DIV class=col-sm-10>
-				<INPUT id=inputPassword3 class=form-control type=password placeholder="강사 이름을 입력하세요.">
+				<INPUT id="" class=form-control type="text" placeholder="강사 이름을 입력하세요."
+					value="<c:forEach var="rUser" items="${RUserList}">
+						<c:out value="${rUser.uname} | " />
+				    </c:forEach>"
+			    >
 		  	</DIV>
 		</DIV>
-		
+	        
 		<DIV class=form-group>
 			<DIV class="col-sm-offset-2 col-sm-10">
 				<BUTTON class="btn btn-primary" onclick="history.back();">Go to back</BUTTON>
