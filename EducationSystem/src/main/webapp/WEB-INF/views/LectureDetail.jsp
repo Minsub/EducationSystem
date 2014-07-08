@@ -6,7 +6,7 @@
 <link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
-<h2>수강 내역</h2>
+<h2>강좌 상세 정보</h2>
 
 <div>
    	<form role=form class=form-horizontal action="/education/jobedu/registerLecture" method="post">
@@ -130,7 +130,7 @@
 	        
 		<DIV class=form-group>
 			<DIV class="col-sm-offset-2 col-sm-10">
-				<BUTTON class="btn btn-primary" href="registerLecture">Go to back</BUTTON>
+				<BUTTON class="btn btn-primary" onclick="history.back(); return false;">Go to back</BUTTON>
 			</DIV>
 		</DIV>
 		
