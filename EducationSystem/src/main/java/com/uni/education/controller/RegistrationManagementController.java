@@ -26,8 +26,10 @@ public class RegistrationManagementController {
 	private LectureService lectureService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm() {
+    public String setupForm(Model model) {
         logger.debug("Call RegistrationManaement GET");
+        List<LectureUserVO> list = lectureService.getLectureUsersForManaging(new LectureUserVO());
+		model.addAttribute("lectureUserList", list);
         return "jobedu/LList_manage";
     }
 	

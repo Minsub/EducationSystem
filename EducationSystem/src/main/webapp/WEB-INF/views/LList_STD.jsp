@@ -3,14 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 	<h2>수강 내역</h2>
-	<p>회원님께서 신청한 수강 내역을 확인할 수 있습니다.</p>
 	
 	<div>	
 	
 	<table class="table table-hover">
 		<tr>
-            <th>년</td>
-			<th>월</th>
+            <th>시작일</th>
+			<th>종료일</th>
 			<th>강좌명</th>
 			<th>강사이름</th>
 			<th>학점</th>
@@ -21,7 +20,7 @@
 		<c:forEach var="lecture" items="${RLectureList}">
             <tr>
 				<td><c:out value="${lecture.YMD_STD}" /></td>					<!-- 년 -->
-  					<td><c:out value="${lecture.YMD_STD}" /></td>				<!-- 월 -->
+  				<td><c:out value="${lecture.YMD_END}" /></td>				<!-- 월 -->
                 <td>		<!-- 강좌명 클릭하면 LectureDetail 로 이동 -->
                 	<a href="LectureDetail?lid=<c:out value="${lecture.lecture_id}"/>"><c:out value="${lecture.lname}" /></a></td><!-- 강좌명 -->
                 <td><c:out value="${lecture.uname}" /></td>		<!-- 사용자 이름 : 선생이름 -->

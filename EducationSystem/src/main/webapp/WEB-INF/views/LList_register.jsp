@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- script for modal window -->
-<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>  -->
+<!-- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>  -->
 
 <script type="text/javascript">
 
@@ -14,6 +14,7 @@ $.urlParam = function(name){
     return results[1] || 0;
 }
 function checkResultCode(){
+	showDiv();
 	var code = $.urlParam('resultCode');
 	// TODO: Insert CODE
 	if(code==0){
@@ -21,38 +22,45 @@ function checkResultCode(){
 	} else {
 		$("#registerFailModal").modal('show');
 	}
+	
 }
 window.onload=checkResultCode;
 
+
+/*
+$("#registerBtn").click(function(e){
+	//var x = $(this).attr('resultCode');
+	//var x = $.urlParam('resultCode');
+	var x =10;
+	//var x = GetURLParameter('resultCode');
+	alert(x);
+});
+*/
+
 // id속성 : #btn(수강신청) #btn1(수강삭제)
 // name속성 : button[name=registerLecture](수강신청) button[name=cancelLecture](수강삭제)
+
 $(document).ready(function(){
 	$("button[name=registerLecture]").click(function(e){
 		//모달 보이기
-		$("#myModal").modal('show');
+		var modalName = "#registerModal" + $(this).attr("id");
+		$(modalName).modal('show');
 	});
 	
 	$("button[name=cancelLecture]").click(function(e){
 		//모달 보이기
-		$("#myModal1").modal('show');
+		var modalName = "#cancelModal" + $(this).attr("id");
+		$(modalName).modal('show');
 	});
-	
-	/*
-	$("#registerBtn").click(function(e){
-		//var x = $(this).attr('resultCode');
-		//var x = $.urlParam('resultCode');
-		var x =10;
-		//var x = GetURLParameter('resultCode');
-		alert(x);
-	});
-	*/
 });
+
+
 </script>
 
 	<h2>수강 등록</h2>
 	
-	<div>
-		<table class="table table-hover">
+	<div id="headerTest">
+		<table id="TableID" class="table table-hover">
 			 <tr>
 	            <th>강좌명</th>
 				<th>날짜</th>
@@ -80,16 +88,14 @@ $(document).ready(function(){
 	                <td>
 	               		<!-- 단일 버튼에 토글 기능을 활성화 하기 위해 data-toggle="button" 을 추가 -->
 	               		<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
-	               			<input type="hidden" name="lecture_id" value="${lectureUser.lid}"/>
+	               			<input type="hidden" name="lecture_id" value="<c:out value="${lectureUser.lid}"/>"/>
 	               			<input type="hidden" name="type" value="register"/>
 							
 							<div class="bs-example">
-							    <!-- Button HTML (to Trigger Modal) -->
-							    <!-- <a href="#" id="btn" class="btn btn-primary">수강신청</a>  -->
-							    <button id="btn" name="registerLecture" type="button" class="btn btn-primary">수강신청</button>
+							    <button id="<c:out value="${lectureUser.lid}"/>" name="registerLecture" type="button" class="btn btn-primary">수강신청</button>
 							    							    
 							    <!-- Modal HTML -->
-							    <div id="myModal" class="modal fade">
+							    <div id="registerModal<c:out value="${lectureUser.lid}"/>" class="modal fade">
 							        <div class="modal-dialog">
 							            <div class="modal-content">
 							                <div class="modal-header">
@@ -109,7 +115,7 @@ $(document).ready(function(){
 							    </div>
 							    
 							    <!-- Modal HTML -->
-							    <div id="registerSuccessModal" class="modal fade">
+							    <div id="registerSuccessModal" name="registerSuccessModal" class="modal fade">
 							        <div class="modal-dialog">
 							            <div class="modal-content">
 							                <div class="modal-header">
@@ -117,8 +123,27 @@ $(document).ready(function(){
 							                    <h4 class="modal-title">Confirmation</h4>
 							                </div>
 							                <div class="modal-body">
-							                    <p>신청 성공!</p>
-							                    <p class="text-warning"><small>수강 내역 페이지에서 신청 과목을 확인하세요.</small></p>
+							                    <p>처리가 성공하였습니다!</p>
+							                    <p class="text-warning"><small>수강 내역 페이지에서 신청 내역을 확인하세요.</small></p>
+							                </div>
+							                <div class="modal-footer">
+							                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    <!-- Modal HTML -->
+							    <div id="registerFailModal" name="registerFailModal" class="modal fade">
+							        <div class="modal-dialog">
+							            <div class="modal-content">
+							                <div class="modal-header">
+							                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							                    <h4 class="modal-title">Confirmation</h4>
+							                </div>
+							                <div class="modal-body">
+							                    <p>처리가 실패하였습니다!</p>
+							                    <p class="text-warning"><small>정상적으로 동작을 완료할 수 없습니다.</small></p>
 							                </div>
 							                <div class="modal-footer">
 							                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
@@ -132,16 +157,16 @@ $(document).ready(function(){
 	                </td>
 	                <td>
 	                	<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
-	               			<input type="hidden" name="lecture_id" value="${lectureUser.lid}"/>
+	               			<input type="hidden" name="lecture_id" value="<c:out value="${lectureUser.lid}"/>"/>
 	               			<input type="hidden" name="type" value="delete"/>
 	               			
 	               			<div class="bs-example">
 							    <!-- Button HTML (to Trigger Modal) -->
 							    <!-- <a href="#" name="btn1" id="btn1" class="btn btn-danger">수강취소</a>  -->
-							    <button id="btn1" name="cancelLecture" type="button" class="btn btn-danger">수강취소</button>
+							    <button id="<c:out value="${lectureUser.lid}"/>" name="cancelLecture" type="button" class="btn btn-danger">수강취소</button>
 							    
 							    <!-- Modal HTML -->
-							    <div id="myModal1" class="modal fade">
+							    <div id="cancelModal<c:out value="${lectureUser.lid}"/>" class="modal fade">
 							        <div class="modal-dialog">
 							            <div class="modal-content">
 							                <div class="modal-header">
@@ -161,7 +186,7 @@ $(document).ready(function(){
 							    </div>
 							    
 							    <!-- Modal HTML -->
-							    <div id="registerFailModal" class="modal fade">
+							    <div id="registerSuccessModal" name="registerSuccessModal" class="modal fade">
 							        <div class="modal-dialog">
 							            <div class="modal-content">
 							                <div class="modal-header">
@@ -169,8 +194,27 @@ $(document).ready(function(){
 							                    <h4 class="modal-title">Confirmation</h4>
 							                </div>
 							                <div class="modal-body">
-							                    <p>신청 실패!</p>
-							                    <p class="text-warning"><small>이미 신청한 강좌입니다.</small></p>
+							                    <p>처리가 성공하였습니다!</p>
+							                    <p class="text-warning"><small>수강 내역 페이지에서 신청 내역을 확인하세요.</small></p>
+							                </div>
+							                <div class="modal-footer">
+							                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    <!-- Modal HTML -->
+							    <div id="registerFailModal" name="registerFailModal" class="modal fade">
+							        <div class="modal-dialog">
+							            <div class="modal-content">
+							                <div class="modal-header">
+							                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							                    <h4 class="modal-title">Confirmation</h4>
+							                </div>
+							                <div class="modal-body">
+							                    <p>처리가 실패하였습니다!</p>
+							                    <p class="text-warning"><small>정상적으로 동작을 완료할 수 없습니다.</small></p>
 							                </div>
 							                <div class="modal-footer">
 							                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>

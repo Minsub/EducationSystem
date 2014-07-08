@@ -25,8 +25,10 @@ public class UserManagementController {
 	private UserService userService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm(String lid, Model model) {
+    public String setupForm(Model model) {
         logger.debug("Call UserManagement GET");
+        List<UserVO> list = userService.getUsers(new UserVO());
+		model.addAttribute("userList", list);
     	return "jobedu/UList_management";
     }
 	

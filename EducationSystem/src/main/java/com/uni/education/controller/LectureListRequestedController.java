@@ -29,6 +29,7 @@ public class LectureListRequestedController {
 		logger.debug("Call LectureListRequested GET");   
 		
 		List<LectureUserVO> list = lectureService.getLecturesRequested();
+		logger.debug("result from DB / size:" + list.size());   
 		model.addAttribute("lectureUserList", list);
 		
         return "jobedu/LList_standby";

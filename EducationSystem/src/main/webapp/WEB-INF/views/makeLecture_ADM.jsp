@@ -5,7 +5,25 @@
 <!-- for datepicker -->
 <link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-		
+
+<script type="text/javascript">
+// redirect 이후, resultCode 에 따라 modal 창 선택하여 출력
+$.urlParam = function(name){
+    var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+    return results[1] || 0;
+}
+function checkResultCode(){
+	var code = $.urlParam('resultCode');
+	// TODO: Insert CODE
+	if(code==0){
+		$("#registerSuccessModal").modal('show');
+	} else {
+		$("#registerFailModal").modal('show');
+	}
+}
+window.onload=checkResultCode;
+</script>
+
 <h2>강좌 개설 (관리자용)</h2>
 
 <div>
@@ -51,8 +69,8 @@
 		  	
 		  	<LABEL class="col-xs-2 control-label" for=ltype> 강사 소속 </LABEL> 
 			<DIV class=col-lg-3>
-				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="IN">내부</label>
-				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="OUT">외부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="내부">내부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="외부">외부</label>
 			</DIV>
 		</DIV>
 				
@@ -85,30 +103,69 @@
 		</DIV>
 		
 		<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=target> 교육 대상 </LABEL> 
-			<DIV class=col-lg-6>
-				<INPUT id=target name="target" class="form-control" type="text" placeholder="교육 대상" value="<c:out value="${lecture.target}" />">
-			</DIV>
+			<label class="col-xs-2 control-label" for=checkbox> 교육 대상 </label> 
+			<DIV class=col-sm-10>
+		   		<label class="radio-inline"><input type="radio" name="radio" id="radio" value="Developer">Developer</label>
+			   	<label class="radio-inline"><input type="radio" name="radio" id="radio" value="Normal">Normal</label>
+		  	</DIV>
 		</DIV>
+		
     	<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=inputPassword3> 커리큘럼 Description <CODE>rows</CODE> </LABEL> 
+			<LABEL class="col-sm-2 control-label" for=inputPassword3> 커리큘럼 Description </LABEL> 
 			<DIV class=col-sm-10>
 				<TEXTAREA id=curriculum name="curriculum" class="form-control" rows="3" placeholder="커리큘럼을 입력하세요." value="<c:out value="${lecture.curriculum}" />"></TEXTAREA>
 		  	</DIV>
 		</DIV>
 		
 		<DIV align="center" class="col-sm-offset-2 col-sm-10">
-			<button class="btn btn-primary" type="submit" style="display:inline;width:100px;margin:10px">확인</button>
+			<button name="submitLectureStd" class="btn btn-primary" type="submit" style="display:inline;width:100px;margin:10px">확인</button>
 			<button class="btn btn-danger" onclick="history.back();" style="display:inline;width:100px;margin:10px">취소</button>
+			
+			<!-- Modal HTML -->
+		    <div id="registerSuccessModal" class="modal fade">
+		        <div class="modal-dialog">
+		            <div class="modal-content">
+		                <div class="modal-header">
+		                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                    <h4 class="modal-title">Confirmation</h4>
+		                </div>
+		                <div class="modal-body">
+		                    <p>신청 성공!</p>
+		                    <p class="text-warning"><small>'요청중인 강좌' 메뉴에서 확인할 수 있습니다.</small></p>
+		                </div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    
+		    <!-- Modal HTML -->
+		    <div id="registerFailModal" class="modal fade">
+		        <div class="modal-dialog">
+		            <div class="modal-content">
+		                <div class="modal-header">
+		                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                    <h4 class="modal-title">Confirmation</h4>
+		                </div>
+		                <div class="modal-body">
+		                    <p>신청 실패!</p>
+		                    <p class="text-warning"><small>정상적으로 처리되지 않았습니다. 시스템 관리자에게 문의 바랍니다.</small></p>
+		                </div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    
 		</DIV>
-		
-
 	</FORM>
 </div>
 		
 <script>
     $('.input-group.date').datepicker({
-        format: "yyyy-mm-dd",
+        format: "yyyymmdd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",
@@ -117,7 +174,7 @@
     });
     
     $('.form-group.date').datepicker({
-        format: "yyyy-mm-dd",
+        format: "yyyymmdd",
         startDate: "2010-01-01",
         endDate: "2020-01-01",
         todayBtn: "linked",

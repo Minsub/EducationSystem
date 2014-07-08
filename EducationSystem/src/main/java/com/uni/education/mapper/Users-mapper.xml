@@ -38,21 +38,21 @@
   
   <insert id="insertDynamic" parameterType="com.uni.education.vo.UserVO">
   	INSERT INTO users (uid
-  		<if test="pw != null pw != ''">,pw</if>
-    	<if test="uname != null uname != ''">,uname</if>
-    	<if test="utype != null utype != ''">,utype</if>
-    	<if test="team != null team != ''">,team</if>
-    	<if test="rank != null rank != ''">,rank</if>
-    	<if test="teacher != null teacher != ''">,teacher</if>
-    	<if test="admin != null admin != ''">,admin</if>
+  		<if test="pw != null and pw != ''">,pw</if>
+    	<if test="uname != null and uname != ''">,uname</if>
+    	<if test="utype != null and utype != ''">,utype</if>
+    	<if test="team != null and team != ''">,team</if>
+    	<if test="rank != null and rank != ''">,rank</if>
+    	<if test="teacher != null and teacher != ''">,teacher</if>
+    	<if test="admin != null and admin != ''">,admin</if>
   	) VALUES ( #{uid}
-  		<if test="pw != null pw != ''">,#{pw}</if>
-    	<if test="uname != null uname != ''">,#{uname}</if>
-    	<if test="utype != null utype != ''">,#{utype}</if>
-    	<if test="team != null team != ''">,#{team}</if>
-    	<if test="rank != null rank != ''">,#{rank}</if>
-    	<if test="teacher != null teacher != ''">,#{teacher}</if>
-    	<if test="admin != null admin != ''">,#{admin}</if>
+  		<if test="pw != null and pw != ''">,#{pw}</if>
+    	<if test="uname != null and uname != ''">,#{uname}</if>
+    	<if test="utype != null and utype != ''">,#{utype}</if>
+    	<if test="team != null and team != ''">,#{team}</if>
+    	<if test="rank != null and rank != ''">,#{rank}</if>
+    	<if test="teacher != null and teacher != ''">,#{teacher}</if>
+    	<if test="admin != null and admin != ''">,#{admin}</if>
   	)
   </insert>
 </mapper>
