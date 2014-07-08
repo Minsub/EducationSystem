@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.uni.education.service.RegisterService;
+import com.uni.education.utils.JUtils;
 import com.uni.education.vo.RegistrationUserVO;
 import com.uni.education.vo.RegistrationVO;
 
@@ -45,6 +46,8 @@ public class UserInfoInLectureController {
 		String lid = registration.getLecture_id();
 		String uid = registration.getUser_id();
 		logger.debug("parameter Check/ lid:" + lid + ", uid:" + uid);
+
+		JUtils.printVO(registration);
     	
 		try {
     		int nResultCode = registerService.updateRegistration(registration);

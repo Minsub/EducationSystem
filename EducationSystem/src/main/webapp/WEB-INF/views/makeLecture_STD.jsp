@@ -14,6 +14,7 @@ $.urlParam = function(name){
     return results[1] || 0;
 }
 function checkResultCode(){
+	showDiv();
 	var code = $.urlParam('resultCode');
 	// TODO: Insert CODE
 	if(code==0){

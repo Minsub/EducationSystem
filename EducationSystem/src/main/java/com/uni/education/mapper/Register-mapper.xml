@@ -29,7 +29,7 @@
 		<if test="cancelation != null"> , cancelation = #{cancelation}</if>
 		<if test="note != null"> , note = #{note}</if>
     </set>
-    WHERE lid = #{lid} and uid = #{uid}
+    WHERE lecture_id = #{lecture_id} and user_id = #{user_id}
   </update>
 
 </mapper>
