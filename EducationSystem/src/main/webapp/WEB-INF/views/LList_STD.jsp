@@ -11,14 +11,6 @@
 		document.uSearch.action="/education/jobedu/LectureListPast";
 		document.uSearch.submit();
 	}
-	
-	function fncGetLecUserList(lecId) {
-		var targetURL;
-		targetURL="/education/jobedu/UserListInLecture" + lecID;
-		document.getElementsById('lid').value=lecId;
-		document.uSearch.action=targetURL;
-		
-	}	
 </script>
 
 <h2>수강 내역</h2>
@@ -54,7 +46,7 @@
 			<td>강의타입</td>
 			<td>
 			<DIV class=col-lg-6>
-				<select name="rank">
+				<select class="form-control" name="rank">
 					<option value=""></option>
 			        <option value="IN">내부</option>
 			        <option value="OUT">외부</option>

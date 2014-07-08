@@ -28,7 +28,7 @@ window.onload=checkResultCode;
 
 <div>
 	<form role=form class=form-horizontal action="/education/jobedu/makeLectureAdmin" method="post">	
-		<INPUT id=lid name=lid class=form-control type=hidden value="<c:out value="${lecture.lid}" />">
+		
 		<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=lname> 강좌명 </LABEL> 
 			<DIV class=col-lg-4>
@@ -69,8 +69,8 @@ window.onload=checkResultCode;
 		  	
 		  	<LABEL class="col-xs-2 control-label" for=ltype> 강사 소속 </LABEL> 
 			<DIV class=col-lg-3>
-				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="내부">내부</label>
-				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="외부">외부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="IN">내부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="OUT">외부</label>
 			</DIV>
 		</DIV>
 				
@@ -117,12 +117,14 @@ window.onload=checkResultCode;
 		  	</DIV>
 		</DIV>
 		
-		<DIV align="center" class="col-sm-offset-2 col-sm-10">
-			<button name="submitLectureStd" class="btn btn-primary" type="submit" style="display:inline;width:100px;margin:10px">확인</button>
-			<button class="btn btn-danger" onclick="history.back();" style="display:inline;width:100px;margin:10px">취소</button>
+		<DIV class="col-sm-offset-2 col-sm-10">
+		
+			<INPUT id=lid name=lid class=form-control type=hidden value="<c:out value="${lecture.lid}" />">
+			<button name="submitLectureStd" class="btn btn-primary" type="submit" >Submit</button>
+			<button class="btn btn-danger" onclick="history.back(); return false;" >Go to Back</button>
 			
 			<!-- Modal HTML -->
-		    <div id="registerSuccessModal" class="modal fade">
+		    <div id="registerSuccessModal" name="registerSuccessModal" class="modal fade">
 		        <div class="modal-dialog">
 		            <div class="modal-content">
 		                <div class="modal-header">
@@ -130,8 +132,8 @@ window.onload=checkResultCode;
 		                    <h4 class="modal-title">Confirmation</h4>
 		                </div>
 		                <div class="modal-body">
-		                    <p>신청 성공!</p>
-		                    <p class="text-warning"><small>'요청중인 강좌' 메뉴에서 확인할 수 있습니다.</small></p>
+		                    <p>트랜잭션 성공!</p>
+		                    <p class="text-warning"><small>수강 내역 페이지에서 신청 내역을 확인하세요.</small></p>
 		                </div>
 		                <div class="modal-footer">
 		                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
@@ -141,7 +143,7 @@ window.onload=checkResultCode;
 		    </div>
 		    
 		    <!-- Modal HTML -->
-		    <div id="registerFailModal" class="modal fade">
+		    <div id="registerFailModal" name="registerFailModal" class="modal fade">
 		        <div class="modal-dialog">
 		            <div class="modal-content">
 		                <div class="modal-header">
@@ -149,8 +151,8 @@ window.onload=checkResultCode;
 		                    <h4 class="modal-title">Confirmation</h4>
 		                </div>
 		                <div class="modal-body">
-		                    <p>신청 실패!</p>
-		                    <p class="text-warning"><small>정상적으로 처리되지 않았습니다. 시스템 관리자에게 문의 바랍니다.</small></p>
+		                    <p>트랜잭션 실패!</p>
+		                    <p class="text-warning"><small>정상적으로 동작을 완료할 수 없습니다.</small></p>
 		                </div>
 		                <div class="modal-footer">
 		                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
