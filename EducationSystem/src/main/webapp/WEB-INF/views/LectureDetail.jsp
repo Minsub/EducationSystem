@@ -122,7 +122,7 @@
 			<DIV class=col-sm-10>
 				<INPUT id="" class=form-control type="text" placeholder="강사 이름을 입력하세요."
 					value="<c:forEach var="rUser" items="${RUserList}">
-						<c:out value="${rUser.uname} | " />
+						<c:out value="${rUser.uname}" />
 				    </c:forEach>"
 			    >
 		  	</DIV>

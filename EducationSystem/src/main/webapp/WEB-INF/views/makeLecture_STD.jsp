@@ -88,7 +88,7 @@ window.onload=checkResultCode;
 			                </div>
 			                <div class="modal-body">
 			                    <p>신청 성공!</p>
-			                    <p class="text-warning"><small>수강 내역 페이지에서 신청 과목을 확인하세요.</small></p>
+			                    <p class="text-warning"><small>요청중인 강좌 메뉴에서 확인해주세요.</small></p>
 			                </div>
 			                <div class="modal-footer">
 			                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
@@ -107,7 +107,7 @@ window.onload=checkResultCode;
 			                </div>
 			                <div class="modal-body">
 			                    <p>신청 실패!</p>
-			                    <p class="text-warning"><small>이미 신청한 강좌입니다.</small></p>
+			                    <p class="text-warning"><small>처리가 정상적으로 종료되지 않았습니다. 시스템 관리자에게 문의하세요.</small></p>
 			                </div>
 			                <div class="modal-footer">
 			                    <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
