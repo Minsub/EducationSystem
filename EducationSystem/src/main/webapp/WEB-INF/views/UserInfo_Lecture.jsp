@@ -11,6 +11,16 @@
 		document.uSearch.submit();
 	}
 	
+	//$(':radio[name="cancelation"]:checked').val();
+	window.onload = function() {
+		var cancelation_r 		= $('#cancelation_value').val();
+		$('input:radio[name=cancelation]:input[value='+cancelation_r+']').attr("checked", true);
+		
+		var pass_r 		= $('#pass_value').val();
+		$('input:radio[name=pass]:input[value='+pass_r+']').attr("checked", true);
+	}
+	
+
 </script>
 
 	<h2>강좌 수강생 정보</h2>
@@ -36,25 +46,23 @@
 			</DIV>
 			
 			<DIV class=form-group>
-			<LABEL class="col-xs-2 control-label" for=cancelation> 취소 여부 </LABEL> 
-			<DIV class=col-lg-4>
-				<select id="cancelation" value="<c:out value="${RegistrationUserList.cancelation}" />">
-			        <option value="Y">Y</option>
-			        <option value="N">N</option>
-		        </select>
+			<LABEL class="col-xs-2 control-label" for=cancelation> 취소 여부</LABEL> 
+			<input type="hidden" id="cancelation_value" value="<c:out value="${RegistrationUserList.cancelation}" />">
+			<DIV class=col-lg-3>
+				<label class="radio-inline"><input type="radio" name="cancelation" id="cancelation" value="Y">Yes</label>
+				<label class="radio-inline"><input type="radio" name="cancelation" id="cancelation" value="N">No</label>
 			</DIV>
-			<LABEL class="col-xs-2 control-label" for=pass> 수료 여부</LABEL> 
-			<DIV class=col-lg-4>
-				<select id="pass" value="<c:out value="${RegistrationUserList.pass}" />">
-			        <option value="Y">Y</option>
-			        <option value="N">N</option>
-		        </select>
+			<LABEL class="col-xs-2 control-label" for=pass> 수료 여부</LABEL>
+			<input type="hidden" id="pass_value" value="<c:out value="${RegistrationUserList.pass}" />">
+			<DIV class=col-lg-3>
+				<label class="radio-inline"><input type="radio" name="pass" id="pass" value="Y">Yes</label>
+				<label class="radio-inline"><input type="radio" name="pass" id="pass" value="N">No</label>
 			</DIV>
 			</DIV>
 			<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=testscore> Test 점수</LABEL> 
 			<DIV class=col-lg-4>
-				<INPUT id=testscore class=form-control type=text  value="<c:out value="${RegistrationUserList.testscore}" />">
+				<INPUT name=testscore class=form-control type=text  value="<c:out value="${RegistrationUserList.testscore}" />">
 			</DIV>
 			</DIV>
 			

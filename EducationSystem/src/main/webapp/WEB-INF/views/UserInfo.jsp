@@ -20,11 +20,16 @@
 			<DIV class=col-lg-4>
 				<INPUT id=uname name=uname class=form-control type=text placeholder="이름"  value="<c:out value="${user.uname}" />">
 			</DIV>
+			<LABEL class="col-xs-2 control-label" for=rank> 직급 </LABEL> 
+			<DIV class=col-lg-2>
+				<INPUT id=rank name=rank class=form-control type=text placeholder="  직급"  value="<c:out value="${user.rank}" />">
+		  	</DIV>
 			</DIV>
 			<DIV class=form-group>
-			<LABEL class="col-xs-2 control-label" for=teacher> 강사여부 </LABEL> 
-			<DIV class=col-lg-4>
-				<INPUT id=teacher name=teacher class=form-control type=text placeholder="Y/N"  value="<c:out value="${user.teacher}" />">
+			<LABEL class="col-xs-2 control-label" for=teacher> 강사 여부 </LABEL> 
+			<DIV class=col-lg-3>
+				<label class="radio-inline"><input type="radio" name="teacher" id="radio" value="Y">Yes</label>
+				<label class="radio-inline"><input type="radio" name="teacher" id="radio" value="N">No</label>
 			</DIV>
 			</DIV>
 			<DIV class=form-group>

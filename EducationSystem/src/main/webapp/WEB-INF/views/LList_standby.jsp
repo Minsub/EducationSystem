@@ -31,7 +31,7 @@
 	        </tr> 
 			<c:forEach var="lectureUser" items="${lectureUserList}">
 	            <tr>
-	                <td><a href="/education/jobedu/LectureDetail?lid=<c:out value="${lectureUser.lid}" />"><c:out value="${lectureUser.lname}" /></a></td>
+	                <td><a href="/education/jobedu/makeLectureAdmin?lid=<c:out value="${lectureUser.lid}" />"><c:out value="${lectureUser.lname}" /></a></td>
 	 <!--           <a href="/education/jobedu/makeLectureAdmin" onClick="fncGetADM('<c:out value="${lectureUser.lid}" />')"><c:out value="${lectureUser.lname}" /></a></td>   --> 
 	                <td><c:out value="${lectureUser.uname}" /></td> 
 	                <td><c:out value="${lectureUser.days}" /></td>
