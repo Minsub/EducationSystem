@@ -130,7 +130,7 @@
 	        
 		<DIV class=form-group>
 			<DIV class="col-sm-offset-2 col-sm-10">
-				<BUTTON class="btn btn-primary" onclick="history.back();">Go to back</BUTTON>
+				<BUTTON class="btn btn-primary" href="registerLecture">Go to back</BUTTON>
 			</DIV>
 		</DIV>
 		

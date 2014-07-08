@@ -69,8 +69,8 @@ window.onload=checkResultCode;
 		  	
 		  	<LABEL class="col-xs-2 control-label" for=ltype> 강사 소속 </LABEL> 
 			<DIV class=col-lg-3>
-				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="IN">내부</label>
-				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="OUT">외부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="내부">내부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="외부">외부</label>
 			</DIV>
 		</DIV>
 				
@@ -105,8 +105,8 @@ window.onload=checkResultCode;
 		<DIV class=form-group>
 			<label class="col-xs-2 control-label" for=checkbox> 교육 대상 </label> 
 			<DIV class=col-sm-10>
-		   		<label class="radio-inline"><input type="radio" name="radio" id="radio" value="DEV">Developer</label>
-			   	<label class="radio-inline"><input type="radio" name="radio" id="radio" value="NOR">Normal</label>
+		   		<label class="radio-inline"><input type="radio" name="radio" id="radio" value="Developer">Developer</label>
+			   	<label class="radio-inline"><input type="radio" name="radio" id="radio" value="Normal">Normal</label>
 		  	</DIV>
 		</DIV>
 		
