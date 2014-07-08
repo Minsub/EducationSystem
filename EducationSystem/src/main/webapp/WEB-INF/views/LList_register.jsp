@@ -123,7 +123,7 @@ $(document).ready(function(){
 							                    <h4 class="modal-title">Confirmation</h4>
 							                </div>
 							                <div class="modal-body">
-							                    <p>처리가 성공하였습니다!</p>
+							                    <p>트랜잭션 성공!</p>
 							                    <p class="text-warning"><small>수강 내역 페이지에서 신청 내역을 확인하세요.</small></p>
 							                </div>
 							                <div class="modal-footer">
@@ -142,7 +142,7 @@ $(document).ready(function(){
 							                    <h4 class="modal-title">Confirmation</h4>
 							                </div>
 							                <div class="modal-body">
-							                    <p>처리가 실패하였습니다!</p>
+							                    <p>트랜잭션 실패!</p>
 							                    <p class="text-warning"><small>정상적으로 동작을 완료할 수 없습니다.</small></p>
 							                </div>
 							                <div class="modal-footer">

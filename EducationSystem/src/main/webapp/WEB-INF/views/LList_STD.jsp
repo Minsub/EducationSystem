@@ -2,9 +2,65 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-	<h2>수강 내역</h2>
+<!-- for datepicker -->
+<link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
+<script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+<script type="text/javascript">
+	function fncLecSearch() {
+		document.uSearch.action="/education/jobedu/LectureListPast";
+		document.uSearch.submit();
+	}
+</script>
+
+<h2>수강 내역</h2>
 	
-	<div>	
+	<!-- <input type="hidden" name="lid" id="lid" value=""> -->
+	<!-- 검색조건 리스트 -->
+<form class="form-inline" name="uSearch" method="post" action="">
+	<input type="hidden" name="lid" id="lid" value="">
+	
+	<table align="right">
+		<tr>
+			<td>시작</td>
+			<td>
+				<div class="input-group date">
+	           		<input name="startDay" type="text" class="form-control">
+	           		<span class="input-group-addon">
+	           		<i class="glyphicon glyphicon-calendar"></i>
+	           		</span>
+	       		</div>
+	       	</td>
+	       	
+	       	<td> ~ 종료</td>
+	       	<td>
+	       		<div class="input-group date">
+	       		    <input name="endDay" type="text" class="form-control">
+	       		    <span class="input-group-addon">
+	       		    <i class="glyphicon glyphicon-calendar">
+	       		    </i>
+	       		    </span>
+	      		 </div>
+			</td>
+			
+			<td>강의타입</td>
+			<td>
+			<DIV class=col-lg-6>
+				<select class="form-control" name="rank">
+					<option value=""></option>
+			        <option value="IN">내부</option>
+			        <option value="OUT">외부</option>
+		        </select>
+		    </DIV>
+			</td>
+			<td><button class="btn btn-primary" onClick="fncLecSearch()">검색</button></td>
+		</tr>
+	</table>
+</form>
+		
+	<p><br></p>
+	
+<div>	
 	
 	<table class="table table-hover">
 		<tr>
@@ -32,4 +88,25 @@
         </c:forEach>
     </table>
     
-	</div>
+</div>
+	
+
+<script>
+    $('.input-group.date').datepicker({
+        format: "yyyymmdd",
+        startDate: "2010-01-01",
+        endDate: "2020-01-01",
+        todayBtn: "linked",
+        autoclose: true,
+        todayHighlight: true
+    });
+    
+    $('.form-group.date').datepicker({
+        format: "yyyymmdd",
+        startDate: "2010-01-01",
+        endDate: "2020-01-01",
+        todayBtn: "linked",
+        autoclose: true,
+        todayHighlight: true
+    });
+</script>
