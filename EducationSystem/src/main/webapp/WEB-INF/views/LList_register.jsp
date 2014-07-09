@@ -22,24 +22,11 @@ function checkResultCode(){
 	} else {
 		$("#registerFailModal").modal('show');
 	}
-	
 }
 window.onload=checkResultCode;
 
-
-/*
-$("#registerBtn").click(function(e){
-	//var x = $(this).attr('resultCode');
-	//var x = $.urlParam('resultCode');
-	var x =10;
-	//var x = GetURLParameter('resultCode');
-	alert(x);
-});
-*/
-
 // id속성 : #btn(수강신청) #btn1(수강삭제)
 // name속성 : button[name=registerLecture](수강신청) button[name=cancelLecture](수강삭제)
-
 $(document).ready(function(){
 	$("button[name=registerLecture]").click(function(e){
 		//모달 보이기
@@ -53,7 +40,6 @@ $(document).ready(function(){
 		$(modalName).modal('show');
 	});
 });
-
 
 </script>
 
@@ -75,8 +61,7 @@ $(document).ready(function(){
 	        </tr> 
 			<c:forEach var="lectureUser" items="${LectureUserList}">
 	            <tr>
-	                <td>		<!-- 강좌명 클릭하면 LectureDetail 로 이동 -->
-	                	<!-- <a href="LectureDetail"><c:out value="${lectureUser.lname}" /></a></td> -->
+	                <td>
 	                	<a href="LectureDetail?lid=<c:out value="${lectureUser.lid}"/>"><c:out value="${lectureUser.lname}" /></a></td><!-- 강좌명 -->
 	                <td><c:out value="${lectureUser.YMD_STD} ~ ${lectureUser.YMD_END}" /></td>
 	                <td><c:out value="${lectureUser.times}" /></td>
@@ -86,7 +71,6 @@ $(document).ready(function(){
 	                <td><c:out value="${lectureUser.uname}" /></td>
 	                <td><c:out value="${lectureUser.credit}" /></td>
 	                <td>
-	               		<!-- 단일 버튼에 토글 기능을 활성화 하기 위해 data-toggle="button" 을 추가 -->
 	               		<form class="form-signin" action="/education/jobedu/registerLecture" method="post">
 	               			<input type="hidden" name="lecture_id" value="<c:out value="${lectureUser.lid}"/>"/>
 	               			<input type="hidden" name="type" value="register"/>

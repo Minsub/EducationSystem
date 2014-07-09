@@ -95,18 +95,27 @@ window.onload=checkResultCode;
 		
 		<!-- select 확인 필요 -->
 		<DIV class=form-group>
+			
+			
 			<LABEL class="col-sm-2 control-label" for=place> 장소 </LABEL> 
 			
 			<DIV class=col-lg-3>
-				<INPUT id=place name="place" class="form-control" type="text" placeholder="교육 장소" value="<c:out value="${lecture.place}" />">
+				<select class="form-control" name="rank">
+					<option value=""></option>
+					<option value="E302">동관3층 전산교육장</option>
+					<option value="E601">동관6층 회의실1</option>
+					<option value="E602">동관6층 회의실2</option>
+					<option value="E603">동관6층 회의실3</option>
+					<option value="E604">동관6층 회의실4</option>
+				</select>
 			</DIV>
 		</DIV>
 		
 		<DIV class=form-group>
 			<label class="col-xs-2 control-label" for=checkbox> 교육 대상 </label> 
 			<DIV class=col-sm-10>
-		   		<label class="radio-inline"><input type="radio" name="radio" id="radio" value="Developer">Developer</label>
-			   	<label class="radio-inline"><input type="radio" name="radio" id="radio" value="Normal">Normal</label>
+		   		<label class="radio-inline"><input type="radio" name="target" id="radio" value="Developer">Developer</label>
+			   	<label class="radio-inline"><input type="radio" name="target" id="radio" value="Normal">Normal</label>
 		  	</DIV>
 		</DIV>
 		
@@ -118,8 +127,6 @@ window.onload=checkResultCode;
 		</DIV>
 		
 		<DIV class="col-sm-offset-2 col-sm-10">
-		
-			<INPUT id=lid name=lid class=form-control type=hidden value="<c:out value="${lecture.lid}" />">
 			<button name="submitLectureStd" class="btn btn-primary" type="submit" >Submit</button>
 			<button class="btn btn-danger" onclick="history.back(); return false;" >Go to Back</button>
 			
