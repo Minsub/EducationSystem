@@ -27,11 +27,11 @@ public class UserInfoInLectureController {
 	private RegisterService registerService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm(String uid, Model model) {
+    public String setupForm(String uid, String lid, Model model) {
         logger.info("Call UserInfoInLecture GET");
-        logger.debug("parameter check / uid:" + uid);
+        logger.debug("parameter check / uid:" + uid + "lid:" + lid);
         
-        RegistrationUserVO Ruser = registerService.getUserByUid(uid);
+        RegistrationUserVO Ruser = registerService.getUserByUid(uid, lid);
         
         model.addAttribute("RegistrationUserList", Ruser);
         logger.debug("check result from DB / Ruser:" + Ruser.toString());

@@ -59,8 +59,8 @@ public class RegisterService {
 		return registerDao.selectByUid(uid);
 	}
 	
-	public RegistrationUserVO getUserByUid(final String uid) {
-		return registerDao.selectRUByUid(uid);
+	public RegistrationUserVO getUserByUid(final String uid, final String lid) {
+		return registerDao.selectRUByUid(uid, lid);
 	}
 } 
 
