@@ -13,6 +13,9 @@ $.urlParam = function(name){
     return results[1] || 0;
 }
 function checkResultCode(){
+	var ltype_r 		= $('#ltype_value').val();
+	$('input:radio[name=ltype]:input[value='+ltype_r+']').attr("checked", true);
+	
 	var code = $.urlParam('resultCode');
 	// TODO: Insert CODE
 	if(code==0){
@@ -67,10 +70,11 @@ window.onload=checkResultCode;
 				<INPUT id=uname name=uname class=form-control type=text placeholder="강사 이름을 입력하세요." >
 		  	</DIV>
 		  	
-		  	<LABEL class="col-xs-2 control-label" for=ltype> 강사 소속 </LABEL> 
+		  	<LABEL class="col-xs-2 control-label" for=ltype> 강사 소속 </LABEL>
+			<input type="hidden" id="ltype_value" value="<c:out value="${lecture.ltype}" />">
 			<DIV class=col-lg-3>
-				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="IN">내부</label>
-				<label class="radio-inline"><input type="radio" name="ltype" id="radio" value="OUT">외부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="ltype" value="IN">내부</label>
+				<label class="radio-inline"><input type="radio" name="ltype" id="ltype" value="OUT">외부</label>
 			</DIV>
 		</DIV>
 				

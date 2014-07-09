@@ -56,7 +56,7 @@ $(document).ready(function(){
 		
            <tr>
                <td><c:out value="${registrationUser.team}" /></td>
-               <td><a href="/education/jobedu/UserInfoInLecture?uid=<c:out value="${registrationUser.user_id}"/>"><c:out value="${registrationUser.uname}" /></a></td>
+               <td><a href="/education/jobedu/UserInfoInLecture?uid=<c:out value="${registrationUser.user_id}"/>&lid=<c:out value="${registrationUser.lecture_id}"/>"><c:out value="${registrationUser.uname}" /></a></td>
                <td><c:out value="${registrationUser.rank}" /></td>
                <td><c:out value="${registrationUser.cancelation}" /></td>
                <td><c:out value="${registrationUser.pass}" /></td>

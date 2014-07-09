@@ -2,6 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<script type="text/javascript">
+	
+	//$(':radio[name="cancelation"]:checked').val();
+	window.onload = function() {
+		var teacher_r 		= $('#teacher_value').val();
+		$('input:radio[name=teacher]:input[value='+teacher_r+']').attr("checked", true);
+	}
+	
+
+</script>
+
+
 	<h2>사용자 정보</h2>
 		<form class=form-horizontal action="/education/jobedu/UserDetail" method="post" >
 			<DIV class=form-group>
@@ -27,9 +39,10 @@
 			</DIV>
 			<DIV class=form-group>
 			<LABEL class="col-xs-2 control-label" for=teacher> 강사 여부 </LABEL> 
+			<input type="hidden" id="teacher_value" value="<c:out value="${user.teacher}" />">
 			<DIV class=col-lg-3>
-				<label class="radio-inline"><input type="radio" name="teacher" id="radio" value="Y">Yes</label>
-				<label class="radio-inline"><input type="radio" name="teacher" id="radio" value="N">No</label>
+				<label class="radio-inline"><input type="radio" name="teacher" id="teacher" value="Y">Yes</label>
+				<label class="radio-inline"><input type="radio" name="teacher" id="teacher" value="N">No</label>
 			</DIV>
 			</DIV>
 			<DIV class=form-group>
