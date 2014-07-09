@@ -55,7 +55,8 @@ public class UserInfoInLectureController {
     		if (nResultCode > 0) { // 성공
         		logger.info("Success");
         		model.addAttribute("resultCode", 0);
-        		return "redirect:/jobedu";
+        		model.addAttribute("lid", lid);
+        		return "redirect:/jobedu/UserListInLecture";
         	} else { //실패
         		logger.info("Fail to..");
         		model.addAttribute("resultCode", 1);

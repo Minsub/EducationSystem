@@ -12,7 +12,7 @@ $.urlParam = function(name){
 function checkResultCode(){
 	var code = $.urlParam('resultCode');
 	// TODO: Insert CODE
-	alert("test");
+	
 	if(code==0){
 		$("#registerSuccessModal").modal('show');
 	} else {
