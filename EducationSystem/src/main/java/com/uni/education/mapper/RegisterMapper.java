@@ -19,8 +19,8 @@ public interface RegisterMapper {
 	public List<RegistrationUserVO> selectRUbyLid(@Param("lid") final String lid);
 	
 	@Select("SELECT * FROM registration INNER JOIN users ON user_id = uid "
-			+ " WHERE user_id = #{uid}")
-	public RegistrationUserVO selectRUbyUid(@Param("uid") final String uid);
+			+ " WHERE user_id = #{uid} and lecture_id = #{lid}")
+	public RegistrationUserVO selectRUbyUid(@Param("uid") final String uid, @Param("lid") final String lid);
 	
 	@Select("SELECT * FROM registration INNER JOIN lectures ON lecture_id = lid "
 		     + " INNER JOIN users ON teacherid = uid"

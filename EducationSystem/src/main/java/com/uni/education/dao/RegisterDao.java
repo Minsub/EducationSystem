@@ -21,6 +21,6 @@ public interface RegisterDao {
 	
 	public int update(RegistrationVO registration);
 	
-	public RegistrationUserVO selectRUByUid(final String uid);
+	public RegistrationUserVO selectRUByUid(final String uid, final String lid);
 	
 }
