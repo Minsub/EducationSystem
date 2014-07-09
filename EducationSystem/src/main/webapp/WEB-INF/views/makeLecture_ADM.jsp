@@ -15,6 +15,8 @@ $.urlParam = function(name){
 function checkResultCode(){
 	var ltype_r 		= $('#ltype_value').val();
 	$('input:radio[name=ltype]:input[value='+ltype_r+']').attr("checked", true);
+	var target_r 		= $('#target_value').val();
+	$('input:radio[name=target]:input[value='+target_r+']').attr("checked", true);
 	
 	var code = $.urlParam('resultCode');
 	// TODO: Insert CODE
@@ -99,32 +101,23 @@ window.onload=checkResultCode;
 		
 		<!-- select 확인 필요 -->
 		<DIV class=form-group>
-			
-			
 			<LABEL class="col-sm-2 control-label" for=place> 장소 </LABEL> 
-			
 			<DIV class=col-lg-3>
-				<select class="form-control" name="rank">
-					<option value=""></option>
-					<option value="E302">동관3층 전산교육장</option>
-					<option value="E601">동관6층 회의실1</option>
-					<option value="E602">동관6층 회의실2</option>
-					<option value="E603">동관6층 회의실3</option>
-					<option value="E604">동관6층 회의실4</option>
-				</select>
+				<INPUT id=place name="place" class="form-control" type="text" placeholder="장소" value="<c:out value="${lecture.place}" />">
 			</DIV>
 		</DIV>
 		
 		<DIV class=form-group>
-			<label class="col-xs-2 control-label" for=checkbox> 교육 대상 </label> 
+			<label class="col-xs-2 control-label" for=target> 교육 대상 </label> 
 			<DIV class=col-sm-10>
-		   		<label class="radio-inline"><input type="radio" name="target" id="radio" value="Developer">Developer</label>
-			   	<label class="radio-inline"><input type="radio" name="target" id="radio" value="Normal">Normal</label>
+				<input type="hidden" id="target_value" value="<c:out value="${lecture.target}" />">
+		   		<label class="radio-inline"><input type="radio" name="target" id="target" value="Developer">Developer</label>
+			   	<label class="radio-inline"><input type="radio" name="target" id="target" value="Normal">Normal</label>
 		  	</DIV>
 		</DIV>
 		
     	<DIV class=form-group>
-			<LABEL class="col-sm-2 control-label" for=inputPassword3> 커리큘럼 Description </LABEL> 
+			<LABEL class="col-sm-2 control-label" for=curriculum> 커리큘럼 Description </LABEL> 
 			<DIV class=col-sm-10>
 				<TEXTAREA id=curriculum name="curriculum" class="form-control" rows="3" placeholder="커리큘럼을 입력하세요." value="<c:out value="${lecture.curriculum}" />"></TEXTAREA>
 		  	</DIV>
