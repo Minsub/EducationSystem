@@ -32,7 +32,7 @@ public class MakeLectureAdminController {
         } else { //요청중인 강좌로 lid를 받고 들어왔을 때 (수정으로..)
         	LectureVO lecture = lectureService.getLectureById(lid);
         	
-        	model.addAttribute("resultCode", 0);
+        	//model.addAttribute("resultCode", 0);
         	model.addAttribute("lecture", lecture);
         	
         	return "jobedu/makeLecture_ADM";
@@ -67,17 +67,17 @@ public class MakeLectureAdminController {
         	if (nResultCode > 0) { // 성공
         		logger.info("Success to create Lecture By admin");
         		model.addAttribute("resultCode", 0);
-        		return "redirect:/jobedu";
+        		return "redirect:/jobedu/makeLectureAdmin";
         	} else { //실패
         		logger.info("Fail to create lecture By admin");
         		model.addAttribute("resultCode", 1);
-        		return "jobedu/makeLecture_STD";
+        		return "redirect:/jobedu/makeLectureAdmin";
         	}
     	} catch (Exception e) {
     		logger.info("Exception!!: " + e.toString());
     		e.printStackTrace();
     		model.addAttribute("resultCode", 1);
-    		return "jobedu/makeLecture_STD";
+    		return "redirect:/jobedu/makeLectureAdmin";
     	}
     }
 }
