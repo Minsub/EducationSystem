@@ -75,7 +75,7 @@
                 <td><c:out value="${lecture.days}" /></td>
                 <td><c:out value="${lecture.target}" /></td>
                 <td><c:out value="${lecture.ltype}" /></td>
-                <td><c:out value="${lecture.teacherID}" /></td>
+                <td><c:out value="${lecture.uname}" /></td>
                 <td><c:out value="${lecture.YMD_STD} ~ ${lecture.YMD_END}" /></td>
             </tr>   
         </c:forEach>
